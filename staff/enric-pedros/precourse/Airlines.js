@@ -16,17 +16,17 @@ var flights = [
 
 
 
-function bienVenida (){ //FUNCIÓN DE ENTRADA AL PROGRAMA I INTRODUCCION DEL NOMBRE  
+function welcome (){ //FUNCIÓN DE ENTRADA AL PROGRAMA I INTRODUCCION DEL NOMBRE  
     
 alert ("BienVenido a las lineas Aereas Skylab\n ");
 var nombreUsusario = prompt("Introduzca el nombre de usuario: ");
 return nombreUsusario; 
 };
 
-var usuario = bienVenida(); // ASIGNAMOS A LA VARIABLE USUARIO EL NOMBRE QUE HEMOS OBTENIDO EN LA FUNCION BIENVENIDA nombreUsuario
+var usuario = welcome(); // ASIGNAMOS A LA VARIABLE USUARIO EL NOMBRE QUE HEMOS OBTENIDO EN LA FUNCION BIENVENIDA nombreUsuario
 
 
-function vuelosdia (){   // MOSTRAMOS POR PANTALLA LOS VUELOS DEL DIA CON EL NOMBRE DE USUARIO DE LA FUNCION BIENVENIDA
+function flightsday (){   // MOSTRAMOS POR PANTALLA LOS VUELOS DEL DIA CON EL NOMBRE DE USUARIO DE LA FUNCION BIENVENIDA
     console.log("estos son los vuelos para el dia de hoy señor/a " + usuario + "\n");
     flights.forEach(element => {
         console.log("id: "+ element.id + " to: "+ element.to + " from: " +element.from + " cost: " +element.cost +"€" + " scale: "+ element.scale)
@@ -35,7 +35,7 @@ function vuelosdia (){   // MOSTRAMOS POR PANTALLA LOS VUELOS DEL DIA CON EL NOM
 
 
 
-function costeMedio (){  //HACEMOS UN BUCLE POR EL ARRAY I EN CADA POSICION IMPRIMIMOS POR TERMINAL EL OBJETO .COST 
+function middlecost (){  //HACEMOS UN BUCLE POR EL ARRAY I EN CADA POSICION IMPRIMIMOS POR TERMINAL EL OBJETO .COST 
     var auxCost = 0;
     for(var i =0; i < flights.length; i++){
         console.log("el coste del vuelo con id: "+flights[i].id +" es: "+ flights[i].cost+ "€")
@@ -47,7 +47,7 @@ function costeMedio (){  //HACEMOS UN BUCLE POR EL ARRAY I EN CADA POSICION IMPR
 
 
 
-function vuelosConEscala (){ //COMPROBAMOS QUE VUELOS TIENEN ESCALA I LO MOSTRAMOS POR TERMINAL
+function flightswithscale (){ //COMPROBAMOS QUE VUELOS TIENEN ESCALA I LO MOSTRAMOS POR TERMINAL
     for(var i =0; i < flights.length; i++){
         if (flights[i].scale){
            console.log("los vuelos con escala son: "+"id:"+ flights[i].id + " " + "de "+ flights[i].from + " a " + flights[i].to) 
@@ -55,17 +55,17 @@ function vuelosConEscala (){ //COMPROBAMOS QUE VUELOS TIENEN ESCALA I LO MOSTRAM
     } 
 }
 
-function ultimosVuelos(){
+function lastflights(){
     for (var i =0; i< flights.length; i++){
         if (flights[i].id >= 5)
         console.log("los últimos vuelos para el dia de hoy son: "+ flights[i].id +" "+ flights[i].to)
     }
 }
 
-vuelosdia(); 
-vuelosConEscala();
-ultimosVuelos();
-costeMedio();
+flightsday(); 
+flightswithscale();
+lastflights();
+middlecost();
 
 
 
@@ -108,13 +108,13 @@ function validadorPrompt1 (valor){
 
 }
 
-setTimeout(tipoUsuario,2000); //preguntem si es administrador i fem un delay de 2000 msg
+setTimeout(typeUser,2000); //preguntem si es administrador i fem un delay de 2000 msg
 
-function adios(){ //despedida del programa
+function bye(){ //despedida del programa
     var exit = confirm("está usted seguro que quiere salir?")
     exit === true ? 
     (console.log("vuelva pronto."),alert("vuelva pronto."), validate = true) 
-    : tipoUsuario()
+    : typeUser()
 }
 
 var existUser = false;
@@ -123,12 +123,12 @@ var validate = false;
 
 
 
-function generarVuelo(origen, destino, precio, escala ) {
+function flightcreation(origen, destino, precio, escala ) {
     var id = flights.length
     flights.push({ id, to: origen, from: destino, cost: precio, scale: escala })
 }
 
-function pregunta (index) {
+function question (index) {
     switch(index) {
         case 1:
             return prompt("diga el destino: ");
@@ -143,7 +143,7 @@ function pregunta (index) {
 }
 
 
-function tipoUsuario (){ // funcion donde indicamos si somos administrador o no i en funcion de eso tendremos unos privilegios u otros
+function typeUser (){ // funcion donde indicamos si somos administrador o no i en funcion de eso tendremos unos privilegios u otros
     if (existUser=== false){
     tipouser = confirm("Es usted Administrador? ")
     existUser = true
@@ -160,7 +160,7 @@ function tipoUsuario (){ // funcion donde indicamos si somos administrador o no 
                         if (index === 3){
                             do{         //hacemos este loop para comprobar que el valor introducido no sea ni null ni vacío
                                 
-                                var tonuevo = pregunta(index);
+                                var tonuevo = question(index);
                                 var pattern = /\d/;
                                 var validate = validadorPrompt1(tonuevo);
                                 var costnuevoInt = parseInt(validate);
@@ -172,7 +172,7 @@ function tipoUsuario (){ // funcion donde indicamos si somos administrador o no 
                         if (index === 1 || index === 2 ){
                             do{         //hacemos este loop para comprobar que el valor introducido no sea ni null ni vacío
                                 var pattern = /\D/;
-                                var tonuevo = pregunta(index);
+                                var tonuevo = question(index);
                                 var validate = validadorPrompt1(tonuevo);
                                 var validaPattern = pattern.test(tonuevo)
                             } while (validate === undefined || validaPattern === false)
@@ -181,7 +181,7 @@ function tipoUsuario (){ // funcion donde indicamos si somos administrador o no 
                         
                         if (index === 4){
                             var pattern = /(si|no)/
-                            var tonuevo = pregunta(index)
+                            var tonuevo = question(index)
                             var validate = validadorPrompt1(tonuevo)
                             
                             if (validate === "si"){
@@ -194,13 +194,13 @@ function tipoUsuario (){ // funcion donde indicamos si somos administrador o no 
                         
                         if(index < 5) {
                             if(validate === false) {
-                                adios()
+                                bye()
                             } else {
                                 admin(index)
                             }
                         }
 
-                        generarVuelo(respuestas[0], respuestas[1], respuestas[2], respuestas[3] )
+                        flightcreation(respuestas[0], respuestas[1], respuestas[2], respuestas[3] )
 
                         console.log("el nuevo vuelo es: " + "id: " + flights[flights.length-1].id + " to: " + flights[flights.length-1].to + " from: " + flights[flights.length-1].from + "de coste: " + flights[flights.length-1].cost + "i escala: " + flights[flights.length-1].scale);
                         console.log(flights)
@@ -209,10 +209,10 @@ function tipoUsuario (){ // funcion donde indicamos si somos administrador o no 
                     }
                         repeatAdd = prompt("quiere añadir más vuelos? (si/no) ")
                         if (repeatAdd === "si"){
-                            tipoUsuario()
+                            typeUser()
                         }else if (repeatAdd === "no"){
                             var salir = confirm("quiere usted volver a la pantalla de inicio? ")
-                            salir ? tipoUsuario() : adios();
+                            salir ? typeUser() : bye();
                         }
                     }
                 break;
@@ -259,7 +259,7 @@ function tipoUsuario (){ // funcion donde indicamos si somos administrador o no 
                  } 
             }
             break;
-        }setTimeout(adios,3000); // delay para despedida
+        }setTimeout(bye,3000); // delay para despedida
     }
 }
 
