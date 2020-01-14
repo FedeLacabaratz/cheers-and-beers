@@ -1,0 +1,12 @@
+body {
+	background-color: yellow;
+}
+
+h1 {
+	cursor: pointer;
+	color: blue;
+}
+
+button {
+	background: magenta;
+}
