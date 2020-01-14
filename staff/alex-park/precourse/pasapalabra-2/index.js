@@ -33,6 +33,8 @@ var rankingEndGame = [
     {name: "Ralph", score: 9},
     {name: "Donald Trump", score: 5}
 ];
+
+var answerCheck = document.getElementById("answercheck");
 var main = document.getElementById("mainbutton");
 var score = document.getElementById("points");
 var defText = document.getElementById("definitions");
@@ -109,6 +111,7 @@ function resetAll () {
     questions.forEach(function(value) {
         value.status = 0;
     });
+    answerCheck.innerHTML = "¡Buena suerte!";
     rankingEndGame = [
         {name: "Obama", score: 20},
         {name: "Ralph", score: 9},
@@ -172,10 +175,11 @@ check.addEventListener('submit', function(e){
     var userAnswer = document.getElementById("answer").value.toLowerCase();
     if (count === questions.length) {
         if (userAnswer.toLowerCase() == "pasapalabra" || remainingQuestions[reCount].status !== 0) {
+            answerCheck.innerHTML = "Has pasado palabra, continuemos...";
             reCount++;
         } else if (userAnswer.toLowerCase() == remainingQuestions[reCount].answer.toLowerCase()) {
             playSuccess();
-            alert("¡Correcto! ¡Ganas +1 punto!");
+            answerCheck.innerHTML = "¡Correcto! ¡Ganas +1 punto!";
             questions[remainingQuestions[reCount].id].status = 1;
             remainingQuestions[reCount].status = 1;
             answerTracker++;
@@ -184,7 +188,7 @@ check.addEventListener('submit', function(e){
             remainingQuestions.splice(remainingQuestions.indexOf(remainingQuestions[reCount]), 1);
         } else {
             playFailure();
-            alert(`No es correcto... la respuesta es: ${remainingQuestions[reCount].answer}.`);
+            answerCheck.innerHTML = `No es correcto... la respuesta es: ${remainingQuestions[reCount].answer}.`;
             questions[remainingQuestions[reCount].id].status = 2;
             remainingQuestions[reCount].status = 2;
             answerTracker++;
@@ -206,11 +210,12 @@ check.addEventListener('submit', function(e){
                 question: questions[count].question[randomQuestions[count]],
                 id: count
             });
+            answerCheck.innerHTML = "Has pasado palabra, continuemos...";
             count++;
             
         } else if (userAnswer.toLowerCase() == questions[count].answer[randomQuestions[count]].toLowerCase()) {
             playSuccess();
-            alert("¡Correcto! ¡Ganas +1 punto!");
+            answerCheck.innerHTML = "¡Correcto! ¡Ganas +1 punto!";
             questions[count].status = 1;
             answerTracker++;
             scoreTracker++;
@@ -219,7 +224,7 @@ check.addEventListener('submit', function(e){
     
         } else {
             playFailure();
-            alert(`No es correcto... la respuesta es: ${questions[count].answer[randomQuestions[count]]}.`);
+            answerCheck.innerHTML = `No es correcto... la respuesta es: ${questions[count].answer[randomQuestions[count]]}.`;
             questions[count].status = 2;
             answerTracker++;
             document.getElementById((questions[count].number)).className = "letter item--failure";
@@ -264,6 +269,7 @@ passtheword.addEventListener("click", function() {
         question: questions[count].question[randomQuestions[count]],
         id: count
     });
+    answerCheck.innerHTML = "Has pasado palabra, continuemos...";
     count++;
     game(count);
 })

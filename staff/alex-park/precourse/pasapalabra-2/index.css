@@ -29,7 +29,7 @@ ul {
     margin-bottom: 5%;
 }
 
-.definitions {
+.textblock {
     height: auto;
     min-height: 180px;
     background-image: linear-gradient(to bottom right, rgb(127, 112, 255), rgb(250, 250, 250));
