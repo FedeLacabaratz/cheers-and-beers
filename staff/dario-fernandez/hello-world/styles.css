@@ -1,0 +1,12 @@
+body {
+ background-color: yellow;
+ border: 5px solid purple;
+
+}
+
+h1 {
+    cursor: pointer;
+}
+button {
+    background-color: red;
+}
