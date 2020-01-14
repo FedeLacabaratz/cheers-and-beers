@@ -38,7 +38,7 @@ function rolPreguntarF()
     }
     
 
-}
+};
 
 function crearVueloF() 
 {
@@ -84,7 +84,7 @@ function crearVueloF()
     
     
     flights.push(nuevoVuelo);    
-}
+};
 
 
 function eliminarVueloF() 
@@ -101,7 +101,7 @@ function eliminarVueloF()
    }
 
     flights.splice(index,1);    
-}
+};
 
 
 
@@ -143,7 +143,7 @@ function buscarPrecioAltoF()
     }
          alert(info);
     
-}
+};
 
     
         
@@ -184,7 +184,7 @@ function buscarPrecioF()
     }
     
     
-}
+};
 
 
 function buscarPrecioBajoF() 
@@ -223,7 +223,7 @@ function buscarPrecioBajoF()
     }
          alert(info);
          
-}
+};
 
 
         
@@ -246,7 +246,7 @@ function comprarF()
     }
         alert("Ups debe de haber un error. Introduzca un numero de vuelo correcto!");
         comprarF();
-}
+};
 
 
 
@@ -274,7 +274,7 @@ function menuUserF()
         
     }  
       
-}
+};
 
 
 function menuAdminF() 
@@ -298,7 +298,7 @@ function menuAdminF()
 
        } 
     }   
-}
+};
 
 
 
@@ -312,7 +312,7 @@ function exitF()
 {
     alert("Muchas gracias. Hasta pronto!!");
        
-}
+};
 
 
 
