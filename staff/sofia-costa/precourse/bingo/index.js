@@ -125,7 +125,7 @@ Line 3:   ${card[2].join('  ')}
     
 function getRandomNumber() {
 
-    var num = Math.floor((Math.random() * 90) + 1)
+    var num = Math.ceil(Math.random() * 90)
     
     if(randomNumbers.includes(num)) {return getRandomNumber()}
     else { 
