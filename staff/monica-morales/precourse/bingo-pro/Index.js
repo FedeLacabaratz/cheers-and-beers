@@ -81,9 +81,9 @@ function print(){
 //crear numero aleatorio que no se repita. 'la bola del juego'
 var numeros_random=[]
 function generateRandom(){
-    var aleatorio=Math.floor(Math.random() * 99) + 1;
+    var aleatorio=Math.ceil(Math.random() * 99) ;
     while(numeros_random.indexOf(aleatorio)!=-1){
-        aleatorio=Math.floor(Math.random() * 99) + 1;
+        aleatorio=Math.ceil(Math.random() * 99);
     }
     alert(`El número extraído es: ${aleatorio}`);
     numeros_random.push(aleatorio);
