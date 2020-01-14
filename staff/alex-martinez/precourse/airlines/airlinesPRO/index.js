@@ -71,7 +71,7 @@ function costeMedioVuelos(){
 function vuelosEscalas(){
     //array para guardar los vuelos con escala y despues contarlos
     var conEscala = [];
-    console.log('Vuelos con escala: ')
+    console.log('Vuelos con escala: ');
     for(var i=0; i<flights.length; i++){
         if(flights[i].scale === true){
             conEscala.push(flights[i]);
@@ -85,7 +85,7 @@ function vuelosEscalas(){
 function ultimosCinco(){
     //variable que almacena los 5 ultimos vuelos del array
     var ultimosVuelos = flights.slice(flights.length-5);
-    console.log('Los últimos 5 vuelos del día son: ')
+    console.log('Los últimos 5 vuelos del día son: ');
     for(var i =0; i<ultimosVuelos.length; i++){
         //console.log(ultimosVuelos[i]);
         console.log(`El vuelo con origen ${ultimosVuelos[i].from} y con destino ${ultimosVuelos[i].to}`);
