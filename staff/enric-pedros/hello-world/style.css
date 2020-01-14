@@ -1,0 +1,14 @@
+body {
+    background-color: yellow;
+    border: fuchsia 10px solid;
+    
+}
+
+h1 {
+    cursor: pointer;
+    
+}
+
+#botonito {
+    background-color: red;
+}
