@@ -6,11 +6,12 @@ In this calculator an user can do arithmetics operations, like plus, subastract,
 
 ### Use Cases
 ![](Use-case.png)
-### [Flows]
+
+### [Activites]
 ![](flow-diagram.png)
 
 ## Technical Description
 
 ### Data Model
 ![](images/data-model.gif)
-```
+
