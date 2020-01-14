@@ -12,7 +12,7 @@ var flights=[
  { id:10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false }
 ]; 
 var nombre = '';
- 
+ // comentario para probar git
 // Pido nombre y compruebo
 function bienvenida(){  
   nombre = prompt('Ingrese su nombre por favor..');
