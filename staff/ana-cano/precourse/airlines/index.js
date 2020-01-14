@@ -1,4 +1,4 @@
-//airlines rules
+//airlines 
 var flight = [
     { id: 00, to: 'Bilbao', from: 'Barcelona', cost: 1600, scale: false },
     { id: 01, to: 'New York', from: 'Barcelona', cost: 700, scale: false },
