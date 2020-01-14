@@ -10,8 +10,5 @@ In this calculator an user can do arithmetics operations, like plus, subastract,
 ### [Activites]
 ![](flow-diagram.png)
 
-## Technical Description
 
-### Data Model
-![](images/data-model.gif)
 
