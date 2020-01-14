@@ -35,7 +35,7 @@ var añadir = function() {
         var vuelosNuevos = [];
         var objArr = {};
         var añadirMas = confirm ("¿Deseas añadir un nuevo vuelo?");
-        if (añadirMas === true){
+        if (añadirMas){
             objArr.id = (flights[flights.length - 1].id) + 1;
             var añadirDestino = function (){
                 var destino = prompt ("Añade el destino del vuelo")
