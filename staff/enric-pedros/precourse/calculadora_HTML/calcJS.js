@@ -45,7 +45,7 @@ function reset (){
 }
 // con esta funcion añadimos el valor del elemento correspondiente al display , hemos creado una funcion sola generica en vez de ir creando funciones por cada valor
 
-function limpiarDisplay (){
+function cleanDisplay (){
     result.placeholder = result.placeholder = "";
 }
 
@@ -83,7 +83,7 @@ function sumar (){
         tipoOperacion = "+"
         primerNumero = result.placeholder
         display2.placeholder = result.placeholder + tipoOperacion
-        limpiarDisplay()
+        cleanDisplay()
         noAddnumbers = false
     }
     
@@ -91,7 +91,7 @@ function sumar (){
         primerNumero = result.placeholder
         tipoOperacion = "+"
         display2.placeholder += primerNumero + tipoOperacion 
-        limpiarDisplay()
+        cleanDisplay()
     }
  
 }
@@ -105,7 +105,7 @@ function restar (){
         tipoOperacion = "-"
         primerNumero = result.placeholder
         display2.placeholder = result.placeholder + tipoOperacion
-        limpiarDisplay()
+        cleanDisplay()
         noAddnumbers = false
 
     }
@@ -113,7 +113,7 @@ function restar (){
         primerNumero = result.placeholder
         tipoOperacion = "-"
         display2.placeholder += primerNumero + tipoOperacion 
-        limpiarDisplay()
+        cleanDisplay()
     }
         
 }
@@ -127,7 +127,7 @@ function multiplicar (){
         tipoOperacion = "*"
         primerNumero = result.placeholder
         display2.placeholder = result.placeholder + tipoOperacion
-        limpiarDisplay()
+        cleanDisplay()
         noAddnumbers = false
 
     }
@@ -135,7 +135,7 @@ function multiplicar (){
         primerNumero = result.placeholder
         tipoOperacion = "*"
         display2.placeholder += primerNumero + tipoOperacion 
-        limpiarDisplay()
+        cleanDisplay()
     }
         
 }
@@ -148,7 +148,7 @@ function dividir (){
         tipoOperacion = "/"
         primerNumero = result.placeholder
         display2.placeholder = result.placeholder + tipoOperacion
-        limpiarDisplay()
+        cleanDisplay()
         noAddnumbers = false
 
     }
@@ -156,7 +156,7 @@ function dividir (){
         primerNumero = result.placeholder
         tipoOperacion = "/"
         display2.placeholder += primerNumero + tipoOperacion 
-        limpiarDisplay()
+        cleanDisplay()
     }
         
 }
