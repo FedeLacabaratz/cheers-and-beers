@@ -24,6 +24,10 @@ The user can restart the game at any time, and quit and choose a different game 
 
 ![alt use cases](./images/use-cases.png)
 
+### Flow
+
+![alt flow](./images/flow-diagram.png)
+
 ## Technical Description
 
 ### Blocks
