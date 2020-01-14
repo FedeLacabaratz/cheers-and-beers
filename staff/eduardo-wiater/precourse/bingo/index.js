@@ -1,5 +1,5 @@
 "use strict" 
-function bingo(){
+function counterMatch(){
    
   var jugadorActivo = {}  
   var bombo = [];
