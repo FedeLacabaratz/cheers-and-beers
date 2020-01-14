@@ -72,7 +72,7 @@ nombre = () => {
     return nom
 }
 
-var numeroerrores = () => {   
+var numeroErrores = () => {   
     error++ 
     console.log("errores: " + error)
     return error
@@ -97,7 +97,7 @@ enunciado = () => {   //primera ronda de preguntes
                 numeroaciertos() 
             }else {
                 console.log("error!!!!!!")
-                numeroerrores();
+                numeroErrores();
             }
         }else element.status = 1;                    
     }); 
@@ -113,7 +113,7 @@ enunciado = () => {   //primera ronda de preguntes
         }
         else {
 
-            (console.log("error!!!!!!"),numeroerrores());
+            (console.log("error!!!!!!"),numeroErrores());
         }
     });
                 
