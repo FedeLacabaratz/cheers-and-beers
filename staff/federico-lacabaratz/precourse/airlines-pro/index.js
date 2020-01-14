@@ -41,7 +41,7 @@ function verify(data) {
         
         
     }else if (data === null) {
-        primerEnd()
+        primerEnd();
         
     }
     else if (data!== Number || data === "") {
@@ -120,7 +120,7 @@ function segVerify(data2) {
         segundoInput();
     
     } else if (data2 === null) {
-        segundoEnd()
+        segundoEnd();
     
     } else if (data2!== Number || data2 === "") {
         segImp = prompt("Por favor, Escribe \"COSTES?\" para conocer el coste medio de los vuelos operados desde aqui.\nEscribe \"ESCALAS?\" para saber que vuelos tienen escalas.\nHaz click en \"Cancelar\" para salir de la aplicación.");
@@ -133,7 +133,7 @@ function segVerify(data2) {
 function costes() {
     
     var costs = flights.map(function(item) { 
-        return item.cost
+        return item.cost;
         
     });
     
@@ -204,13 +204,13 @@ function tercerInput() {
         }
         
         if(respuesta === 'MAYOR' && flights[i].cost > valorIntrod) {
-            console.log(`\nEl\"/\"Los vuelo\"/\"s con importe superior al que indicas es\"/\"son:\n${flights[i].id}, con destino: ${flights[i].to}, con origen: ${flights[i].from}, con coste de: ${flights[i].cost}€, ${scale}.`)
+            console.log(`\nEl\"/\"Los vuelo\"/\"s con importe superior al que indicas es\"/\"son:\n${flights[i].id}, con destino: ${flights[i].to}, con origen: ${flights[i].from}, con coste de: ${flights[i].cost}€, ${scale}.`);
         
         } else if(respuesta === 'IGUAL' && flights[i].cost === valorIntrod) {
-            console.log(`\nEl\"/\"Los vuelo\"/\"s que coincide\"/\"n con el importe que indicas es\"/\"son:\n${flights[i].id}, con destino: ${flights[i].to}, con origen: ${flights[i].from}, con coste de: ${flights[i].cost}€, ${scale}.`)
+            console.log(`\nEl\"/\"Los vuelo\"/\"s que coincide\"/\"n con el importe que indicas es\"/\"son:\n${flights[i].id}, con destino: ${flights[i].to}, con origen: ${flights[i].from}, con coste de: ${flights[i].cost}€, ${scale}.`);
         
         } else if(respuesta === 'MENOR' && flights[i].cost < valorIntrod) {
-            console.log(`\nEl\"/\"Los vuelo\"/\"s con importe inferior al que indicas es\"/\"son:\n${flights[i].id}, con destino: ${flights[i].to}, con origen: ${flights[i].from}, con coste de: ${flights[i].cost}€, ${scale}.`)
+            console.log(`\nEl\"/\"Los vuelo\"/\"s con importe inferior al que indicas es\"/\"son:\n${flights[i].id}, con destino: ${flights[i].to}, con origen: ${flights[i].from}, con coste de: ${flights[i].cost}€, ${scale}.`);
         
         }
 
@@ -229,7 +229,7 @@ function tercerInput2() {
 
         if(flights[i].id == selecId) {
             alert(`Has comprado el vuelo: ${flights[i].id}, con destino: ${flights[i].to}, con origen: ${flights[i].from}, con coste de: ${flights[i].cost}€, ${scale}.`);
-            tercerEnd()
+            tercerEnd();
 
         } 
          
@@ -276,7 +276,7 @@ function cuartoInput2() {
                         
             if(flights[i].id == idElimin) {
             
-                flights.splice(flights[i].id,1)
+                flights.splice(flights[i].id,1);
                     
                 }
             }
