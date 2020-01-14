@@ -65,7 +65,8 @@ function generarNumeroAleatorio(){
 
 //Función nuevo Turno
 function comprobarNumeroAleatorioEnCarton(param) {
-    for (let i = 0; i < carton.length; i++) {
+    var cartonLength = carton.length;
+    for (let i = 0; i < cartonLength; i++) {
         if (carton[i].number === param) {
             alert('Felicidades tu número ' + param + ' está en el cartón.¡¡Y vamos para BINGO!!')
             carton[i].number = "X";
