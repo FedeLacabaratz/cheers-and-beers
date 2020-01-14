@@ -13,8 +13,8 @@ var flights = [
 ];
 // Dades d'usuari
 function presentacio (){
-    var usuari = prompt('Bon dia, Benvingut a SkyLab Airlines, quin és el seu nom?','');
-    console.log ('Benvingut ' + usuari);
+    var user = prompt('Bon dia, Benvingut a SkyLab Airlines, quin és el seu nom?','');
+    console.log ('Benvingut ' + user);
 } 
 // Vols del dia
 function volsDiaris (){
