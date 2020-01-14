@@ -1,9 +1,9 @@
 "use strict" 
-function counterMatch(){
+function bingo(){
    
   var jugadorActivo = {}  
   var bombo = [];
-  var contadorMatch = 0 , contador = 0 , puntos = 100 , estadoLinea = false;
+  var counterMatch = 0 , contador = 0 , puntos = 100 , estadoLinea = false;
   var usadosBombo = [];
   var carton = [
     {id:0 , numero: 0 , match : false },
@@ -148,7 +148,7 @@ function counterMatch(){
           carton[i].match = true;
           carton[i].numero = 'X';
           puntos+=3;
-          contadorMatch++;
+          counterMatch++;
         }
       }
 
@@ -167,7 +167,7 @@ function counterMatch(){
         puntos+=5;
         alert('*** Linea!! ***');
       }
-      if( contadorMatch === 15 ){
+      if( counterMatch === 15 ){
         puntos+=15;
         return resumen();
       }
@@ -250,7 +250,7 @@ function counterMatch(){
         carton[i].match = false;
       }
       bombo = []; usadosBombo = [];
-      contadorMatch = 0 ; contador = 0 ; puntos = 100 ; estadoLinea = false;  
+      counterMatch = 0 ; contador = 0 ; puntos = 100 ; estadoLinea = false;  
     }
 
   numerosBombo();  
