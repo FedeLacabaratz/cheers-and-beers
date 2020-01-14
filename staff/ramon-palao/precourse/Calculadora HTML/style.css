@@ -1,0 +1,133 @@
+.container{
+    display:grid;
+    margin: auto;
+    width: 30%;
+    height: 600px;
+    grid-template: repeat(7, 1fr) / repeat(4, 1fr);
+    text-align: center;
+    font-family: Helvetica;
+}
+
+.box{
+    border: 1px solid black;
+    background-color: #EFF7FC;
+    font-size: 35px;
+}
+
+.screen{
+    grid-area: 1 / 1 / span 2 / span 4;
+    background-color: #1E3340;
+    color: white;
+    font-size: 60px;
+    text-align: right;
+}
+
+.ac{
+    grid-area: 3 / 1 / 4 / span 2;
+    font-size: 35px;
+}
+
+.cero{
+    grid-area: 7 / 1 / 8 / span 2;
+}
+
+.ac:hover{
+    background-color: #8ABFBC;
+}
+
+.delete:hover{
+    background-color: #8ABFBC;
+}
+
+.siete:hover{
+    background-color: #8ABFBC;
+}
+
+.ocho:hover{
+    background-color: #8ABFBC;
+}
+
+.nueve:hover{
+    background-color: #8ABFBC;
+}
+
+.cuatro:hover{
+    background-color: #8ABFBC;
+}
+
+.cinco:hover{
+    background-color: #8ABFBC;
+}
+
+.seis:hover{
+    background-color: #8ABFBC;
+}
+
+.siete:hover{
+    background-color: #8ABFBC;
+}
+
+.uno:hover{
+    background-color: #8ABFBC;
+}
+
+.dos:hover{
+    background-color: #8ABFBC;
+}
+
+.tres:hover{
+    background-color: #8ABFBC;
+}
+
+.cero:hover{
+    background-color: #8ABFBC;
+}
+
+.coma:hover{
+    background-color: #8ABFBC;
+}
+
+.division{
+    background-color: #FF8F19;
+    color: white;
+}
+
+.multiplicar{
+    background-color: #FF8F19;
+    color: white;
+}
+
+.resta{
+    background-color: #FF8F19;
+    color: white;
+}
+
+.suma{
+    background-color: #FF8F19;
+    color: white;
+}
+
+.igual{
+    background-color: #FF8F19;
+    color: white;
+}
+
+.division:hover{
+    background-color: #F9AA57;
+}
+
+.multiplicar:hover{
+    background-color: #F9AA57;
+}
+
+.resta:hover{
+    background-color: #F9AA57;
+}
+
+.suma:hover{
+    background-color: #F9AA57;
+}
+
+.igual:hover{
+    background-color: #F9AA57;
+}
