@@ -31,103 +31,15 @@
     grid-area: 7 / 1 / 8 / span 2;
 }
 
-.ac:hover{
+.ac:hover, .delete:hover, .siete:hover, .ocho:hover, .nueve:hover, .cuatro:hover, .cinco:hover, .seis:hover, .siete:hover, .uno:hover, .dos:hover, .tres:hover, .cero:hover, .coma:hover{
     background-color: #8ABFBC;
 }
 
-.delete:hover{
-    background-color: #8ABFBC;
-}
-
-.siete:hover{
-    background-color: #8ABFBC;
-}
-
-.ocho:hover{
-    background-color: #8ABFBC;
-}
-
-.nueve:hover{
-    background-color: #8ABFBC;
-}
-
-.cuatro:hover{
-    background-color: #8ABFBC;
-}
-
-.cinco:hover{
-    background-color: #8ABFBC;
-}
-
-.seis:hover{
-    background-color: #8ABFBC;
-}
-
-.siete:hover{
-    background-color: #8ABFBC;
-}
-
-.uno:hover{
-    background-color: #8ABFBC;
-}
-
-.dos:hover{
-    background-color: #8ABFBC;
-}
-
-.tres:hover{
-    background-color: #8ABFBC;
-}
-
-.cero:hover{
-    background-color: #8ABFBC;
-}
-
-.coma:hover{
-    background-color: #8ABFBC;
-}
-
-.division{
+.division, .multiplicar, .resta, .suma, .igual{
     background-color: #FF8F19;
     color: white;
 }
 
-.multiplicar{
-    background-color: #FF8F19;
-    color: white;
-}
-
-.resta{
-    background-color: #FF8F19;
-    color: white;
-}
-
-.suma{
-    background-color: #FF8F19;
-    color: white;
-}
-
-.igual{
-    background-color: #FF8F19;
-    color: white;
-}
-
-.division:hover{
-    background-color: #F9AA57;
-}
-
-.multiplicar:hover{
-    background-color: #F9AA57;
-}
-
-.resta:hover{
-    background-color: #F9AA57;
-}
-
-.suma:hover{
-    background-color: #F9AA57;
-}
-
-.igual:hover{
+.division:hover, .multiplicar:hover, .resta:hover, .suma:hover, .igual:hover{
     background-color: #F9AA57;
 }
