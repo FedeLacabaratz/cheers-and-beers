@@ -1,0 +1,15 @@
+body {
+background-color : yellow;
+border: 5px solid fuchsia;
+}
+
+h1 {
+    cursor: pointer;
+}
+
+button{
+    padding: 40px;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 10px;
+}
