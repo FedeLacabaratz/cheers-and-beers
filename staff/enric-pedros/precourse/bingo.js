@@ -7,7 +7,7 @@ function usuario() { //nombre de usuario
 }
 
 var cartro = []
-var lineasCartro = 5
+var lineasCartro = 5;
 
 
 function aleatorio(a, b) {   //esta funcion genera un numero aleatorio entre un minimo y un máximo 
@@ -28,7 +28,7 @@ function aleatorio(a, b) {   //esta funcion genera un numero aleatorio entre un 
 
 
 var confirmacio = false
-var arrayNumeros
+var arrayNumeros;
 
 function nuevaPartida() {  // funció que comença el Bingo
     var newplay = confirm("Quiere iniciar una nueva partida señor " + user + " ?");
