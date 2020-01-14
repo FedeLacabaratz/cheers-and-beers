@@ -1,11 +1,11 @@
 //Los arrays que se usarán durante el programa
-const VALORES_ENTRADA = []
-const VALORES_ENTRADA_PF = []
-const VALORES_COMPUTAR = []
-const RESULTADOS = []
+var VALORES_ENTRADA = []
+var VALORES_ENTRADA_PF = []
+var VALORES_COMPUTAR = []
+var RESULTADOS = []
 //Controlan errores y si es necesario hacer raíz cuadrada
-let lanzarError = false
-let valoresVacios = 0
+var lanzarError = false
+var valoresVacios = 0
 //Entrada de datos
 VALORES_ENTRADA.push(prompt('Introduce el primer número'))
 VALORES_ENTRADA.push(prompt('Introduce el segundo número'))
@@ -28,7 +28,7 @@ for(i = 0; i < VALORES_ENTRADA.length; i++)
 computar(VALORES_COMPUTAR[0], VALORES_COMPUTAR[1])
 //Funciones usadas en el programa
 function sumar(num1, num2) {
-    let suma = num1 + num2
+    var suma = num1 + num2
     //Este if statement evalúa si el resultado es entero o no obteniéndo su módulo de 1. Los no enteros no son divisibles entre 1, y su módulo arrojará un 'truthy value'.
     if(suma % 1) { 
         suma = parseFloat(suma.toFixed(3))
@@ -37,7 +37,7 @@ function sumar(num1, num2) {
 }
 
 function restar(num1, num2) {
-    let resta = num1 - num2
+    var resta = num1 - num2
     if(resta % 1) {
         resta = parseFloat(resta.toFixed(3))
     }
@@ -45,7 +45,7 @@ function restar(num1, num2) {
 }
 
 function multiplicar(num1, num2) {
-    let multiplicacion = num1 * num2
+    var multiplicacion = num1 * num2
     if(multiplicacion % 1) {
         multiplicacion = parseFloat(multiplicacion.toFixed(3))
     }
@@ -53,7 +53,7 @@ function multiplicar(num1, num2) {
 }
 
 function dividir(num1, num2) {
-    let division = num1 / num2
+    var division = num1 / num2
     if(division % 1) {
         division = parseFloat(division.toFixed(3))
     }
@@ -61,7 +61,7 @@ function dividir(num1, num2) {
 }
 
 function raiz(num1) {
-    let raizCuadrada = Math.sqrt(num1)
+    var raizCuadrada = Math.sqrt(num1)
     if(raizCuadrada % 1) {
         raizCuadrada = parseFloat(raizCuadrada.toFixed(3))
     }

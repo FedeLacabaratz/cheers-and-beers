@@ -1,4 +1,4 @@
-const ROSCO = [
+var ROSCO = [
     { letter: "a", answer: "abducir", status: 0, question: "CON LA A. Dicho de una supuesta criatura extraterrestre: Apoderarse de alguien"},
     { letter: "b", answer: "bingo", status: 0, question: "CON LA B. Juego que ha sacado de quicio a todos los 'Skylabers' en las sesiones de precurso"},
     { letter: "c", answer: "churumbel", status: 0, question: "CON LA C. Niño, crío, bebé"},
@@ -201,12 +201,12 @@ var POSTJUEGO = {
         this.botonNuevaPartida.removeEventListener('click', this.finPostjuego)
     },
     resetRosco() {
-        for(let i = 0; i < ROSCO.length; i++) {
+        for(var i = 0; i < ROSCO.length; i++) {
             ROSCO[i].status = 0
         }
     },
     resetRoscoHTML() {
-        for(let i = 0; i < ROSCO.length; i++) {
+        for(var i = 0; i < ROSCO.length; i++) {
             document.getElementById(ROSCO[i].letter).classList.remove('rosco__letra--acertada')
             document.getElementById(ROSCO[i].letter).classList.remove('rosco__letra--fallada')
             document.getElementById(ROSCO[i].letter).classList.remove('rosco__letra--focus')

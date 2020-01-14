@@ -1,4 +1,4 @@
-const BOMBO = {
+var BOMBO = {
     numeros: [],
     bola: 0,
     llenar() {
@@ -10,9 +10,9 @@ const BOMBO = {
         this.numeros.splice(0, this.numeros.length)
     },
     sacarBola() {
-        let numeroAleatorio = parseInt(Math.random() * this.numeros.length)
+        var numeroAleatorio = parseInt(Math.random() * this.numeros.length)
         this.bola = this.numeros[numeroAleatorio]
-        let indexRemover = this.numeros.indexOf(this.bola)
+        var indexRemover = this.numeros.indexOf(this.bola)
         this.numeros.splice(indexRemover, 1)
         return this.bola
     },
@@ -21,7 +21,7 @@ const BOMBO = {
     }
 }
 
-const CARTON = {
+var CARTON = {
     numeros: [],
     aciertosLinea1: 0,
     aciertosLinea2: 0,
@@ -54,7 +54,7 @@ const CARTON = {
     }
 }
 
-const JUGADOR =  {
+var JUGADOR =  {
     nombre: prompt('Bienvenido al Bingo. ¿Cómo te llamas?'),
     turnos: 0,
     aciertos: 0,

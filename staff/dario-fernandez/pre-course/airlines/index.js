@@ -21,13 +21,13 @@ function llamarFuncion() {
 }
 
 function saludar() {
-    let userName = prompt('¿Cuál es tu nombre?')
+    var userName = prompt('¿Cuál es tu nombre?')
     console.log(`¡Hola, ${userName}!`)
 }
 
 function mostrarVuelos() {
     for(var i = 0; i < flights.length; i++) {
-        let escala = ' '
+        var escala = ' '
         if(!flights[i].scale) {
             escala = ' no '
         } 
@@ -38,17 +38,17 @@ function mostrarVuelos() {
 }
 
 function mostrarCosteMedio() {
-    let sum = 0
+    var sum = 0
     for(var i = 0; i < flights.length; i++) {
         sum += flights[i].cost
     }
-    let numOfValues = parseInt(flights.length)
-    let media = parseInt(sum / numOfValues)
+    var numOfValues = parseInt(flights.length)
+    var media = parseInt(sum / numOfValues)
     console.log(`El coste medio de los vuelos es de ${media}€.`)
 }
 
 function realizaEscala(){
-    let countEscala = 0
+    var countEscala = 0
     for(var i = 0; i < flights.length; i++)
     {
         if(flights[i].scale){
@@ -59,11 +59,11 @@ function realizaEscala(){
 }
 
 function ultimosDestinos() {
-    let ultimosVuelos = ''
-    let i = flights.length - 5
-    let l = flights.length
-    let ult = flights.length - 1
-    let penult = flights.length - 2
+    var ultimosVuelos = ''
+    var i = flights.length - 5
+    var l = flights.length
+    var ult = flights.length - 1
+    var penult = flights.length - 2
     for(i; i < l; i++) {
         if(i == ult) {
             ultimosVuelos += `y ${flights[i].to}`

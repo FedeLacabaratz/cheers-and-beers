@@ -1,4 +1,4 @@
-const ROSCO = [
+var ROSCO = [
     { letter: "a", answer: "abducir", status: 0, question: "CON LA A. Dicho de una supuesta criatura extraterrestre: Apoderarse de alguien"},
     { letter: "b", answer: "bingo", status: 0, question: "CON LA B. Juego que ha sacado de quicio a todos los 'Skylabers' en las sesiones de precurso"},
     { letter: "c", answer: "churumbel", status: 0, question: "CON LA C. Niño, crío, bebé"},
@@ -28,11 +28,11 @@ const ROSCO = [
     { letter: "z", answer: "zen", status: 0, question: "CON LA Z. Escuela de budismo que busca la experiencia de la sabiduría más allá del discurso racional"},
 ]
 
-const PRE_JUEGO = {
+var PRE_JUEGO = {
     jugador: prompt('¡Bienvenido a Pasapalabra!\n¿Cómo te llamas?')
 }
 
-const JUEGO = {
+var JUEGO = {
     aciertos: 0,
     fallos: 0,
     preguntar(x) {
@@ -67,7 +67,7 @@ const JUEGO = {
     }
 }
 
-const POST_JUEGO = {
+var POST_JUEGO = {
     ranking: [],
     record: [],
     traerRanking() {
