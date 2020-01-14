@@ -42,15 +42,11 @@ function bingo(){
     }
     getCarton();
 
-    console.log('')
-    console.log('Hola ' + nombre)
-    console.log('')
-    console.log('Este es el carton que se te ha asignado:')
-    console.log('')
-    console.log(carton.slice(0,5))
-    console.log(carton.slice(5,10))
-    console.log(carton.slice(10))
-    console.log('')
+   
+    console.log('\nHola ' + nombre + '\n' + 'Este es el carton que se te ha asignado:\n' + carton.slice(0,5) + '\n' + carton.slice(5,10) + '\n' + carton.slice(10)+ '\n')
+    
+
+
     if(confirm('Empezamos?')) {
         turno();
     } else {console.log('Bye')}
