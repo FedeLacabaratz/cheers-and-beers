@@ -176,22 +176,22 @@ function bingo() {
         if (coincideLinea1 === true || coincideLinea2 === true || coincideLinea3 === true) {
 
             if (coincideLinea1 === true && linea1 <15) {
-                alert(`Felicitaciones!! Haz hecho la PRIMERA LINEA!!`);
-                console.log(`Felicitaciones!! Haz hecho la PRIMERA LINEA!!`);
+                alert(`Felicitaciones!! Has hecho la PRIMERA LINEA!!`);
+                console.log(`Felicitaciones!! Has hecho la PRIMERA LINEA!!`);
                 linea1;
             
             };
             
             if (coincideLinea2 === true && linea2 <15) {
-                alert(`Felicitaciones!! Haz hecho la SEGUNDA LINEA!!`);
-                console.log(`Felicitaciones!! Haz hecho la SEGUNDA LINEA!!`);
+                alert(`Felicitaciones!! Has hecho la SEGUNDA LINEA!!`);
+                console.log(`Felicitaciones!! Has hecho la SEGUNDA LINEA!!`);
                 linea2;
             
             };
             
             if (coincideLinea3 === true && linea3 <15) {
-                alert(`Felicitaciones!! Haz hecho la TERCERA LINEA!!`);
-                console.log(`Felicitaciones!! Haz hecho la TERCERA LINEA!!`);
+                alert(`Felicitaciones!! Has hecho la TERCERA LINEA!!`);
+                console.log(`Felicitaciones!! Has hecho la TERCERA LINEA!!`);
                 linea3;
             
             };
@@ -200,8 +200,8 @@ function bingo() {
 
         if (coincideLinea1 === true && coincideLinea2 === true && coincideLinea3 === true) {
             bingo=true;
-            alert(`Wow!!! Felicitaciones!!! Haz hecho BINGO!!!`);
-            console.log(`Wow!!! Felicitaciones!!! Haz hecho BINGO!!!`)
+            alert(`Wow!!! Felicitaciones!!! Has hecho BINGO!!!`);
+            console.log(`Wow!!! Felicitaciones!!! Has hecho BINGO!!!`)
             alert(`Has completado tu carton en ${turns} turnos!`);
             console.log(`Has completado tu carton en ${turns} turnos!`)
             
