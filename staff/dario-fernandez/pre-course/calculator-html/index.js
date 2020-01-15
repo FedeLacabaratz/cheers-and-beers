@@ -1,29 +1,54 @@
-var boton1 = document.getElementById('n1')
-var boton2 = document.getElementById('n2')
-var boton3 = document.getElementById('n3')
-var boton4 = document.getElementById('n4')
-var boton5 = document.getElementById('n5')
-var boton6 = document.getElementById('n6')
-var boton7 = document.getElementById('n7')
-var boton8 = document.getElementById('n8')
-var boton9 = document.getElementById('n9')
-var boton0 = document.getElementById('n0')
-var botonComa = document.getElementById('n,')
-var botonAC = document.getElementById('AC')
-var botonSuma = document.getElementById('suma')
-var botonResta = document.getElementById('resta')
-var botonMult = document.getElementById('mult')
-var botonDiv = document.getElementById('div')
-var botonIgual = document.getElementById('igual')
-var botonBorrar = document.getElementById('flecha')
-var display = document.getElementById('pantalla')
+var boton1 
+var boton2
+var boton3
+var boton4
+var boton5
+var boton6
+var boton7
+var boton8
+var boton9
+var boton0
+var botonComa
+var botonAC
+var botonSuma
+var botonResta
+var botonMult
+var botonDiv
+var botonIgual
+var botonBorrar
+var display
 var pantalla = ''
 var operacion = ''
 var operando1 = ''
 var operando2 = ''
 var recienOperado = false
 
-botonBorrar.addEventListener('click', borrar)
+function crearBotonesJS(callback) {
+    boton1 = document.getElementById('n1')
+    boton2 = document.getElementById('n2')
+    boton3 = document.getElementById('n3')
+    boton4 = document.getElementById('n4')
+    boton5 = document.getElementById('n5')
+    boton6 = document.getElementById('n6')
+    boton7 = document.getElementById('n7')
+    boton8 = document.getElementById('n8')
+    boton9 = document.getElementById('n9')
+    boton0 = document.getElementById('n0')
+    botonComa = document.getElementById('n,')
+    botonAC = document.getElementById('AC')
+    botonSuma = document.getElementById('suma')
+    botonResta = document.getElementById('resta')
+    botonMult = document.getElementById('mult')
+    botonDiv = document.getElementById('div')
+    botonIgual = document.getElementById('igual')
+    botonBorrar = document.getElementById('flecha')
+    display = document.getElementById('pantalla')
+
+    if(typeof callback === 'function'){
+        callback()
+    }
+}
+
 
 function borrar() {
     if(recienOperado) {
@@ -34,7 +59,6 @@ function borrar() {
     }
 }
 
-botonSuma.addEventListener('click', prepararSuma)
 
 function prepararSuma() {
     if(recienOperado) {
@@ -46,7 +70,6 @@ function prepararSuma() {
     mostrarPantalla()
 }
 
-botonResta.addEventListener('click', prepararResta)
 
 function prepararResta() {
     if(recienOperado) {
@@ -58,7 +81,6 @@ function prepararResta() {
     mostrarPantalla()
 }
 
-botonMult.addEventListener('click', prepararMult)
 
 function prepararMult() {
     if(recienOperado) {
@@ -70,7 +92,6 @@ function prepararMult() {
     mostrarPantalla()
 }
 
-botonDiv.addEventListener('click', prepararDiv)
 
 function prepararDiv() {
     if(recienOperado) {
@@ -108,7 +129,6 @@ function operar() {
     operando2 = ''
 }
 
-botonIgual.addEventListener('click', operar)
 
 function mostrarPantalla() {
     if(pantalla.length <= 10) {
@@ -118,7 +138,6 @@ function mostrarPantalla() {
     }
 }
 
-botonAC.addEventListener('click', ac)
 
 function ac() {
     pantalla = '0'
@@ -127,7 +146,6 @@ function ac() {
     operacion = ''
 }
 
-boton1.addEventListener('click', mostrar1)
 
 function mostrar1() {
     if(recienOperado) {
@@ -142,7 +160,6 @@ function mostrar1() {
     mostrarPantalla()
 
 }
-boton2.addEventListener('click', mostrar2)
 
 function mostrar2() {
     if(recienOperado) {
@@ -156,7 +173,6 @@ function mostrar2() {
     pantalla += boton2.innerHTML
     mostrarPantalla()
 }
-boton3.addEventListener('click', mostrar3)
 
 function mostrar3() {
     if(recienOperado) {
@@ -170,7 +186,6 @@ function mostrar3() {
     pantalla += boton3.innerHTML
     mostrarPantalla()
 }
-boton4.addEventListener('click', mostrar4)
 
 function mostrar4() {
     if(recienOperado) {
@@ -184,7 +199,6 @@ function mostrar4() {
     pantalla += boton4.innerHTML
     mostrarPantalla()
 }
-boton5.addEventListener('click', mostrar5)
 
 function mostrar5() {
     if(recienOperado) {
@@ -198,7 +212,6 @@ function mostrar5() {
     pantalla += boton5.innerHTML
     mostrarPantalla()
 }
-boton6.addEventListener('click', mostrar6)
 
 function mostrar6() {
     if(recienOperado) {
@@ -212,7 +225,6 @@ function mostrar6() {
     pantalla += boton6.innerHTML
     mostrarPantalla()
 }
-boton7.addEventListener('click', mostrar7)
 
 function mostrar7() {
     if(recienOperado) {
@@ -226,7 +238,6 @@ function mostrar7() {
     pantalla += boton7.innerHTML
     mostrarPantalla()
 }
-boton8.addEventListener('click', mostrar8)
 
 function mostrar8() {
     if(recienOperado) {
@@ -240,7 +251,6 @@ function mostrar8() {
     pantalla += boton8.innerHTML
     mostrarPantalla()
 }
-boton9.addEventListener('click', mostrar9)
 
 function mostrar9() {
     if(recienOperado) {
@@ -254,7 +264,6 @@ function mostrar9() {
     pantalla += boton9.innerHTML
     mostrarPantalla()
 }
-boton0.addEventListener('click', mostrar0)
 
 function mostrar0() {
     if(recienOperado) {
@@ -269,7 +278,6 @@ function mostrar0() {
         mostrarPantalla()
     }
 }
-botonComa.addEventListener('click', mostrarComa)
 var hayComa = false
 
 function mostrarComa() {
@@ -288,3 +296,26 @@ function mostrarComa() {
         mostrarPantalla()
     }
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+    crearBotonesJS(function(){
+        botonBorrar.addEventListener('click', borrar)
+        botonSuma.addEventListener('click', prepararSuma)
+        botonResta.addEventListener('click', prepararResta)
+        botonMult.addEventListener('click', prepararMult)
+        botonDiv.addEventListener('click', prepararDiv)
+        botonIgual.addEventListener('click', operar)
+        botonAC.addEventListener('click', ac)
+        boton1.addEventListener('click', mostrar1)
+        boton2.addEventListener('click', mostrar2)
+        boton3.addEventListener('click', mostrar3)
+        boton4.addEventListener('click', mostrar4)
+        boton5.addEventListener('click', mostrar5)
+        boton6.addEventListener('click', mostrar6)
+        boton7.addEventListener('click', mostrar7)
+        boton8.addEventListener('click', mostrar8)
+        boton9.addEventListener('click', mostrar9)
+        boton0.addEventListener('click', mostrar0)
+        botonComa.addEventListener('click', mostrarComa)
+    })
+})
