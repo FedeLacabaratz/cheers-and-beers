@@ -1,10 +1,22 @@
-var tags = document.querySelectorAll('*')
+var element = document.children[0]
 
-var tagsUpdated = Array.prototype.map.call(tags, function(tag) {
+var code = ""
 
-  tag.classList = []
-  tag.id = ""
-  return tag
-})
+function html(elem) {
 
-console.log(tagsUpdated)
+  code += "<" + elem.tagName + ">"
+
+  for (var i = 0; i < elem.children.length; i++) {
+
+    if (elem.children.length) {
+      html(elem.children[i])
+    }
+    
+  }
+
+  code += "</" + elem.tagName + ">"
+}
+
+html(element)
+
+console.log(code)
