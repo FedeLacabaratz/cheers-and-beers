@@ -1,27 +1,3 @@
-<<<<<<< Updated upstream
-function html (elements) {
-=======
-/*function html (elements) {
->>>>>>> Stashed changes
-    var code = "";
-    for (var i=0; i<elements.length;i++) {
-        var element = elements[i]
-        code += '<' + element.tagName + ">";
-        
-        if (element.children.length) {
-            code += html(element.children);
-        }
-
-        code += '</' + element.tagName + ">";
-    }    
-    return code;
-}
-
-<<<<<<< Updated upstream
-console.log(html(document.children));
-=======
-console.log(html(document.children));*/
-// 3
 function isSemantic(element) {
     return semantic.indexOf(element.tagName.toLowerCase()) > -1;
 }
@@ -51,18 +27,3 @@ function html(elements, indent) {
 }
     
 console.log(html(document.children));
-
-
-
-/*var inline = ['h1', 'h2', 'h3', 'h5', 'span', 'time', 'title', 'strong', 'td', 'li', 'button', 'a' ]; // TODO include more tags
-function isInline(element) {
-    return inline.indexOf(element.tagName.toLowerCase()) > -1;
-}
-
-var selfClosed = ['input', 'link', 'br', 'img', 'source']; // TODO include more tags
-function isSelfClosed(element) {
-    return selfClosed.indexOf(element.tagName.toLowerCase()) > -1;
-}
-*/
-
->>>>>>> Stashed changes
