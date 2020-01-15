@@ -56,7 +56,7 @@ function html(elements, indent) {
         code += indent + '</' + element.tagName + '>\n';
     }
 
-    return code;
+    return code.toLowerCase();
 }
 
 console.log(html(document.children));
