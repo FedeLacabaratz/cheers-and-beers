@@ -13,7 +13,7 @@ var flight = [
     { id: 10, to: 'Tel-Aviv', from: 'Madrid', cost: 150, scale: false }];
 
     // 1 Preguntar nombre usuario y dar Bienvenida
-function airlinesSkylab() {
+function airlinesName() {
     var nombre = prompt('¿Cómo te llamas?');
     alert('Bienvenido a Skylab Airlines ' + nombre);
 // 2 Ver datos de forma amigable, hice un prompt pero no entiendo como poner todo en el mismo mensaje
