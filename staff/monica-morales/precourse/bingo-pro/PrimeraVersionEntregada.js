@@ -131,7 +131,7 @@ function askTurn(){
     };
 //Función que muestra el sistema de puntos
 
-var puntos=''
+var puntos='';
 function sistemaPuntos(){
     alert(`A continuación te mostramos cuantos puntos puedes conseguir, SUERTE!!!!`);
     for(i in puntuacion){
