@@ -17,7 +17,7 @@ function html (elements) {
         code += '</' + element.tagName + '>';
         
     }
-    return code;
+    return code;semantic-
 }
 console.log(html(document.children));
 
