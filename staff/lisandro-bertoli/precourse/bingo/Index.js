@@ -156,16 +156,14 @@ function bingo() {
 
 	function newGame() {
 		showBingoCard();
-		var aceptar = prompt('Aceptas esta tarjeta? Si/No');
+		var aceptar = prompt('Aceptas esta tarjeta? Si/No').toLocaleLowerCase();
 		switch (aceptar) {
 			case null:
 				break;
-			case 'No':
 			case 'no':
 				bingoCard = createCard();
 				newGame();
 				break;
-			case 'Si':
 			case 'si':
 				while (!gameState.bingo && KEEP_PLAYING) {
 					askTurn();

@@ -3,7 +3,7 @@ var buttons = document.querySelectorAll('button');
 var equalsButton = document.getElementById('equals');
 var acButton = document.getElementById('ac');
 var display = document.getElementById('display');
-var delButton = document.getElementById('borrar');
+var deleteButton = document.getElementById('borrar');
 
 //-----
 var oldResultDisplayed = false;
@@ -25,7 +25,7 @@ equalsButton.addEventListener('click', function(event) {
 
 acButton.addEventListener('click', ac);
 
-delButton.addEventListener('click', del);
+deleteButton.addEventListener('click', delete);
 
 // ====== Functions ========== //
 
@@ -67,7 +67,7 @@ function ac() {
 	display.value = '';
 }
 
-function del() {
+function delete() {
 	var newString = display.value.slice(0, -1);
 	display.value = newString;
 }
