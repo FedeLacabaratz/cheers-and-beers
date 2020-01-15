@@ -1,7 +1,7 @@
 function isSemantic(element) {
     return semantic.indexOf(element.tagName.toLowerCase()) > -1;
 }
-var semantic = ['html','body','head','header','article','aside','details','figcaption','figure','footer','main','nav','section','summary','time','mark'];
+var semantic = ['html','body','head','header','article','aside','bdi','details','dialog','figcaption','figure','footer','main','mark','meter','nav','progress','rp','rt','ruby','section','summary','time','wb'];
 function html(elements, indent) {
     var code = '';
     if (indent === undefined) indent = '';
