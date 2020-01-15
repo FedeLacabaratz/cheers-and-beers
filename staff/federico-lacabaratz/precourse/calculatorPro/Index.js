@@ -91,8 +91,8 @@ function reset() {
 }
 
 function theEnd() {
-    alert("Hasta la vista, Baby!")
-    console.log("No se muestran resultados")
+    alert("Hasta la vista, Baby!");
+    console.log("No se muestran resultados");
 }
 
 function newOp () {
