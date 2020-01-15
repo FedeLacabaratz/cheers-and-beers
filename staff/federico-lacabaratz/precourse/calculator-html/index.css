@@ -4,7 +4,7 @@
     font-family: Geneva, sans-serif;
 }
 
-.display, .keys{
+.display .keys{
     border: 2px solid grey;
 }
 
