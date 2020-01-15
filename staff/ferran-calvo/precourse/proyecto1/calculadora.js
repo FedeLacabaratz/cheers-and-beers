@@ -43,7 +43,7 @@ function division(numeros){
 }
 function nuevaOperacion(){
     let pregunta = prompt("¿Desea realizar una operación? y/n");
-    if (pregunta == "y"){
+    if (pregunta.toLowerCase() == "y"){
         let numerosOperacion = prompt("Introducir los números separados por una coma.")
         let listaNumeros = numerosOperacion.split(",");
         for (i=0; i<listaNumeros.length ; i++){
@@ -61,7 +61,7 @@ function nuevaOperacion(){
             nuevaOperacion();
         }
     }
-    if (pregunta == "n"){
+    if (pregunta.toLowerCase() == "n"){
         console.log("Bye");
     }
 }
