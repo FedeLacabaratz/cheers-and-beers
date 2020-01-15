@@ -18,7 +18,6 @@ function html (elements) {
         
     }
     return code;
-
 }
 console.log(html(document.children));
 
