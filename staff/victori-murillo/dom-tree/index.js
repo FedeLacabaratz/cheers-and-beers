@@ -1,22 +1,24 @@
-var element = document.children[0]
 
-var code = ""
+function html(elements) {
 
-function html(elem) {
+  var code = ""
+  
+  
+  for (var i = 0; i < elements.length; i++) {
 
-  code += "<" + elem.tagName + ">"
+    var element = elements[i]
 
-  for (var i = 0; i < elem.children.length; i++) {
+    code += "<" + element.tagName + ">"
 
-    if (elem.children.length) {
-      html(elem.children[i])
+    if (element.children.length) {
+      code += html(element.children)
     }
     
   }
 
-  code += "</" + elem.tagName + ">"
+  code += "</" + element.tagName + ">"
+
+  return code
 }
 
-html(element)
-
-console.log(code)
+console.log(html(document.children))
