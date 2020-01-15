@@ -113,3 +113,9 @@ $ git stash
 ```sh
 $ git stash pop
 ```
+
+### fetch current branch from forked upstream
+
+```sh
+$ git fetch upstream
+```
