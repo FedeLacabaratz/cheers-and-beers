@@ -21,13 +21,13 @@ as Client:
 
 
 ### Uses cases
-![](https://drive.google.com/file/d/1j8eeVkQorkV_tN5jtRhJ9OIGQEJLB4Mu/view)
+![](images/UML_usesCases.jpg)
 
 ### Technical Descriptions
 When you insert your name , the system check your imput... bla bla
 
 ### Blocks
-![](https://drive.google.com/file/d/1dR3yQW4wbrZYPECPTTYH31wnqgTrRGKt/view)
+![](images/UML_bloke.jpg)
 
 ### Components
 
