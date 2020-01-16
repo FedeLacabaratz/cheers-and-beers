@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+
+            * {
+                margin:0;
+            }
+
+            body {
+                height: 100vh;
+            }
+
+            .container {
+                display: grid;
+                grid-template-areas: "h h h h"
+                                    "n m m a"
+                                    "f f f f";
+                grid-template-rows: 20vh 60vh 20vh;
+                text-align: center;
+            }
+
+            .header, .footer {
+                padding: 8vh 0;
+            }
+
+            .nav, .main, .aside {
+                padding: 28vh 0;
+            }
+
+            .header {
+                grid-area: h;
+            }
+
+            .nav {
+                grid-area: n;
+            }
+
+            .main {
+                grid-area: m;
+            }
+
+            .aside {
+                grid-area: a;
+            }
+
+            .footer {
+                grid-area: f;
+            }
+
+            .area {
+                border: 1px solid black;
+            }
+
+            
+                    </style>
+    </head>
+    <body>
+        <div class=container>
+            <header class='header area'>HEADER</header>
+            <nav class='nav area'>NAV</nav>
+            <main class='main area'>MAIN</main>
+            <aside class='aside area'>ASIDE</aside>
+            <footer class='footer area'>FOOTER</footer>
+        </div>
+        
+    </body>
+</html>
