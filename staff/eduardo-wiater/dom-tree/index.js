@@ -1,16 +1,21 @@
-function pruebaHtml (elements){ 
+var resumen = document.children
 
-var spa = ''
-  for (var i = 0 ; i < elements.length; i++){
-    var code = elements[i];
-  
-     spa += '<'+code.tagname+'>' 
-    if ( code.children.lenght) 
-     spa += '</'+code.tagname+'>'
+function findTags(parametro) {
+  var cont = "";
+
+  for (var i = 0; i < parametro.length; i++) {
+    var ram = parametro[i];
+
+    cont += '<' + ram.tagName + '>';
+    if (ram.children.length) {
+      cont += findTags(ram.children);
+    }
+
   }
- return code
-}
- 
-pruebaHtml(document.children)
 
-// esto esta fatal!! HELP!
+  cont += '</' + ram.tagName + '>'
+
+  return cont
+}
+
+console.log(findTags(resumen))
