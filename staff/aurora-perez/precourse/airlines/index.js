@@ -22,7 +22,7 @@ function aerolinea () {
 
     function itinerario (){
         for (i in flights ){
-         if (flights[i].scale === true) {
+         if (flights[i].scale) {
             alert('El vuelo '+ flights[i].id+ ' con origen '+flights[i].to + ', con destino a '+flights[i].from + ', tiene un coste de '+flights[i].cost+'€ con escala.');
           } else {
             alert('El vuelo '+ flights[i].id+ ' con origen '+flights[i].to + ', con destino a '+flights[i].from + ', tiene un coste de '+flights[i].cost+'€ sin escala.');

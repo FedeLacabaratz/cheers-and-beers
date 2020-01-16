@@ -32,7 +32,7 @@ function bingo (){
     var lineaCantada1 = false;
     var lineaCantada2 = false;
     var lineaCantada3 = false;
-    var contadorTurnos= 0
+    var contadorTurnos= 0:
 
 
     //generar array con numeros del 1 al 90 para el carton, de ahi iremos sacando numeros random que iran en el carton
@@ -54,7 +54,7 @@ function bingo (){
     var numcarton=[];
     function generarCarton () {
         while(numcarton.length<15){
-            var temp = Math.floor(Math.random()*89)+1;
+            var temp = Math.floor(Math.random()*90);
             if (listaNumeros.includes(temp)===false){
                 generarCarton();
             } else {
