@@ -7,6 +7,9 @@
 		<title>Document</title>
 
 		<style>
+			body {
+				height: 100vh;
+			}
 			body,
 			div {
 				margin: 0;
@@ -16,26 +19,47 @@
 			div {
 				border: 1px solid black;
 				text-align: center;
-				height: 15%;
+				height: 10%;
 			}
 
 			#main {
-				width: 59.67%;
-				height: 70%;
-				display: inline-block;
-				margin: 0 auto;
+				height: 60%;
+			}
+			@media only screen and (min-width: 768px) {
+				#main {
+					width: 79.45%;
+					height: 70%;
+					display: inline-block;
+				}
+				#right {
+					float: right;
+					height: 70%;
+					width: 20%;
+				}
 			}
 
-			#left {
-				float: left;
-				width: 20%;
-				height: 70%;
-			}
+			@media only screen and (min-width: 1024px) {
+				div {
+					height: 15%;
+				}
+				#right,
+				#left {
+					width: 20%;
+					height: 70%;
+				}
 
-			#right {
-				float: right;
-				width: 20%;
-				height: 70%;
+				#right {
+					float: right;
+				}
+
+				#left {
+					float: left;
+				}
+
+				#main {
+					width: 59.4%;
+					margin: 0 auto;
+				}
 			}
 		</style>
 	</head>
