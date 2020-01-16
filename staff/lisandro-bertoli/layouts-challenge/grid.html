@@ -42,14 +42,47 @@
 			.grid-container {
 				border: 1px solid black;
 				height: 100vh;
-
+				width: 100vw;
 				display: grid;
-				grid-template-columns: repeat(25%);
-				grid-template-rows: 15% 70% 15%;
+				grid-template-columns: 100%;
+				grid-template-rows: 10% 10% 60% 10% 10%;
 				grid-template-areas:
-					'header header header header'
-					'nav main main aside'
-					'footer footer footer footer';
+					'header'
+					'nav'
+					'main'
+					'aside'
+					'footer';
+			}
+
+			@media only screen and (min-width: 768px) {
+				.grid-container {
+					border: 1px solid black;
+					height: 100vh;
+					width: 100vw;
+					display: grid;
+					grid-template-columns: 25% 25% 25% 25%;
+					grid-template-rows: 10% 10% 70% 10%;
+					grid-template-areas:
+						'header header header header'
+						'nav nav nav nav'
+						'main main main aside'
+						'footer footer footer footer';
+				}
+			}
+
+			@media only screen and (min-width: 1024px) {
+				.grid-container {
+					border: 1px solid black;
+					height: 100vh;
+					width: 100vw;
+					display: grid;
+					grid-template-columns: 25% 25% 25% 25%;
+					grid-template-rows: 15% 70% 15%;
+					grid-template-areas:
+						'header header header header'
+						'nav main main aside'
+						'footer footer footer footer';
+				}
 			}
 		</style>
 	</head>
