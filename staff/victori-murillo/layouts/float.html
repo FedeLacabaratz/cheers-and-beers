@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Float</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    header,
+    nav,
+    main,
+    aside,
+    footer {
+      border: 1px solid blue;
+      margin: 0 auto;
+    }
+
+    header,
+    footer {
+      height: 20vh;
+    }
+
+    nav,
+    main,
+    aside {
+      display: block;
+      height: 20vh;
+    }
+
+    @media only screen and (min-width: 500px) {
+
+      nav,
+      main,
+      aside {
+        display: inline-block;
+        width: calc(100vw/3);
+        height: 60vh;
+      }
+
+      nav {
+        float: left;
+      }
+
+      aside {
+        float: right;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>header</header>
+  <nav>nav</nav>
+  <main>main</main>
+  <aside>aside</aside>
+  <footer>footer</footer>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Grid</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
+    }
+
+    .grid-item {
+      border: 1px solid blue;
+    }
+
+    @media only screen and (min-width: 500px) {
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 20vh 60vh 20vh;
+      }
+
+      .header,
+      .bottom {
+        grid-column-start: 1;
+        grid-column-end: 4;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item header">header</div>
+    <div class="grid-item">nav</div>
+    <div class="grid-item">main</div>
+    <div class="grid-item">aside</div>
+    <div class="grid-item bottom">bottom</div>
+  </div>
+</body>
+
+</html>
