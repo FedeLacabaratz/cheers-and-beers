@@ -18,16 +18,11 @@
       flex-direction: column;
     }
 
-    header,
-    nav,
-    main,
-    aside,
-    footer {
+    body *:not(div) {
       border: 1px solid blue;
     }
 
-    header,
-    footer {
+    body>*:not(div) {
       height: 20vh;
     }
 
@@ -37,9 +32,7 @@
       flex-direction: column;
     }
 
-    nav,
-    main,
-    aside {
+    div>* {
       flex-grow: 1;
     }
 

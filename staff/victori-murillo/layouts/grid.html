@@ -16,26 +16,28 @@
       margin: 0;
     }
 
-    .grid-container {
+    body > :first-child {
       display: grid;
       grid-template-columns: auto;
-      grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
+      grid-template-rows: 10vh 20vh 40vh 20vh 10vh;
     }
 
-    .grid-item {
+    div > div {
       border: 1px solid blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     @media only screen and (min-width: 500px) {
 
-      .grid-container {
+      body > :first-child {
         display: grid;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: 20vh 60vh 20vh;
+        grid-template-columns: auto 50vw auto;
+        grid-template-rows: 15vh 70vh 15vh;
       }
 
-      .header,
-      .bottom {
+      div > div:nth-child(4n+1) {
         grid-column-start: 1;
         grid-column-end: 4;
       }
@@ -44,12 +46,12 @@
 </head>
 
 <body>
-  <div class="grid-container">
-    <div class="grid-item header">header</div>
-    <div class="grid-item">nav</div>
-    <div class="grid-item">main</div>
-    <div class="grid-item">aside</div>
-    <div class="grid-item bottom">bottom</div>
+  <div>
+    <div>header</div>
+    <div>nav</div>
+    <div>main</div>
+    <div>aside</div>
+    <div>bottom</div>
   </div>
 </body>
 

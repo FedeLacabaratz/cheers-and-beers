@@ -13,45 +13,33 @@
 
     body {
       margin: 0;
-      text-align: center;
     }
 
     table {
       border-collapse: collapse;
       width: 100%;
+      text-align: center;
     }
 
     td {
       border: 1px solid blue;
-    }
-
-    tr:nth-child(1) td {
       height: 20vh;
     }
 
     tr:nth-child(2) td {
       height: 20vh;
-      display: block;
-    }
-
-    tr:nth-child(3) td {
-      height: 20vh;
+      display: table;
+      width: 100vw;
     }
 
     @media only screen and (min-width: 500px) {
-      tr:nth-child(1) td {
-        height: 20vh;
-      }
 
       tr:nth-child(2) td {
-        width: calc(100% /3);
+        width: calc(100vw / 3);
         height: 60vh;
         display: table-cell;
       }
 
-      tr:nth-child(3) td {
-        height: 20vh;
-      }
     }
   </style>
 </head>
