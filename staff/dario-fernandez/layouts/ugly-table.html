@@ -1,12 +1,13 @@
 <html>
 <head>
     <style>
-        body {
+        * {
             margin: 0;
         }
         table {
             width: 100%;
             height: 100vh;
+            border-spacing: 0;
         }
         td {
             border: 1px solid black;
@@ -26,23 +27,23 @@
 <body>
     <table>
         <tr>
-            <td colspan="3" >
+            <td colspan="3" style="background-color: red;">
                 <header>Header</header>
             </td>
         </tr>
         <tr>
-            <td class="side">
+            <td class="side" style="background-color: blue;">
                 <nav>Nav</nav>
             </td>
-            <td>
+            <td style="background-color: green;">
                 <main>Main</main>
             </tdcolspan="2">
-            <td class="side">
+            <td class="side" style="background-color: yellow;">
                 <aside>Aside</aside>
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="3" style="background-color: purple;">
                 <footer>Footer</footer>
             </td>
         </tr>
