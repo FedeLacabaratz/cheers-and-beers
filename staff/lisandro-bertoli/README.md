@@ -1,8 +1,8 @@
 [github](https://github.com/lichab)
 
-[github](https://github.com/lichab)
+# CSS
 
-# Specificity
+## Specificity
 
 Every selector has its place in the specificity hierarchy. There are four categories which define the specificity level of a selector:
 
@@ -43,3 +43,21 @@ The specificity of B is 101 (one ID reference and one element)
 The specificity of C is 1000 (inline styling)
 
 Since 1 < 101 < 1000, the third rule (C) has a greater level of specificity, and therefore will be applied.
+
+## Positioning / Layout
+
+### Box Model
+
+All block type elements have the following disposition:
+
+![atl box-model](./images/box-model.png)
+
+Pay attention to this since setting an element withd or height is not the only thing that decides, but also de rest of the box model elements.
+
+### Box sizing
+
+This is a new HTML5 feature that "fixes" the situation described above.
+
+It does that by using the outer part of the box model as the refference point to calculate the height and with. In contrast with the regular box model which only takes the content into account.
+
+Be careful because this also makes the content smaller to fit on the size that we want.
