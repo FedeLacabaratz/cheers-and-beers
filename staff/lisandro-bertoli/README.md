@@ -61,3 +61,13 @@ This is a new HTML5 feature that "fixes" the situation described above.
 It does that by using the outer part of the box model as the refference point to calculate the height and with. In contrast with the regular box model which only takes the content into account.
 
 Be careful because this also makes the content smaller to fit on the size that we want.
+
+### Position
+
+The position could be:
+
+1. <strong>Relative</strong>: it is realative to its own original position.
+2. <strong>Fixed</strong>: can be fixed to the top or the bottom of the page.
+3. <strong>Absolute</strong>: You need to set the exact position you want the element to be realive to its container.
+4. <strong>Z-index</strong>:
+5. <strong>Sticky</strong>: It sticks to the top or bottom once this "touches the element".
