@@ -20,16 +20,19 @@
         .item2 { 
             grid-area: nav; 
             background-color: blue;
+            height: 10vh;
         }
 
         .item3 { 
             grid-area: main; 
             background-color: yellow;
+            height: 60vh;
         }
 
         .item4 { 
             grid-area: aside; 
             background-color: yellowgreen;
+            height: 10vh;
         }
 
         .item5 { 
@@ -38,18 +41,47 @@
             height: 10vh;
         }
 
-        .item2, .item3, .item4 {
-            height: 80vh;
-        }
-
         .grid-container {
             display: grid;
             grid-template-areas: 
-            'header header header header'
-            'nav main main aside'
-            'footer footer footer footer';
+            'header'
+            'nav'
+            'main'
+            'aside'
+            'footer';
+            height: 100vh;
         }
 
+        @media only screen and (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: auto;
+                grid-template-areas: 
+                'header header header'
+                'nav nav nav'
+                'main main aside'
+                'footer footer footer';
+            }
+
+            .item3, .item4 {
+                height: 70vh;
+            }
+        }
+
+        @media only screen and (min-width: 768px) {
+            
+            .grid-container {
+                grid-template-columns: auto;
+                grid-template-areas: 
+                'header header header header header'
+                'nav main main main aside'
+                'footer footer footer footer footer';
+            }
+
+            .item2, .item3, .item4 {
+                height: 80vh;
+            }
+
+        }
 
     </style>
 </head>
