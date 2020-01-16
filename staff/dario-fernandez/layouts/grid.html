@@ -1,0 +1,46 @@
+<html>
+<head>
+    <style>
+        *{
+            margin: 0;
+        }
+        .grid_container {
+            height: 100vh;
+            display: grid;
+            grid-template: 1fr 3fr 1fr / 1fr 2fr 1fr;
+        }
+        header {
+            background-color: red;
+            grid-column: 1 / 4;
+        }
+        nav {
+            background-color: blue;
+            grid-row: 2 / 3;
+            grid-column: 1 / 2;
+        }
+        main {
+            background-color: green;
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+        aside {
+            background-color: yellow;
+            grid-row: 2 / 3;
+            grid-column: 3 / 4;
+        }
+        footer {
+            background-color: purple;
+            grid-column: 1 / 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid_container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>Main</main>
+        <aside>Aside</aside>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
