@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layout with float</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+ 
+    }
+
+    body {
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        height: 100vh;
+    }
+
+
+    /* header, main, nav, aside, footer {
+        border: 1px solid black;
+    } */
+
+    header {
+        text-align: left;
+        height: 10%;
+        background-color: red;
+    }
+
+    .maincontent {
+        /* display: block; */
+        height: 80%;
+        width: 100%;
+        
+    }
+
+    main {
+        width: 60%;
+        float:left;
+        background-color: blue;
+        height: 100%;
+    }
+
+    nav {
+        float: left;
+        width: 20%;
+        background-color: yellow;
+        height: 100%;
+    }
+
+    aside {
+        float: left;
+        width: 20%;
+        height: 100%;
+        background-color: green;
+    }
+
+    footer {
+        height: 10%;
+        background-color: forestgreen
+    }
+</style>
+<body><header>header</header><div class="maincontent"><nav>nav</nav><main>main</main><aside>aside</aside></div><footer>footer</footer></body>
+</html>
