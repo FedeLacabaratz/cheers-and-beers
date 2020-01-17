@@ -2,7 +2,7 @@
 
 # Full-Stack Web-Development Bootcamp 202001
 
-![alt timeline](stuff/misc/timeline.png)
+![alt timeline](stuff/misc/timeline.jpg)
 
 [Slides](https://docs.google.com/presentation/d/1gp6C0VXyTZtbGhBTWwgSsFGb82uinVnfGTnLx6n9p6Q/edit?usp=sharing)
 
