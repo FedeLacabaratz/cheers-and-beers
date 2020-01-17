@@ -80,3 +80,9 @@ aside > ul{
     border: 1px solid black;
     margin: 20px;
 }
+.profile__info{
+    display: flex;
+}
+.profile__info > div {
+    margin: 40px ;
+}
