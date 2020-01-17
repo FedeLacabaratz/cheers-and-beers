@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+}
+
+header {
+  border-bottom: 1px solid grey;
+  height: 7vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+header > div {
+  /* border: 1px solid blue; */
+  width: calc(100%/3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+header > div:nth-child(3) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+}
+
+header > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 20px;
+}
+
+/* .nav {
+  border: 1px solid blue;
+  width: 50%;
+
+  display: flex;
+  justify-content: space-evenly;
+} */
+
+main {
+  height: 84vh;
+  /* border: 1px solid blue; */
+
+  display: flex;
+  flex-direction: column;
+}
+
+.follow, .photos {
+  height: 50%;
+  border: 1px solid blue;
+}
+
+
+/* Component Photos */
+.photos {
+  display: flex;
+  flex-direction: column;
+}
+
+.photos > div:nth-child(1) {
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 24px;
+}
+
+.photos > div:nth-child(2) {
+  height: 80%;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photos__item {
+  width: calc(100%/3);
+  height: 50%;
+  border: 1px solid pink;
+}
+
+.photos__item--circle {
+  border-radius: 50%
+}
+
+/* Component NavButton */
+.navButton {
+  height: 9vh;
+  border: 1px solid blue;
+  font-size: 26px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+
+}
