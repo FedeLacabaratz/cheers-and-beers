@@ -7,25 +7,16 @@
                 margin:0;
             }
 
-            body {
-                height: 100vh;
-            }
-
             .container {
                 display: grid;
-                grid-template-areas: "h h h h"
-                                    "n m m a"
-                                    "f f f f";
-                grid-template-rows: 20vh 60vh 20vh;
+                grid-template-areas: "h"
+                                    "n"
+                                    "m"
+                                    "a"
+                                    "f";
+                grid-template-rows: 20vh 15vh 80vh 15vh 20vh;
+                grid-template-columns: 100%;
                 text-align: center;
-            }
-
-            .header, .footer {
-                padding: 8vh 0;
-            }
-
-            .nav, .main, .aside {
-                padding: 28vh 0;
             }
 
             .header {
@@ -50,6 +41,35 @@
 
             .area {
                 border: 1px solid black;
+            }
+            
+            @media only screen and (min-width: 768px) {
+
+                .container {
+                display: grid;
+                grid-template-areas: "h h"
+                                    "n n"
+                                    "m a"
+                                    "f f";
+                grid-template-rows: 20vh 15vh 80vh 20vh;
+                grid-template-columns: 80% 20%;
+                text-align: center;
+                }
+
+            }
+
+            @media only screen and (min-width: 1200px) {
+
+                .container {
+                    display: grid;
+                    grid-template-areas: "h h h h"
+                                        "n m m a"
+                                        "f f f f";
+                    grid-template-rows: 20vh 60vh 20vh;
+                    grid-template-columns: 20% 30% 30% 20%;
+                    text-align: center;
+                }
+
             }
 
             
