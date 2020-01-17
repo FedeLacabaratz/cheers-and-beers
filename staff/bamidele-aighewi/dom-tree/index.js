@@ -1,3 +1,13 @@
+function isInline(element) {
+    var inline = ['h1', 'h2', 'h3', 'h5', 'span', 'time', 'title', 'strong', 'td', 'li', 'button', 'a'];
+    return inline.indexOf(element.tagName.toLowerCase()) > -1;
+}
+
+function isSelfClosed(element) {
+    var selfClosed = ['input', 'link', 'br', 'img', 'source'];
+    return selfClosed.indexOf(element.tagName.toLowerCase()) > -1;
+}
+
 function html(elements, indent) {
     var code = '';
 
@@ -24,18 +34,6 @@ function html(elements, indent) {
     }
 
     return code;
-}
-
-var inline = ['h1', 'h2', 'h3', 'h5', 'span', 'time', 'title', 'strong', 'td', 'li', 'button', 'a']; // TODO include more tags
-
-function isInline(element) {
-    return inline.indexOf(element.tagName.toLowerCase()) > -1;
-}
-
-var selfClosed = ['input', 'link', 'br', 'img', 'source']; // TODO include more tags
-
-function isSelfClosed(element) {
-    return selfClosed.indexOf(element.tagName.toLowerCase()) > -1;
 }
 
 console.log(html(document.children));
