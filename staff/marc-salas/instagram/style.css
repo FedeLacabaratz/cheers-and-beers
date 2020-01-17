@@ -17,6 +17,7 @@ ul{
 }
 .header__nav > ul > li{
     border: 1px solid black;
+    margin: 16px;
     justify-content: space-between;
 }
 
@@ -29,6 +30,53 @@ aside > ul{
     justify-content: space-around;
     align-content: center; 
 }
+.page{
+    height: 85vh;
+    width: 100vw;
+}
 .page__historis--people > li{
     height: 100%;
+    margin: 16px;
+}
+.post{
+    height: 85vh;
+    width: 100vw;
+}
+.post-head{
+    display: flex;
+    justify-content: space-between;  
+}
+.post-head__logo{
+    text-align: center;
+    margin: 16px;
+}
+.post-head__user{
+    display: flex;
+    left: 3px;
+}
+.post-head__menu{
+    margin: 10px;
+}
+.post-image{
+    border: 1px solid black;
+    height: 50%;
+    width: 100%;
+}
+.coment-nav{
+    display: flex;
+    justify-content: space-between;
+}
+.coment-nav__nav > ul{
+    margin: 10px;
+    padding: 0;
+    display: flex;
+    justify-content: start;
+}
+.coment-nav__nav > ul > li{
+    border: 1px solid black;
+    margin: 10px;
+}
+.coment-nav__save{
+    border: 1px solid black;
+    margin: 20px;
 }
