@@ -50,6 +50,7 @@ document.getElementById("username").onkeypress = function(event){
 
 //Al clicar el botón principal guardaremos el nombre del jugador y pasaremos a la siguiente pantalla
 document.getElementById("botonEmpezar").addEventListener("click", userButton);
+preventDefault();
 function userButton(){
     var playerObjeto = {};
     playerObjeto.nombre = document.inicioJuego.username.value;
