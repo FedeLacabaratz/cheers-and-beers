@@ -103,6 +103,10 @@ body {
 	height: 20%;
 }
 
+.heart--liked:hover {
+	background-color: red;
+}
+
 .post__actions > div {
 	margin: 5px;
 	border: 1px solid black;
