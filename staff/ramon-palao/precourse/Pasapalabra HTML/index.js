@@ -40,17 +40,18 @@ var getFocus = function(name){
     document.getElementById(name).focus();
 }
 getFocus("username");
-//debugger;
+
+//Evento que nos permite validar nuestro nombre en el campo usuario apretando la tecla Enter
 document.getElementById("username").onkeypress = function(event){
     if(event.keycode === 13 || event.which === 13){
+        event.preventDefault();
         userButton();
     }
-    //return userButton();
 };
 
 //Al clicar el botón principal guardaremos el nombre del jugador y pasaremos a la siguiente pantalla
 document.getElementById("botonEmpezar").addEventListener("click", userButton);
-preventDefault();
+
 function userButton(){
     var playerObjeto = {};
     playerObjeto.nombre = document.inicioJuego.username.value;
@@ -135,6 +136,14 @@ function verify(){
         endGame();
     }
 }
+
+//Evento que nos permite validar las respuestas apretando el botón Enter
+document.getElementById("answerText").onkeypress = function(event){
+    if(event.keycode === 13 || event.which === 13){
+        event.preventDefault();
+        verify();
+    }
+};
 
 //Función que es llamada cuando la partida ha finalizado. Se registran los aciertos y los fallos y se para el crono
 function endGame(){
