@@ -4,6 +4,10 @@
   font-size: 10px;
 }
 
+h2 {
+  font-size: 2.5rem;
+}
+
 button,
 input,
 optgroup,
@@ -42,6 +46,15 @@ select,
 
 .fas {
   font-size: 2rem;
+}
+
+.fas {
+  font-size: 2rem;
+}
+
+.results__header {
+  display: flex;
+  margin: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
