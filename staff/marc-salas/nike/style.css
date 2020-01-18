@@ -48,13 +48,42 @@ select,
   font-size: 2rem;
 }
 
-.fas {
-  font-size: 2rem;
+.results__header {
+  height: 7rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 15px;
+}
+.results__header-filter {
+  margin: 10px;
 }
 
-.results__header {
-  display: flex;
-  margin: 10px;
+.product {
+  height: 37rem;
+  width: 18.5rem;
+}
+.product__name {
+  font-size: 2.5rem;
+  margin: 5px;
+}
+.product__especification {
+  font-size: 2rem;
+  margin: 5px;
+}
+.product__price {
+  font-size: 2rem;
+  margin: 5px;
+}
+
+.results__products {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.fas {
+  font-size: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
