@@ -145,4 +145,24 @@ select,
   font-size: 1.5rem;
 }
 
+@media only screen and (min-width: 1024px) {
+  .product {
+    width: 30%;
+  }
+
+  .results {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+  }
+  .results__header {
+    grid-column: 1/span 2;
+  }
+  .results__filter {
+    grid-column: 1/span 1;
+  }
+  .results__products {
+    grid-column: 2/span 4;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
