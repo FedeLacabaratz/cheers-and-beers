@@ -5,6 +5,9 @@ body{
 ul{
     list-style: none;
 }
+h2{
+    margin: 0;
+}
 .header{
     border: 1px solid black;
     display: flex;
@@ -82,7 +85,47 @@ aside > ul{
 }
 .profile__info{
     display: flex;
+    border: 1px solid black;
 }
 .profile__info > div {
-    margin: 40px ;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+.profile__aditional-info{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+
+}
+.profile__aditional-info > p{
+    margin: 20px;
+}
+.profile__posts-info{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+
+}
+.profile__posts-info > p{
+    margin: 20px;
+}
+.profile__posts{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 1px solid black;
+    height: 50vh;
+}
+.profile__posts > div {
+    text-align: center;
+    border: 1px solid black;
+}
+.end-page__info{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+.end-page__info > li{
+    margin: 15px;
 }
