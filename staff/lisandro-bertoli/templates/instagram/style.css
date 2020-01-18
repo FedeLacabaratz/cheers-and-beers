@@ -45,12 +45,16 @@ body {
 	height: 75%;
 }
 
-.feed__stories {
+.profile {
+	height: 100%;
+}
+
+.stories {
 	height: 15%;
 	border: 1px solid black;
 }
 
-.feed__stories > ul {
+.stories > ul {
 	height: 100%;
 	display: flex;
 	justify-content: space-around;
@@ -61,7 +65,32 @@ body {
 	height: 100%;
 }
 
-.post {
+.profile__followers {
+	display: flex;
+	justify-content: space-around;
+	border: 1px solid black;
+}
+
+.profile__followers > div {
+	line-height: 2.5;
+	border: 1px solid black;
+	margin-top: 2px;
+}
+
+.profile-posts__header {
+	display: flex;
+	justify-content: space-around;
+}
+
+.profile-posts__header > div {
+	line-height: 3;
+	border: 1px solid black;
+	width: 15%;
+	text-align: center;
+	margin-top: 3px;
+}
+
+.profile-posts__ .post {
 	border: 1px solid black;
 	height: 100%;
 	width: 100vw;
@@ -88,6 +117,16 @@ body {
 	background: white;
 	height: 50%;
 	text-align: center;
+}
+
+.profile-posts__grid {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	height: 50vh;
+}
+
+.posts__img {
+	border: 1px solid black;
 }
 
 .post__comments-area {
