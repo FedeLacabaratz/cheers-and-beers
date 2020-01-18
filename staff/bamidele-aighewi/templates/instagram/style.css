@@ -53,3 +53,103 @@ body{
     background-position: center;
     background-size: contain;
 }
+
+.card{
+    max-width: 600px;
+}
+
+.card__header{
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__stories{
+    overflow: hidden;
+    padding: 0;
+    display: block;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.card__stories .stories__story{
+    height: 50px;
+    width: 50px;
+}
+
+.card__stories .stories__story .story__image{
+    height: 40px;
+    width: 40px;
+}
+
+.card__userName{
+    font-size: .9rem;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.card__options{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+/*.card__media{
+    background-image: url('images/fake-img_smiley.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}*/
+
+.card__footer{
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card__interactions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__directInteractions, .card__indirectInteractions{
+    border: 1px solid #cccccc;
+    height: 30px;
+}
+
+.card__directInteractions{
+    width: 200px;
+}
+
+.card__indirectInteractions{
+    width: 50px;
+}
+
+.card__interactionsDetails{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card__details{
+    padding-left: 20px;
+}
+
+.card__caption{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    color: #292929;
+}
+
+.card__caption-secondary{
+    color: #9b9b9b;
+}
+
+.card__comments{
+    margin-top: 10px;
+}
