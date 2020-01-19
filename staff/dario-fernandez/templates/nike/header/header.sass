@@ -1,0 +1,31 @@
+@import ../search/search
+@import ./button
+
+*
+    margin: 0
+    padding: 0
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 0 .3rem
+    &__logo-container
+        width: 17%
+        justify-self: center
+    &__logo
+        width: 100%
+    &__functions
+        display: flex
+        align-items: center
+    &__search
+        height: 2rem
+        &>input
+            display: none
+        &>button:click ~ input
+            display: initial
+    &__cart
+        @extend %button
+    &__burger-menu
+        @extend %button
+    &__menu-list
+        display: none

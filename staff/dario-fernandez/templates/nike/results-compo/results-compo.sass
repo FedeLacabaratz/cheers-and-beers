@@ -1,0 +1,27 @@
+@import ../filter/filter
+@import ./grids
+@import ./product
+@import ../header/button
+.results
+    width: 100vw
+    &__header
+        position: sticky
+        top: -1px
+        background-color: #fff
+        display: flex
+        justify-content: space-between
+        margin: 1rem 0
+        padding: 1rem
+    &__title
+        font-weight: normal
+    &__show-filters
+        margin-right: .5rem
+        font-size: 1.5rem
+    &__filters-form
+        display: none
+    &__categories
+        display: flex
+        justify-content: space-around
+    &__list
+        @extend %mobile
+

@@ -1,0 +1,18 @@
+@import utils.sass
+.deploy-menu
+    &__title
+        @extend %main-link
+        display: flex
+        justify-content: space-between
+    &__list
+        @extend %reset-list
+        @extend %small-text
+        display: none
+        align-self: flex-end
+
+@media screen and ( min-width: 1024px )
+    .deploy-menu
+        &__show-more-icon
+            display: none
+        &__list
+            display: initial

@@ -1,0 +1,49 @@
+@import utils.sass
+@import deploy-menu.sass
+
+.footer
+    color: #FFF
+    background-color: #101010
+    padding: 2rem 1rem 0 1rem
+    display: flex
+    flex-direction: column
+    font-size: .7rem
+    &>*
+        margin: 1rem 0
+    &>i
+        color: #FFF
+    &__menu
+        margin: 0
+    &__menu-list
+        @extend %reset-list
+        @extend %main-link
+    &__link
+        margin: 1.2rem 0
+    &__split
+        height: 1px
+        background-color: #888
+        margin: 0
+    &__support-about
+        margin-bottom: 0
+    &__deploy-menu
+        margin: 0 0 2.5rem 0
+    &__social-list
+        @extend %reset-list
+        display: flex
+    &__social-link
+        font-size: 2rem
+        margin-right: 1.5rem
+    &__footer>*
+        margin-bottom: 1.5rem
+    &__ubication
+        margin-bottom: .5rem
+    &__ubication-icon
+        font-size: 1.5em
+        margin-right: .7rem
+    &__copyright
+        @extend %small-text
+    &__legal-list
+        @extend %reset-list
+    &__legal-link
+        @extend %small-text
+        margin-bottom: 1.2rem
