@@ -1,0 +1,88 @@
+*
+    margin: 0
+    box-sizing: border-box
+ 
+.nav-upper, .nav-type
+    display: flex
+    flex-direction: row
+    border: $border-basic
+    height: 7vh
+    font-family: $font
+
+    &__right-side
+        width: 100%
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+
+    &__search, &__trolley, &__menu, &__logo
+        align-self: center
+        padding: 2vh
+
+    &__option
+        @extend .nav-upper__search
+        font-size: 17px
+        font-family: $font
+
+.nav-desktop
+    display: none
+
+.nav-left
+    display: none
+
+@media only screen and (min-width: 1024px)
+
+    .nav-desktop
+        display: flex
+        flex-direction: row
+        height: 7vh
+        width: 100%
+        border: $border-basic
+        font-family: $font
+        position: fixed
+        z-index: 10
+        background-color: white
+        top: 0px
+
+        &__dif-brands
+            display: flex
+            flex-direction: row
+            width: 100%
+        
+        &__dif-options
+            display: flex
+            flex-direction: row
+            justify-content: flex-end
+            width: 100%
+    
+        &__brand
+            align-self: center
+            padding: 2vh
+            border: $border-basic
+        
+        &__option
+            align-self: center
+            padding: 2vh
+
+    .nav-upper
+        position: fixed
+        z-index: 10
+        background-color: white
+        top: 7vh
+        width: 100%
+        height: 10vh
+
+    .nav-left
+        display: flex
+        flex-direction: column
+    
+    .main-grid
+        @extend %grid-desktop
+        margin: 10vh 10vh 10vh 35vh
+
+        &__picture
+            width: 100%
+            height: 50vh
+
+            
+            
