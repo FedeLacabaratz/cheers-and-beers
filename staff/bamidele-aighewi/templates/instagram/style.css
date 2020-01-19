@@ -4,6 +4,9 @@ body{
     background-color: #fafafa;
 }
 
+/*resposive image*/
+img{ width: 100%; }
+
 .header{
     background-color: #ffffff;
     height: 80px;
@@ -12,6 +15,10 @@ body{
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+}
+
+.page__body{
+    transition: margin 500ms ease;
 }
 
 .stories{
@@ -56,6 +63,7 @@ body{
 
 .card{
     max-width: 600px;
+    margin-bottom: 100px;
 }
 
 .card__header{
@@ -68,7 +76,7 @@ body{
     justify-content: space-between;
 }
 
-.card__stories{
+.card__stories, .lateralMenu__stories{
     overflow: hidden;
     padding: 0;
     display: block;
@@ -77,12 +85,14 @@ body{
     align-items: center;
 }
 
-.card__stories .stories__story{
+.card__stories .stories__story,
+.miniCard__stories .stories__story{
     height: 50px;
     width: 50px;
 }
 
-.card__stories .stories__story .story__image{
+.card__stories .stories__story .story__image,
+.miniCard__stories .stories__story .story__image{
     height: 40px;
     width: 40px;
 }
@@ -152,4 +162,207 @@ body{
 
 .card__comments{
     margin-top: 10px;
+}
+
+.miniCard{
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+.miniCard.miniCard-scrollY{
+    overflow-y: scroll;
+}
+
+.lateralMenu{
+    display: none;
+}
+
+/* PROFILE POST*/
+.userInfo{
+    padding: 50px;
+}
+
+.userInfo__profilePic{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: url('images/fake-img_100x100.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.profile__stories{
+    border-bottom: none;
+}
+
+.profilePage.page__body{
+    width: 70%;
+    max-width: 70%;
+    margin: auto;
+}
+
+.profilePosts{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.profilePosts .profilePosts__post{
+    flex: 1 0 auto;
+    max-width: 33.33%;
+    /*width: 33.33%;*/
+    height: 150px;
+    background-image: url('images/fake-img_smiley.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.profilePosts .profilePosts__post:not(:last-of-type){
+    margin-right: 10px;
+}
+
+.postPreview{
+    width: 95%;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: 1px solid #cccccc;
+    margin: auto;
+    margin-top: 15%;
+    display: flex;
+    overflow: hidden;
+    height: 400px;
+}
+
+.postPreview__media{
+    flex: 1 1 auto;
+    height: 400px;
+    width: 60%;
+    max-width: 60%;
+    background-image: url('images/fake-img_smiley.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.postPreview__details{
+    flex: 1 1 auto;
+    position: relative;
+    width: 40%;
+    max-width: 40%;
+    overflow-y: scroll;
+}
+
+.postPreview__header{
+    height: 80px;
+    border-bottom: 1px solid #cccccc;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+}
+
+.postPreview__interractionBtns{
+    height: 80px;
+    border-top: 1px solid #cccccc;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    background-color: #ffffff;
+}
+
+
+/* MEDIA QUERIES */
+/* Small devices (landscape phones, 576px and up)*/
+@media (max-width: 991.98px) {
+    /*.profilePage.page__body{
+        max-width: none;
+    }*/
+
+    .feedPage .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*.profilePage.page__body{
+        margin: auto;
+    }*/
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /*.profilePage.page__body{
+        max-width: none;
+    }*/
+
+    .feedPage .content{
+        margin-right: 50px;
+    }
+
+    .lateralMenu{
+        display: block;
+        width: 20%;
+    }
+
+    .feedPage.page__body{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .lateralMenu__user{
+        margin-bottom: 20px;
+    }
+
+    .header__stories.stories{
+        display: none;
+    }
+
+    .card{
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+    }
+
+    .lateralMenu__stories .stories__story{
+        height: 60px;
+        width: 60px;
+    }
+
+    .lateralMenu__stories .stories__story .story__image{
+        height: 50px;
+        width: 50px;
+    }
+
+    .miniCard__stories{
+        overflow: hidden;
+        padding: 0;
+        display: block;
+        border: none;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .miniCard__stories .stories__story{
+        height: 50px;
+        width: 50px;
+    }
+
+    .miniCard__stories .stories__story .story__image{
+        height: 40px;
+        width: 40px;
+    }
+
+    .miniCard__header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
 }
