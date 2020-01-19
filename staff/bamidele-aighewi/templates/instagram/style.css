@@ -234,10 +234,11 @@ img{ width: 100%; }
     border-radius: 3px;
     border: 1px solid #cccccc;
     margin: auto;
-    margin-top: 15%;
+    margin-top: 100px;
     display: flex;
-    overflow: hidden;
+    /*overflow: hidden;*/
     height: 400px;
+    transition: width 500ms ease;
 }
 
 .postPreview__media{
@@ -277,6 +278,14 @@ img{ width: 100%; }
     background-color: #ffffff;
 }
 
+.postPreview__media{
+    grid-area: postPreviewMedia;
+}
+
+.postPreview__details{
+    grid-area: postPreviewDetails;
+}
+
 
 /* MEDIA QUERIES */
 /* Small devices (landscape phones, 576px and up)*/
@@ -294,6 +303,35 @@ img{ width: 100%; }
     /*.profilePage.page__body{
         margin: auto;
     }*/
+
+    .postPreview{
+        display: block;
+        margin-top: 10px;
+        /*overflow: visible;*/
+    }
+
+    .postPreview__media,
+    .postPreview__details{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .postPreview__details{
+        border-right: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        border-radius: 0 0 3px 3px;
+    }
+
+    .postPreview__media{
+        flex: none;
+        height: 350px;
+    }
+
+    .postPreview__comments{
+        height: 200px;
+        overflow-y: scroll;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -301,6 +339,10 @@ img{ width: 100%; }
     /*.profilePage.page__body{
         max-width: none;
     }*/
+
+    .postPreview{
+        width: 70%;
+    }
 
     .feedPage .content{
         margin-right: 50px;
