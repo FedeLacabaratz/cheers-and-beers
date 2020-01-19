@@ -33,7 +33,7 @@ select,
   background-color: transparent;
 }
 
-.main-header {
+.header {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -41,14 +41,17 @@ select,
   padding: 1rem;
   border-bottom: 0.3px solid lightgrey;
 }
-.main-header__actions {
+.header__actions .fas, .header__logo {
+  font-size: 2rem;
+}
+.header .header-actions {
   display: flex;
   justify-content: space-around;
   width: 12rem;
   padding: 0.4rem;
 }
-.main-header__actions .fas, .main-header__logo {
-  font-size: 2rem;
+.header .header-actions__query--show {
+  display: none;
 }
 
 .product {
@@ -208,6 +211,39 @@ select,
 
   .product {
     width: 31%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .header {
+    height: 6rem;
+  }
+  .header .header-actions {
+    justify-content: space-between;
+    width: 70%;
+  }
+  .header .header-actions__query--show {
+    display: inline-block;
+    order: 1;
+    margin-right: 2rem;
+  }
+  .header .header-actions__query-btn--hidden {
+    display: none;
+  }
+  .header .header-actions__cart--hidden {
+    display: none;
+  }
+  .header .header-actions__nav-button--hidden {
+    display: none;
+  }
+  .header .header-actions__nav-container {
+    order: 0;
+    width: 100%;
+  }
+  .header .header-actions__nav {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    padding: 2.4rem 1.5rem;
   }
 }
 body {

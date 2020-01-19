@@ -8,21 +8,29 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<header class="main-header">
-			<figure class="main-header__logo">
+		<header class="header">
+			<figure class="header__logo">
 				LOGO
 			</figure>
-			<section class="main-header__actions">
-				<!-- <input
-					class="main-header__query"
+			<section class="header-actions">
+				<input
+					class="header-actions__query header-actions__query--show"
 					type="text"
-                /> -->
-				<button><i class="fas fa-search"></i></button>
-				<button class="main-header__cart">
+                />
+				<button class="header-actions__query-btn header-actions__query-btn--hidden"><i class="fas fa-search"></i></button>
+				<button class="header-actions__cart header-actions__cart--hidden">
 					<i class="fas fa-shopping-cart"></i>
 				</button>
-				<nav>
-					<button class="main-header__nav"><i class="fas fa-bars"></i></button>
+				<nav class="header-actions__nav-container">
+					<button class="header-actions__nav-button header-actions__nav-button--hidden"><i class="fas fa-bars"></i></button>
+					<ul class="header-actions__nav header-actions__nav--hidden">
+						<li>NOVEDADES</li>
+						<li>HOMBRE</li>
+						<li>MUJER</li>
+						<li>NIÑO/A</li>
+						<li>PERSONALIZAR</li>
+						<li>COLECCIONES</li>
+					</ul>
 				</nav>
 			</section>
 		</header>
@@ -32,9 +40,14 @@
 					<span>Zapatillas / Air Max</span>
 					<h1>Air Max Zapatillas</h1>
 				</section>
-				<nav class="main-results__filter-toggle">
-					<button><i class="fas fa-sliders-h"></i></button>
-				</nav>
+				<section class="main-results__filter-actions">
+					<button class="main-results__filter-toggle"><i class="fas fa-sliders-h"></i></button>
+					<nav>
+						<p>Ordenar por</p>
+						<i class="fas fa-chevron-down"></i>
+					</nav>
+				</section>
+
 			</header>
 			<section
 				class="main-results__filters-menu main-results__filters-menu--hidden"
