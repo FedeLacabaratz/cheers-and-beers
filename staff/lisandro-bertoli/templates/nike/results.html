@@ -3,35 +3,59 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 		<link rel="stylesheet" href="style.css" />
 		<title>Document</title>
 	</head>
 	<body>
-		<header class="header">
-			<figure class="header__logo">
-				LOGO
-			</figure>
-			<section class="header-actions">
-				<input
-					class="header-actions__query header-actions__query--show"
-					type="text"
-                />
-				<button class="header-actions__query-btn header-actions__query-btn--hidden"><i class="fas fa-search"></i></button>
-				<button class="header-actions__cart header-actions__cart--hidden">
-					<i class="fas fa-shopping-cart"></i>
-				</button>
-				<nav class="header-actions__nav-container">
-					<button class="header-actions__nav-button header-actions__nav-button--hidden"><i class="fas fa-bars"></i></button>
-					<ul class="header-actions__nav header-actions__nav--hidden">
-						<li>NOVEDADES</li>
-						<li>HOMBRE</li>
-						<li>MUJER</li>
-						<li>NIÑO/A</li>
-						<li>PERSONALIZAR</li>
-						<li>COLECCIONES</li>
-					</ul>
-				</nav>
+		<header>
+			<nav class="header-alt-nav">
+				<section class="header-alt-nav__brands">
+					<figure>
+						NikePlus
+					</figure>
+					<figure>
+						Jordan
+					</figure>
+					<figure>
+						Hurley
+					</figure>
+					<figure>
+						Converse
+					</figure>
+				</section>
+				<section class="header-alt-nav__actions">
+					<a href="">Registrate / Inicia sesion</a>
+					<a href="">Ayuda</a>
+					<a href=""><i class="fas fa-shopping-cart"></i></a>
+					<a href=""><i class="fas fa-map-marker-alt"><span> Espana</span></i></a>
+				</section>
+			</nav>
+			<section class="header">
+				<figure class="header__logo">
+					<img src="https://www.iconsdb.com/icons/preview/black/nike-xxl.png" alt="">
+				</figure>
+				<section class="header-actions">
+					<input
+						class="header-actions__query header-actions__query--show"
+						type="text"
+					/>
+					<button class="header-actions__query-btn header-actions__query-btn--hidden"><i class="fas fa-search"></i></button>
+					<button class="header-actions__cart header-actions__cart--hidden">
+						<i class="fas fa-shopping-cart"></i>
+					</button>
+					<nav class="header-actions__nav-container">
+						<button class="header-actions__nav-button header-actions__nav-button--hidden"><i class="fas fa-bars"></i></button>
+						<ul class="header-actions__nav header-actions__nav--hidden">
+							<li>NOVEDADES</li>
+							<li>HOMBRE</li>
+							<li>MUJER</li>
+							<li>NIÑO/A</li>
+							<li>PERSONALIZAR</li>
+							<li>COLECCIONES</li>
+						</ul>
+					</nav>
+				</section>
 			</section>
 		</header>
 		<main class="main-results">
