@@ -12,23 +12,68 @@
 
 <body>
     <header class="head">
-        <figure class="head__logo-nike">
-            <i class="fas fa-check"></i>
-            <img src="" alt="">
-        </figure>
-        <section class="head__menu">
-            <button class="head__menu-input">
-                <i class="fas fa-search"></i>
-            </button>
-            <button class="head_meun-search">
-                <i class="fas fa-shopping-cart"></i>
-            </button>
-            <nav class="head__menu-nav">
-                <button class="head__menu-nav-button">
-                    <i class="fas fa-bars"></i>
-                </button>
+        <aside class="head__extra">
+            <nav class="head__extra-corporative">
+                <ul>
+                    <li>NikePlus</li>
+                    <li><i class="fas fa-basketball-ball"></i></li>
+                    <li>Hurley</li>
+                    <li>Converse</li>
+                </ul>
             </nav>
+            <nav class="head__extra-user">
+                <ul>
+                    <li>Registrate/Inicia sesion</li>
+                    <li>Ayuda</li>
+                    <li>carrito</li>
+                    <li>Catalunya</li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="head__body">
+            <figure class="head__logo-nike">
+                <i class="fas fa-check"></i>
+                <img src="" alt="">
+            </figure>
+            <section class="head__menu-small">
+                <button class="head__menu-input">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="head_meun-search">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <nav class="head__menu-nav">
+                    <button class="head__menu-nav-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </section>
+            <section class="head__menu-big">
+                <ul>
+                    <li>NOVEDADES</li>
+                    <li>HOMBRE</li>
+                    <li>MUJER</li>
+                    <li>NIÑO/A</li>
+                    <li>PERSONALIZAR</li>
+                    <li>COLECCIONES</li>
+                    <li><input type="Buscar"></li>
+                </ul>
+            </section>
         </section>
+        <footer class="head__footer">
+            <section class="head__footer-content">
+                <button class="head__footer-content-arrow-left">
+                    <i class="fas fa-angle-left"></i>
+                </button>
+                <section class="head__footer-content-promotion"> 
+                    LA Promoció
+                 </section>
+                <button class="head__footer-content-arrow-right">
+                    <i class="fas fa-angle-right"></i>
+                </button>
+            </section>
+        </footer>
+
     </header>
     <main class="results">
         <header class="results__header">
@@ -41,15 +86,41 @@
         </header>
         <section class="results__filter">
             <nav class="filter__list">
-                <ul>
+                <section class="filter__list-title">
+                    <p>Sexo</p>
+                    <button>
+                        <i class="fas fa-angle-up"></i>
+                    </button>
+                </section>
+                <ul class="filter__list-options">
                     <il>Hombre</il>
                     <il>Mujer</il>
                 </ul>
             </nav>
             <nav class="filter__list">
-                <ul>
-                    <il>Para niño</il>
-                    <il>Para niña</il>
+                <section class="filter__list-title">
+                    <p>Deportes</p>
+                    <button>
+                        <i class="fas fa-angle-up"></i>
+                    </button>
+                </section>
+                <ul class="filter__list-options">
+                    <il>Lifestyle</il>
+                    <il>Gym y Training</il>
+                </ul>
+            </nav>
+            <nav class="filter__list">
+                <section class="filter__list-title">
+                    <p>Tipo de producto</p>
+                    <button>
+                        <i class="fas fa-angle-up"></i>
+                    </button>
+                </section>
+                <ul class="filter__list-options">
+                    <il>Zapatillas</il>
+                    <il>Equipamento</il>
+                    <il>Ropa</il>
+                    <il>Conjuntos</il>
                 </ul>
             </nav>
             <nav class="filter__color">
