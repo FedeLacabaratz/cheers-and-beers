@@ -75,7 +75,7 @@ nav{
     display: flex;
     flex-direction: row;
 }
-.upperbar__userphoto, .upperbar__options-choice, .interaction__like, .interaction__comment, .interaction__message, .interaction__share{
+.upperbar__options-choice, .interaction__like, .interaction__comment, .interaction__message, .interaction__share{
     width: 5vh;
     height: 3vh;
     align-self: center;
@@ -85,11 +85,20 @@ nav{
 .interaction__like--color{
     background-color: red;
 }
+.upperbar__userphoto{
+    width: 5vh;
+    height: 3vh;
+    align-self: center;
+    margin: 1vh;
+    background-color: grey;
+    cursor: pointer;
+}
 .upperbar__username{
     width: 16vh;
     height: 3vh;
     align-self: center;
     background-color: grey;
+    cursor: pointer;
 }
 .upperbar__options, .interaction__options-two{
     display: flex;
