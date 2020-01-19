@@ -64,7 +64,7 @@ select,
 .head__extra {
   display: flex;
   justify-content: space-between;
-  border: 1px solid grey;
+  border-bottom: 1px solid grey;
   width: 100vw;
   height: 6vh;
 }
@@ -77,7 +77,10 @@ select,
   padding: 8px 28px;
 }
 .head__extra-corporative > ul > li {
-  border: 1px solid black;
+  border-right: 1px solid grey;
+}
+.head__menu-big {
+  margin-right: 20vw;
 }
 .head__menu-big > ul {
   display: flex;
@@ -93,7 +96,8 @@ select,
   width: 200px;
 }
 .head__footer {
-  border: 1px solid black;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
   width: 100vw;
   height: 8vh;
 }
@@ -182,11 +186,40 @@ select,
   width: 100%;
 }
 
+.filter__color {
+  border-top: 1px solid grey;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+.filter__color-title {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.filter__color-title > p, .filter__color-title > button {
+  font-size: 2rem;
+}
+.filter__color-options {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20rem;
+}
+.filter__color-options > li {
+  margin: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: blue;
+}
+
 .fas {
   font-size: 2rem;
 }
 
 .footer {
+  display: flex;
+  flex-wrap: wrap;
   color: white;
   background-color: black;
   padding: 10px;
@@ -264,6 +297,54 @@ select,
   .results__products {
     grid-column: 2/span 4;
   }
+
+  .footer {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer__list {
+    display: flex;
+    width: 75vw;
+  }
+
+  .footer__faqs > ul {
+    margin-top: 9px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer__faqs > ul > li {
+    width: 150px;
+    margin-right: 10vw;
+    margin-top: 0;
+  }
+
+  .footer__map {
+    width: 20vw;
+  }
+
+  .footer__social {
+    width: 20vw;
+  }
+
+  .footer__extra {
+    border-top: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+  }
+
+  .footer__legal {
+    width: 25vw;
+  }
+  .footer__legal > ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer__legal > ul > li {
+    margin-right: 20px;
+  }
 }
 @media only screen and (max-width: 1024px) {
   .head__extra, .head__menu-big {
@@ -284,6 +365,14 @@ select,
 
   .results__filter {
     display: none;
+  }
+
+  .footer__list, .footer__social {
+    width: 100vw;
+  }
+
+  .footer__extra {
+    width: 100vw;
   }
 }
 
