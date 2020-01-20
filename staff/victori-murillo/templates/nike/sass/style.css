@@ -70,8 +70,7 @@ ul {
 .sneaker__text {
   text-align: left;
   color: gray;
-  margin: 3px;
-  margin-left: 10px;
+  margin: 3px 3px 3px 10px;
 }
 
 @media (min-width: 692px) {
