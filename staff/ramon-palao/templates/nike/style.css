@@ -101,6 +101,12 @@
     margin: 3vh;
   }
 }
+.categorias {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
+}
+
 .title {
   padding: 2vh;
   height: 10vh;
