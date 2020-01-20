@@ -40,34 +40,32 @@ select,
     line-height: 2;
   }
 }
-.header {
+.main-header {
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 4.5rem;
   border-bottom: 0.3px solid lightgrey;
 }
-.header__logo {
-  width: 10rem;
-  margin: 0 1rem;
+.main-header__logo-container {
+  width: 15%;
 }
-.header__logo > img {
+.main-header__logo-img {
   margin: 0 2rem;
-  height: 4.8rem;
-  width: 5rem;
+  width: 100%;
 }
-.header .header-actions {
+.main-header-actions {
   display: flex;
-  justify-content: space-around;
-  width: 12rem;
+  justify-content: space-evenly;
+  width: 50%;
 }
-.header .header-actions__query, .header .header-actions__nav {
+.main-header-actions__query, .main-header-actions__nav {
   display: none;
 }
-.header .header-actions__nav-button {
+.main-header-actions__nav-button {
   padding-top: 1.3rem;
 }
-.header .header-actions__query-btn, .header .header-actions__cart, .header .header-actions__nav-button {
+.main-header-actions__query-btn, .main-header-actions__cart, .main-header-actions__nav-button {
   font-size: 1.5rem;
 }
 
@@ -279,16 +277,17 @@ select,
     color: grey;
   }
 
-  .header {
+  .main-header {
     height: 6rem;
-    margin-top: 1rem;
-    width: 99vw;
   }
-  .header .header-actions {
+  .main-header__logo-img {
+    width: 30%;
+  }
+  .main-header-actions {
     justify-content: space-between;
     width: 70%;
   }
-  .header .header-actions__query {
+  .main-header-actions__query {
     display: inline-block;
     order: 1;
     margin-top: 1rem;
@@ -297,27 +296,27 @@ select,
     width: 15%;
     min-width: 6rem;
   }
-  .header .header-actions__query-btn {
+  .main-header-actions__query-btn {
     display: none;
   }
-  .header .header-actions__cart {
+  .main-header-actions__cart {
     display: none;
   }
-  .header .header-actions__nav-button {
+  .main-header-actions__nav-button {
     display: none;
   }
-  .header .header-actions__nav-container {
+  .main-header-actions__nav-container {
     order: 0;
     width: 100%;
   }
-  .header .header-actions__nav {
+  .main-header-actions__nav {
     display: flex;
     justify-content: space-around;
     width: 70%;
     padding: 2.4rem 1.5rem;
     font-weight: 600;
   }
-  .header .header-actions__nav > li {
+  .main-header-actions__nav > li {
     margin: 0 1rem;
   }
 }
