@@ -126,6 +126,9 @@ select,
   justify-content: space-between;
   margin-top: 25px;
   padding: 15px;
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 .results__header-filter {
   margin: 10px;
