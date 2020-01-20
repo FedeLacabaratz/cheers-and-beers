@@ -5,7 +5,7 @@
 }
 
 body{
-    max-width: 1200px;
+    max-width: 1800px;
     min-height: 100px;
 }
 
@@ -13,6 +13,7 @@ body{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
 }
 header{
     width: 100%;
@@ -138,7 +139,12 @@ header{
 
 @media only screen and (min-width: 992px){
     
+    header{
+        width: 100%;
+    }
+
     .content{
+        width: 100%;
         justify-content: center;
     }
     .posts{
