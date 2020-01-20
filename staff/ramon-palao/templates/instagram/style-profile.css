@@ -98,7 +98,7 @@
         height: 10vh;
     }
     .header__info{
-        margin: 15vh 30% 0 30%;
+        margin-top: 15vh;
     }
     .header__user-photo, .main__stories{
         width: 15vh;
@@ -107,7 +107,7 @@
         background-color: #ff7979;
     }
     .header__personal-info, .header__additional-info, .main__stories-bar, .main__photo-options, .main__photos-display{
-        margin: 5vh 30%;
+        margin: 5vh;
     }
 
 }
