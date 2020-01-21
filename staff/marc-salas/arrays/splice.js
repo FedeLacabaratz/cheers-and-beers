@@ -10,13 +10,10 @@ function splice(array, index, count, value) {
     if (value) {
         array[index] = value;
         count = count - 1;
-        for (var b = index + 1; b < array.length; b++) {
-            array[b] = array[b + count];
-    } 
-    }else{
-        for (var b = index; b < array.length; b++) {
-            array[b] = array[b + count];
-        }
+        var newIndex = index + 1
+    }
+    for (var b = newIndex || index ; b < array.length; b++) {
+        array[b] = array[b + count];
     }
     array.length = array.length - (count);
     console.log(array);
