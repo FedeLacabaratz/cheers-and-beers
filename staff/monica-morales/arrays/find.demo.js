@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('DEMO find');
+/*console.log('DEMO find');
 
 var numbers = [5,6,14,6];
 function num(value){
@@ -9,4 +9,4 @@ function num(value){
     }
 };
 
-console.log('this is the result',find(numbers,num));
+console.log('this is the result',find(numbers,num));*/

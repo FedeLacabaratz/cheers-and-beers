@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('DEMO concat');
+/*_console.log('DEMO concat');
 
 var letters = ['a','b','c'], numbers = [1,2,3];
 console.log('it',letters,numbers);
@@ -12,4 +12,4 @@ console.log('should two arrays be concated', concat(letters, word));
 
 var letters = ['a','b','c'], number = 9;
 console.log('it',letters,number);
-console.log('should two arrays be concated', concat(letters, number));
+console.log('should two arrays be concated', concat(letters, number));*/
