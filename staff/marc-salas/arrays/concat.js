@@ -11,6 +11,6 @@ function concat(array, value){
         }
     }
     }
-        console.log(result.length);
+        //console.log(result.length);
         return result;
 }
