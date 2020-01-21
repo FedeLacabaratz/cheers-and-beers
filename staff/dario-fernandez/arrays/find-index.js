@@ -1,18 +1,18 @@
 'use strict'
 
-function find(array, expresion) {
+function findIndex(array, expresion) {
     for(var i = 0; i < array.length; i++) {
         if(expresion(array[i])) {
-            return array[i]
-            break
+             return i
         }
     }
+    return -1
 }
 
 // ---------TEST---------
 
 // var testArray = [1, 2, 3, 4, 5]
 
-// console.log('Should print 3 ==> ' + find(testArray, function(element) {
+// console.log('Should print 2 ==> ' + find(testArray, function(element) {
 //     return element >= 3
 // }))

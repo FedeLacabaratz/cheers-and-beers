@@ -12,7 +12,7 @@ function fill(array, value, startIndex, stopIndex) {
 
 // ----------TEST-----------
 
-var testArray = [1, 2, 3, 4, 5]
+// var testArray = [1, 2, 3, 4, 5]
 
 // console.log('Should print [a, a, a, a, a] ==> ' + fill(testArray, 'a'))
 // console.log('Should print [1, 2, 2, 2, 2] ==> ' + fill(testArray, 2, 2))
