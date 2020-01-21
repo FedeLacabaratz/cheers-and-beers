@@ -10,4 +10,4 @@ function of() {
 
 // --------TEST---------
 
-of(1, 2, 3, 'cuatro', '5', 'seis')
+// of(1, 2, 3, 'cuatro', '5', 'seis')

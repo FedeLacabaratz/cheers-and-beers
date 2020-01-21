@@ -6,6 +6,6 @@ function isArray(array) {
 
 // --------TEST-----
 
-var arrayTest = [1, 2, 3]
+// var arrayTest = [1, 2, 3]
 
-console.log('Should say true ==> ' + isArray(arrayTest))
+// console.log('Should say true ==> ' + isArray(arrayTest))

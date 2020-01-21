@@ -1,3 +1,3 @@
 # Introduction
 
-This project is cloning all Javascript array methods in plain JS
+This project is cloning all Javascript array methods using only plain JS.

@@ -1,7 +1,7 @@
 'use strict'
 function indexOf(array, value, initialIndex) {
     var index = -1
-    for(var i = 0 + initialIndex; i < array.length; i++) {
+    for(var i = initialIndex || 0; i < array.length; i++) {
         if(array[i] === value) {
             index = i
             break
