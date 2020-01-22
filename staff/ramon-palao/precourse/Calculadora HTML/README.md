@@ -10,13 +10,19 @@ Basic calculator that performs four mathematical operations
 
 ## Functional Description
 
+```sh
+
+User enters the numbers and applies the math operation that wants to perform. More math operations can be added to the result. There is also an option to restart the flow to start again.
+
+```
+
 ### Use Cases
 
-![](C:\Users\Ramon\Pictures\UML\use-cases.jpg)
+![](.\UML\use-cases.jpg)
 
 ### Flows
 
-![](C:\Users\Ramon\bootcamp\collab\skylab-bootcamp-202001\staff\ramon-palao\precourse\Calculadora HTML\UML\flow.jpg)
+![](.\UML\flow.jpg)
 
 ### Sequences
 
