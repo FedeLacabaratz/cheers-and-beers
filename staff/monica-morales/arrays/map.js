@@ -1,8 +1,8 @@
 'use strict';
 
-var numbers =[3,5,8,9];
-
 function map(arr, expression){
+    if (!(arr instanceof Array)) throw new TypeError(arr + ' is not an Array'); 
+    if(expression===undefined) throw new TypeError ('It is necessary an expression');
     var newArray = [];
     for(var i = 0; i<arr.length; i++){
         newArray[newArray.length] = expression(arr[i]);
@@ -14,4 +14,3 @@ function expression(element){
     return element*2;
 };
 
-//console.log(map(numbers,expression));
