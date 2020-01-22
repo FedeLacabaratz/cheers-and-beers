@@ -18,7 +18,7 @@ results.forEach(function(result, index) {
 });
 
 console.log('should fail on non-function expression');
-var _error;
+var _error = undefined;
 try {
     forEach([1, 2, 3]);
 } catch(error) {
@@ -27,7 +27,7 @@ try {
     console.assert(_error instanceof  TypeError, 'should error be of type TypeError');
     console.assert(_error.message === 'undefined is not a function', 'should fail with message "undefined is not a function"');
 }
-var _error;
+var _error = undefined;
 try {
     forEach([1, 2, 3], true);
 } catch(error) {
@@ -36,7 +36,7 @@ try {
     console.assert(_error instanceof  TypeError, 'should error be of type TypeError');
     console.assert(_error.message === 'true is not a function', 'should fail with message "true is not a function"');
 }
-var _error;
+var _error = undefined;
 try {
     forEach([1, 2, 3], 1);
 } catch(error) {
@@ -47,7 +47,7 @@ try {
 }
 
 console.log('should fail on non-array as first argument');
-var _error;
+var _error = undefined;
 try {
     forEach(undefined, function() {});
 } catch(error) {
@@ -56,7 +56,7 @@ try {
     console.assert(_error instanceof  TypeError, 'should error be of type TypeError');
     console.assert(_error.message === 'undefined is not an Array', 'should fail with message "undefined is not an Array"');
 }
-var _error;
+var _error = undefined;
 try {
     forEach(true, function() {});
 } catch(error) {
@@ -65,7 +65,7 @@ try {
     console.assert(_error instanceof  TypeError, 'should error be of type TypeError');
     console.assert(_error.message === 'true is not an Array', 'should fail with message "true is not an Array"');
 }
-var _error;
+var _error = undefined;
 try {
     forEach(1, function() {});
 } catch(error) {
