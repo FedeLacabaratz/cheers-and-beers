@@ -13,38 +13,36 @@ console.log(
 );
 
 //Test 1
-newArray.forEach(function (element, index) {
-	if (index < originalArray.length) {
-		console.assert(
-			element === originalArray[index],
-			'should element at index ' + index + 'be ' + originalArray[index]
-		);
-	} else {
-		console.assert(
-			element === arrayToConcat[index - originalArray.length],
-			'should element at index ' +
-			index +
-			'be ' +
-			arrayToConcat[index - originalArray]
-		);
-	}
+var originalArray = [1, 2, 3];
+var arrayToConcat = [4, 5, 6];
+var concatenated = concat(originalArray, arrayToConcat);
+
+concatenated.forEach(function (element, index) {
+	if (index < 3) console.assert(element === originalArray[index], 'value at index ' + index + ' should be ' + originalArray[index]);
 });
 
-
 //Test 2
-console.log('original array should not be modified');
-originalArray.forEach(function (element, index) {
-	console.assert(element === arrayCopy[index], 'original array was modified.');
+
+var originalArray = [1, 2, 3];
+var arrayToConcat = [4, 5, 6];
+var concatenated = concat(originalArray, arrayToConcat);
+
+concatenated.forEach(function (element, index) {
+	if (index > 2) console.assert(element === arrayToConcat[index - 3], 'value at index ' + index + ' should be ' + arrayToConcat[index - 3]);
 });
 
 
 //Test 3
-console.log(
-	'new array length should be equal to the length of originalArray plus the length of arrayToConcat'
-);
-console.assert(
-	newArray.length === originalArray.length + arrayToConcat.length,
-	'should array length be 6'
-);
+console.log('original array length should not be modified');
+var originalArray = [1, 2, 3];
+var arrayToConcat = [4, 5, 6];
+var concatenated = concat(originalArray, arrayToConcat)
+
+console.assert(originalArray.length === 3, 'original array length should be 3');
+
+
+
+
+
 
 
