@@ -14,4 +14,4 @@ function expression(element){
     return element*2;
 };
 
-console.log(map(numbers,expression));
+//console.log(map(numbers,expression));

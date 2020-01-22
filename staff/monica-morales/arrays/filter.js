@@ -1,6 +1,5 @@
 'use strict'
 
-
 function filter(array, expression){
     var array2 = [];
     for(var i =0; i<array.length; i++){

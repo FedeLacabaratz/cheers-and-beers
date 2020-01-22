@@ -7,5 +7,5 @@ function find(arr,expression){
             return arr[i];
         };
     };
-    return false;
+    return undefined;
 };

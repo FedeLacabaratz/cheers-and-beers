@@ -3,7 +3,7 @@
 var a1 = [1,2,3];
 var a2 = [4,5,6];
 var array = concat(a1,a2);
-console.log('TEST concat');
+//console.log('TEST concat');
 console.log('result: ', array);
 console.assert(array.length === a1.length+a2.length,'should array length be 6');
 console.log('should value at index 0 be 1');
