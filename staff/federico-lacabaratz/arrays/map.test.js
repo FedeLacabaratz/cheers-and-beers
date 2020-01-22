@@ -1,0 +1,21 @@
+"use strict";
+
+console.log("TEST map");
+
+var arr = [1,3,5,6,7,9];
+
+function mapeo(num){ 
+    return num +10
+}
+
+console.log('Verifies that the array does not grow more than its original length')
+var a = map(arr, mapeo);
+console.assert(a.length === 6, "results length should equal 6");
+
+console.log('Verifies each element of the array')
+console.assert(a[0] === 11, "a[0] this should be 11"); 
+console.assert(a[1] === 13, "a[1] this should be 13"); 
+console.assert(a[2] === 15, "a[2] this should be 15"); 
+console.assert(a[3] === 16, "a[3] this should be 16"); 
+console.assert(a[4] === 17, "a[4] this should be 17"); 
+console.assert(a[5] === 19, "a[5] this should be 19"); 
