@@ -22,7 +22,20 @@ console.assert(!ret, 'false should be returned');
 
 //Test 3
 console.log('function should iterate over all elements in the array');
-var arr = [1, 2, 3, 4, 5];
-every(arr, function (element, index) {
-    console.assert(element === arr[index])
-})
+var arr = [1, 2, 'string'];
+var a = every(arr, function (element, index) {
+    return typeof element === 'number';
+});
+var arr = [1, 'string', 2];
+var b = every(arr, function (element, index) {
+    return typeof element === 'number';
+});
+var arr = ['string', 1, 2];
+var c = every(arr, function (element, index) {
+    return typeof element === 'number';
+});
+
+console.assert(a === b && b === c, 'return value should be the same for all');
+
+
+
