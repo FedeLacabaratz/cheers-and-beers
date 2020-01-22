@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TEST forEach');
+console.log('------------------------ TEST forEach ------------------------');
 
 console.log('should array [1, 2, 3] be modified adding 10 to each value');
 var a = [1, 2, 3];

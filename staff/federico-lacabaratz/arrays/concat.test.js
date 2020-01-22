@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TEST Concat');
+console.log('------------------------ TEST Concat ------------------------');
 
 console.log('This should merge arrays a and b');
 var a = ['a', 'b', 'c'];

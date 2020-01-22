@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TEST push');
+console.log('------------------------ TEST push ------------------------');
 
 console.log('should have added 4 at the end of array [1, 2, 3]');
 var a = [1, 2, 3];

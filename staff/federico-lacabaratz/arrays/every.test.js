@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TEST Every');
+console.log('------------------------ TEST Every ------------------------');
 
 var a = [1, 10, 20, 32, 15, 50, 40, 49];
 
@@ -13,8 +13,8 @@ var result = every(a, allSmallerThan);
 console.log('All elements in an array are < than 50, included within the array a');
 console.assert(result === true, 'Check that not all values within a are < than 51');
 
-// console.log('it should return true, otherwise false... the result on this case is:', 
-// every(a, allSmallerThan));
+console.log('it should return true, otherwise false... the result on this case is:', 
+every(a, allSmallerThan));
 
 console.log('All elements comply with the original condition (value < 51)')
 var result2 = []

@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('TEST From');
+console.log('------------------------ TEST From ------------------------');
 
 var arr = [2, 3, 5, 78, 57, 32]
 

@@ -1,6 +1,6 @@
 'use strict';
 
-console.log('DEMO Filter');
+console.log('------------------------ TEST Filter ------------------------');
 
 var a = [10, 13, 56, 34, 57, 22, 5, 72, 33, 1];
 
