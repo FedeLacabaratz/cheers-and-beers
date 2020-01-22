@@ -1,41 +1,45 @@
+describe('every', function () {
+    it('should iterate over all elements in the array', function () {
+        var array1 = [1, 2, 'string'];
+        var a = every(array1, function (element, index) {
+            return typeof element === 'number';
+        });
 
-console.log('TEST every');
+        var array2 = [1, 'string', 2];
+        var b = every(array2, function (element, index) {
+            return typeof element === 'number';
+        });
+
+        var array3 = ['string', 1, 2];
+        var c = every(array3, function (element, index) {
+            return typeof element === 'number';
+        });
+
+        assert(a === b && b === c, 'return value should be the same for all, but got a: ' + a + ' b: ' + b + ' c: ' + c);
+    });
+
+    it('should true be returned when all elements are numbers', function () {
+        var arr = [1, 2, 3, 4, 5];
+        var result = every(arr, function (element) {
+            return typeof element === 'number'
+        });
+
+        assert(result, 'true should be returned, but got ' + result);
+    });
+
+    it('should false be returned when 1 element does not comply with the condition', function () {
+        var arr = [2, 'string', 4, 4];
+
+        var result = every(arr, function (element) { return typeof element === 'number' });
+
+        console.assert(!result, 'false should be returned, but got ' + result);
+    });
 
 
-//Test 1
-console.log('should true be returned when all elements comply with the condition');
 
-var arr = [1, 2, 3, 4, 5];
-
-console.assert(every(arr, function (element) {
-    return typeof element === 'number'
-}), 'true should be returned');
-
-
-//Test 2
-console.log('should false be returned when 1 element does not comply with the condition');
-
-var arr = [2, 'string', 4, 4];
-
-var ret = every(arr, function (element) { return typeof element === 'number' });
-console.assert(!ret, 'false should be returned');
-
-//Test 3
-console.log('function should iterate over all elements in the array');
-var arr = [1, 2, 'string'];
-var a = every(arr, function (element, index) {
-    return typeof element === 'number';
 });
-var arr = [1, 'string', 2];
-var b = every(arr, function (element, index) {
-    return typeof element === 'number';
-});
-var arr = ['string', 1, 2];
-var c = every(arr, function (element, index) {
-    return typeof element === 'number';
-});
 
-console.assert(a === b && b === c, 'return value should be the same for all');
+
 
 
 
