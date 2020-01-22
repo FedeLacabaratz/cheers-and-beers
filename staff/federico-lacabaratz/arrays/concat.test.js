@@ -2,12 +2,11 @@
 
 console.log('TEST Concat');
 
+console.log('This should merge arrays a and b');
 var a = ['a', 'b', 'c'];
 var b = ['d', 'e', 'f'];
 
 var result = concat(a, b);
-
-console.log('This should merge arrays a and b');
 console.assert(result.length === (a.length + b.length), 'it should return a new array =', concat(a, b));
 
 

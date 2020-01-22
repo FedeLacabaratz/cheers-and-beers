@@ -10,6 +10,13 @@ function mapeo(num){
 
 console.log('Verifies that the array does not grow more than its original length')
 var a = map(arr, mapeo);
+
+console.log('Verifies that the array adds 10 to each number within')
+for (var i=0; i<a.length; i++) {
+    console.assert(a[i] === arr[i] + 10, 'this should give a result of each array item + 10, in this spcecific index, the result should be '+arr[i]+10);
+};
+
+console.log('Verifies that the array doesn\'t grow more than 6 positions');
 console.assert(a.length === 6, "results length should equal 6");
 
 console.log('Verifies each element of the array')
