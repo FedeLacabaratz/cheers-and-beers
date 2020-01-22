@@ -16,6 +16,6 @@ function splice(array, index, count, value) {
         array[b] = array[b + count];
     }
     array.length = array.length - (count);
-    console.log(array);
+    //console.log(array);
     return result;
 }

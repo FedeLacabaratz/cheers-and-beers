@@ -1,23 +1,17 @@
 'use strict';
 
 console.log("FILTER TEST");
-var a = [1,15,16,33,9, 0,"Marc","palabrota",true];
 
-
-console.log("it", a);
-
+console.log("should return all the value that complies the condition");
+var a = [1,15,19,10,5];
 function isBigEnough(value) {
     return value >= 10;
 }
-console.log("should show 15, 16, 33 of the array 'a' ", filter(a, isBigEnough));
+console.assert( filter(a,isBigEnough).length === 3,"should pass 3 values not " + filter(a,isBigEnough).length);
 
+console.log("sould compare all the values of the array");
+var a = ["hola","hola","hola","homer"];
 function isLongEnough(value) {
-    return value.length > 4;
+    return value.length >= 5;
 }
-console.log("should show palabrota of the array 'a' ", filter(a, isLongEnough));
-
-function isTrue(value) {
-    return value === true;
-}
-debugger
-console.log("should show true of the array 'a' ", filter(a, isTrue));
+console.assert( filter(a,isLongEnough) == 'homer',"should be homer not " +  filter(a,isLongEnough));
