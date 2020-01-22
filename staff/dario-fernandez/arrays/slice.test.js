@@ -15,3 +15,12 @@ for(var i = 0; i < newArray.length; i++){
 
 var newArray = slice(arrayOne, startIndex)
 console.assert(newArray.length === arrayOne.length - startIndex, 'the length of newArray should be equal to the length of original array less startIndex');
+
+
+var _error;
+try{
+    slice('a');
+} catch(error) {
+    console.assert(error instanceof TypeError, 'The error should be Typeerror instead of ' + error.__proto__.constructor.name);
+    console.assert(error.message === 'a is not an array', 'Error message shoud be \'a is not an array\'')    
+}
