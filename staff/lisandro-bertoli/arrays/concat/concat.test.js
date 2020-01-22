@@ -28,6 +28,60 @@ describe('concat', function () {
 		}
 	});
 
+	it('should fail if first parameter is not an Array', function () {
+		(function () {
+			var _error;
+			try {
+				concat(1, 2)
+			} catch (error) {
+				_error = error;
+
+			} finally {
+				assert(_error instanceof TypeError, 'should error be of type TypeError, but got ' + _error);
+				assert(_error.message === '1 is not an Array', 'should fail with message "1 is not an Array", but got ' + _error.message);
+			}
+		})();
+
+		(function () {
+			var _error;
+			try {
+				concat('string', 2)
+			} catch (error) {
+				_error = error;
+
+			} finally {
+				assert(_error instanceof TypeError, 'should error be of type TypeError, but got ' + _error);
+				assert(_error.message === 'string is not an Array', 'should fail with message "string is not an Array", but got ' + _error.message);
+			}
+		})();
+
+		(function () {
+			var _error;
+			try {
+				concat(true, 2)
+			} catch (error) {
+				_error = error;
+
+			} finally {
+				assert(_error instanceof TypeError, 'should error be of type TypeError, but got ' + _error);
+				assert(_error.message === 'true is not an Array', 'should fail with message "true is not an Array", but got ' + _error.message);
+			}
+		})();
+
+		(function () {
+			var _error;
+			try {
+				concat(undefined, 2)
+			} catch (error) {
+				_error = error;
+
+			} finally {
+				assert(_error instanceof TypeError, 'should error be of type TypeError, but got ' + _error);
+				assert(_error.message === 'undefined is not an Array', 'should fail with message "undefined is not an Array", but got ' + _error.message);
+			}
+		})();
+	});
+
 });
 
 
