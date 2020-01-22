@@ -17,7 +17,7 @@ function it(should, test) {
 function describe(description, tests) {
     'use strict';
 
-    console.log('%cTEST ' + description, 'color: blue;');
+    console.log('%c' + description, 'color: blue;');
 
     tests();
 }
