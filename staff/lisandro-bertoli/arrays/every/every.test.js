@@ -15,9 +15,9 @@ console.assert(every(arr, function (element) {
 //Test 2
 console.log('should false be returned when 1 element does not comply with the condition');
 
-var arr2 = [2, 'string', 4, 4];
+var arr = [2, 'string', 4, 4];
 
-var ret = every(arr2, function (element) { return typeof element === 'number' });
+var ret = every(arr, function (element) { return typeof element === 'number' });
 console.assert(!ret, 'false should be returned');
 
 //Test 3
