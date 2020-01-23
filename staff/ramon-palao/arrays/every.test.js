@@ -1,29 +1,3 @@
-//Using our test-tool
-
-function assert(assertion, message) {
-    if (!assertion) throw new Error('Assertion failed: ' + message);
-}
-
-function it(should, test) {
-    try {
-        test();
-
-        console.log('%c ♥️ ' + should + ' √', 'color: green;');
-    } catch (error) {
-        console.error('🤡 ' + should + ' †\n', error);
-    }
-}
-
-function describe(description, tests) {
-    'use strict';
-
-    console.log('%c' + "TEST " + description, 'color: blue;');
-
-    tests();
-}
-
-// TESTING
-
 describe("every", function(){
     //Happy Path
     it("should return true because all the elements from the array are bigger than 2", function(){
@@ -44,20 +18,20 @@ describe("every", function(){
     })
 
     //Error Handing
-    it("should fail because the first parameter is not an array"), function(){
+    it("should fail because the second parameter is not a function", function(){
 
         (function(){
             //var ourArray = [10, 8, 25, 30, 90, 12, 11];
             var _error;
 
             try {
-                every(function(){});
+                every([1, 2, 3]);
             } catch (error) {
                 _error = error;
+            } finally {
+                assert(_error instanceof TypeError, "should error be a type of TypeError");
+                assert(_error.message === 'undefined is not a function', 'should fail with message "undefined is not a function"');    
             }
-
-            assert(_error instanceof TypeError, "should error be a type of TypeError");
-            assert(_error.message === "function(){} is not an Array at every", "should fail with message 'function(){} is not an Array at every'");
-        })()
-    }
+        })();
+    })
 })

@@ -10,5 +10,5 @@ function indexOf(array, value){
 }
 
 
-console.log(indexOf(a, "marc"));
+//console.log(indexOf(a, "marc"));
 //Expected output: 3
