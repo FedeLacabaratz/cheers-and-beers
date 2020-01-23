@@ -9,7 +9,7 @@ describe('FILL TEST', function () {
     it('should remplace all the values of the array with the new value', function () {
         var a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         fill(a, 0).forEach(function (value) {
-            console.assert(value === 0, "all values should be 0");
+            assert(value === 0, "all values should be 0");
         });
     });
 
@@ -29,8 +29,8 @@ describe('FILL TEST', function () {
         } catch (error) {
             _error = error;
         } finally {
-            console.assert(_error instanceof TypeError, 'should error be of type TypeError');
-            console.assert(_error.message === '1 is not an Array', 'wrong message');
+            assert(_error instanceof TypeError, 'should error be of type TypeError');
+            assert(_error.message === '1 is not an Array', 'wrong message');
         };
     });
 
