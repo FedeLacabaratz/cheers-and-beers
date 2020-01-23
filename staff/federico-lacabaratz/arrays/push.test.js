@@ -1,22 +1,55 @@
-'use strict';
+describe('Push', function () {
+    
+    it('should have added 4 at the end of array [1, 2, 3]', function () {
+        var array = [1, 2, 3];
+        var results = push(array, 4);
 
-console.log('------------------------ TEST push ------------------------');
+        assert((results === 4), 'should array results length be 4, but got:'+results);
+    });
 
-console.log('should have added 4 at the end of array [1, 2, 3]');
-var a = [1, 2, 3];
-var length = push(a, 4);
-console.assert(length === 4, 'should array length be 4');
-console.assert(a[a.length - 1] === 4, 'should last value be 4');
-a.forEach(function (value, index) {
-    console.assert(value === index + 1, 'should value at index ' + index + ' be ' + (index + 1) + ', but got ' + value);
+    it('Verifies that the last value added is equal to 4', function () {
+        var array = [1, 2, 3];
+        push(array, 4);
+
+        assert(array[array.length - 1] === 4, 'should last value be 4, but got:'+array[array.length - 1]);
+    });
+    
+    it('Verifies each value of the array to be correct', function () {
+        var array = [1, 2, 3];
+        push(array, 4);
+
+        assert(array[0] === 1, 'should value at index 0 be 1');
+        assert(array[1] === 2, 'should value at index 1 be 2');
+        assert(array[2] === 3, 'should value at index 2 be 3');
+        assert(array[3] === 4, 'should value at index 3 be 4');
+    });
+
+    it('Verifies if the array is an array', function () {
+        var _error;
+        
+        try {
+            push('s', 1);
+            
+        } catch(error) {
+            _error = error;
+        } finally {
+            assert(_error instanceof TypeError, 'Should throw a TypeError, but got:'+_error.constructor.name);
+            assert(_error.message === 's is not an array', 'Error message should be "s is not an array" but got:'+_error.message);
+        }
+    });
+
+    it('Verifies if the isn\'t a value argument', function () {
+        var _error;
+        
+        try {
+            push([1]);
+            
+        } catch(error) {
+            _error = error;
+        } finally {
+            assert(_error instanceof TypeError, 'Should throw a TypeError, but got:'+_error.constructor.name);
+            assert(_error.message === 'There is no value tu push', 'Error message should be "s is not an array" but got:'+_error.message);
+        }
+    });
 });
 
-console.log('should have added 5 at the end of array [1, 2, 3, 4]');
-var a = [1, 2, 3, 4];
-var length = push(a, 5);
-console.assert(length === 5, 'should array length be 5');
-console.assert(a[a.length - 1] === 5, 'should last value be 5');
-console.assert(a[0] === 1, 'should value at index 0 be 1');
-console.assert(a[1] === 2, 'should value at index 1 be 2');
-console.assert(a[2] === 3, 'should value at index 2 be 3');
-console.assert(a[3] === 4, 'should value at index 3 be 4');
