@@ -1,15 +1,40 @@
 'use strict'
+describe("REVERSE TEST", function(){
 
-console.log("REVERSE TEST");
+    it('array should keep the same length',function(){
 
-console.log('array should keep the same length');
-var a = [1,2,3];
-var b = reverse(a);
-console.assert(a.length === 3, 'arrays length should be 3 not ' + a.length);
+        var a = [1,2,3];
+        var b = reverse(a);
+        assert(a.length === 3, 'arrays length should be 3 not ' + a.length);
 
-console.log('values should be paced inverted of the original order');
-var a = [3,3,1];
-var b = reverse(a);
-b.forEach(function(value,index){
-    console.assert(value === index + 1, "values are not reverted correctly" );
-});
+    })
+
+    it('values should be paced inverted of the original order', function(){
+
+        var a = [3,3,1];
+        var b = reverse(a);
+        b.forEach(function(value,index){
+        assert(value === index + 1, "values are not reverted correctly" );
+        });  
+
+    })
+    it('Should show the correct errors',function(){
+        
+        var _error;
+        
+        try {           
+            
+            reverse (1);
+    
+        } catch (error) {
+            
+            _error = error;
+        } finally {
+            
+            assert(_error instanceof TypeError, 'should error be of type TypeError');
+            assert(_error.message === '1 is not an Array', 'wrong message');
+        };
+    });
+
+
+})

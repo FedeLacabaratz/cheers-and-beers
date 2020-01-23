@@ -26,9 +26,7 @@ describe('FLAT TEST', function(){
         
         var _error;
         
-        try {
-            
-            var a = {};
+        try {           
             
             fill(1, 3);
     

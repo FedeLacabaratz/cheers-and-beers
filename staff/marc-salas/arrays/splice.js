@@ -1,7 +1,7 @@
 'use strict';
-var a = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 function splice(array, index, count, value) {
+    if (!(array instanceof Array)) { throw new TypeError(array +' is not an Array')};
     var result = []
     getComputedStyle
     for (var i = 1; i <= count; i++) {
