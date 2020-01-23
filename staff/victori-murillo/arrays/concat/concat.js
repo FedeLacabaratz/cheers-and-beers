@@ -8,14 +8,14 @@ function concat() {
     if (arguments[i] instanceof Array) {
 
       for (var j = 0; j < arguments[i].length; j++) {
-        newArray[newArray.length] = arguments[i][j]
+        newArray[newArray.length] = arguments[i][j];
       }
 
     } else {
-      newArray[newArray.length] = arguments[i]
+      newArray[newArray.length] = arguments[i];
     }
 
   }
 
-  return newArray
+  return newArray;
 }

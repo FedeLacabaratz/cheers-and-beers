@@ -1,39 +1,77 @@
-"use strict";
+describe("every", function () {
+  it("should return a boolean", function () {
+    assert(typeof every([1, 2], function (element) { return element > 2 }) === "boolean", "should return a boolean");
+  });
 
-console.log("TEST every");
+  it("should keep the same element in the array", function () {
 
-//1
-var message = "should return a boolean";
-console.log(message);
-var a = [2, 4, 8];
-console.assert(typeof every(a, function (num) {return num % 2 === 0}) === "boolean", message);
+    var array = [2, 4, 8];
+    var template = [];
+
+    for (var i = 0; i < array.length; i++) { template[i] = array[i] }
+
+    every(array, function (number) { return number % 2 === 0 })
+
+    template.forEach(function (element, index) {
+      assert(element === array[index], "should keep the same element in the array");
+    })
+  });
+
+  it("should return true if every element is true => (num > 7)", function () {
+    assert(every([8, 9], function (num) {
+      return num > 7;
+    }) === true, "should return true if every element is true => (num > 7)");
+  });
+
+  it("should return false if at least one element doesnt't pass the test implement", function () {
+    var array = ["hola", "hi", "hallo"];
+
+    assert(every(array, function (element) { return element.length > 3 }) === false,
+      "should return false if at least one element doesnt't pass the test implement");
+  });
+
+  it("should failt if not is a function as a second argument", function () {
+
+    (function() {
+      var _error;
+
+      try {
+        every([1, 2])
+      } catch (error) {
+        _error = error;
+      }
+
+      assert(_error instanceof TypeError, "should be an Error: TypeError, but got " +  _error);
+      assert(_error.message === "undefined is not a function", 'should show in message "undefined is not a function"');
+    })();
+    
+    (function() {
+      var _error;
+
+      try {
+        every([1, 2], 7)
+        
+      } catch (error) {
+        _error = error;
+      }
+
+      assert(_error instanceof TypeError, "should be an Error: TypeError, but got " + _error);
+      assert(_error.message === "7 is not a function", 'should show in message "7 is not a function"');
+    })();
+
+    (function() {
+      var _error;
+
+      try {
+        every([], true)
+      } catch (error) {
+        _error = error;
+      }
+
+      assert(_error instanceof TypeError, "shoud be an Error: TypeError, but got " + _error);
+      assert(_error.message === "true is not a function", 'should show in message "true is not a function"');
+    })();
+  });
 
 
-//2
-var message = "should keep the same element in the array";
-console.log(message);
-var a = [2, 4, 8];
-
-var template = [];
-// template = a.map(ele => ele); // refactor ES5
-for(var i = 0; i < a.length; i++) { template[i] = a[i] }
-
-every(a, function (num) {return num % 2 === 0})
-
-template.forEach(function (element, index) {
-  console.assert(element === a[index], message)
 });
-
-
-//3
-var message = "should return true if every element is true => (num > 7)"
-console.log(message)
-var a = [9, 8, 10];
-console.assert(every(a, function (num) {return num > 7}) === true, message);
-
-
-//4
-var message = "should return false if at least one element doesnt't pass the test implement";
-console.log(message)
-var a = ["hola", "hi", "hallo"];
-console.assert(every(a, function (string) {return string.length > 3 }) === false, message);
