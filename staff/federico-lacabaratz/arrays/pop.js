@@ -1,13 +1,13 @@
 'use strict';
 
-function pop(arr1) {
+function pop(array) {
     
-    var arr2 = [];
+    var result = [];
 
-    for (var i=0; i<arr1.length-1; i++) {
+    for (var i=0; i<array.length-1; i++) {
 
-        arr2[i] = arr1[i];
+        result[i] = array[i];
      
     };
-    return arr2;
+    return result;
 };

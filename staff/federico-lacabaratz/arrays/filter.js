@@ -1,16 +1,16 @@
 'use strict';
 
+function filter(array, condition) {
+    if (!(array instanceof Array)) throw new TypeError(array + ' is not an Array');
+    if (typeof condition !== 'function') throw new TypeError(condition + ' is not a function');
 
-function filter(arr1, condition) {
-    
-    var arr2= [];
-    
-    for (var i=0; i<arr1.length; i++) {
-        
-        if (condition(arr1[i])) {
-            arr2[arr2.length] = arr1[i];
-        };
-     
-    };
-    return arr2;
-};
+    var filtered = [];
+
+    for (var i = 0; i < array.length; i++) {
+        if (condition(array[i])) {
+            filtered[filtered.length] = array[i];
+        }
+    }
+
+    return filtered;
+}

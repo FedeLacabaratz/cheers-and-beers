@@ -1,26 +1,45 @@
-'use strict';
+describe('---------- TEST Filter ----------', function () {
+    it('Verifies that all numbers within the array are > than 18', function () {
+        var array = [10, 13, 56, 34, 57, 22, 5, 72, 33, 1];
 
-console.log('------------------------ TEST Filter ------------------------');
+        var results = filter(array, function (value) {
+            return value > 18;
+        });
 
-var a = [10, 13, 56, 34, 57, 22, 5, 72, 33, 1];
+        assert(results instanceof Array, 'should results be an Array, but got ' + results.constructor.name);
+        assert(results.length === 6, 'should results length be 6 but got ' + results.length);
 
-function isBiggerThan(value) {
-    return value > 18;
+        for (var i = 0; i < results.length; i++) {
+            assert(results[i] > 18, 'theres is an item in the result array that is not > 18');
+        }
+    });
 
-};
+    it('Verifies all the words with the letter "o" that exists within array', function () {
+        var array = ['abc', 'hola', 'mundo', 'hello', 'world'];
 
-console.log('It will show all numbers bigger than 18'); 
-var result = filter(a, isBiggerThan);
+        var results = filter(array, function (value) {
+            return value.indexOf('o') > -1;
+        });
 
-console.log('Verifies that all numbers within the array are > than 18');
-for (var i=0; i<result.length; i++) {
-    console.assert(result[i] > 18, 'theres is an item in the result array that is not < 18');
-};
+        assert(results instanceof Array, 'should results be an Array, but got ' + results.constructor.name);
+        assert(results.length === 4, 'should results length be 4 but got ' + results.length);
+        assert(results[0] === 'hola', 'should value be "hola", but got ' + results[0]);
+        assert(results[1] === 'mundo', 'should value be "mundo", but got ' + results[1]);
+        assert(results[2] === 'hello', 'should value be "hello", but got ' + results[2]);
+        assert(results[3] === 'world', 'should value be "world", but got ' + results[3]);
+    });
 
-console.log('Verifies each element within the array to be > than 18');
-console.assert(result[0] === 56, "a[0] this should be 56"); 
-console.assert(result[1] === 34, "a[1] this should be 34"); 
-console.assert(result[2] === 57, "a[2] this should be 57"); 
-console.assert(result[3] === 22, "a[3] this should be 22"); 
-console.assert(result[4] === 72, "a[4] this should be 72"); 
-console.assert(result[5] === 33, "a[5] this should be 33"); 
+    it('should fail on non-array first argument', function () {
+        (function () {
+            var _error;
+            try {
+                filter(undefined, function () { });
+            } catch (error) {
+                _error = error;
+            }
+            assert(_error instanceof TypeError, 'should error be of type TypeError, but got ' + _error);
+            assert(_error.message === 'undefined is not an Array', 'should fail with message "undefined is not an Array"');
+        })();
+
+    });
+});
