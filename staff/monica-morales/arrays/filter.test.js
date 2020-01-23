@@ -1,22 +1,37 @@
-'use strict';
-console.log('TEST filter');
+describe('filter', function(){
+    it('Should return values bigger than 5', function(){
+        (function(){
+        var array = [8,2,9,1,6];
+        function expres(value){
+            return value > 5;
+        }
+        var result = filter(array,expres);
+           
+        assert(result.length === 3, 'Result should be 3');
+    })();
+
+    it('Should failed if the first arguments is not an array', function(){
+        (function(){
+            var _error;
+            try {
+                filter('hello');
+            } catch (error){
+                _error = error;
+            }
+            assert(_error instanceof TypeError, 'The error should be TypeError');
+            assert(_error.message === 'hello is not an Array', 'Should fail with message: "hello is not an Array"');
+        })();
+    });
+    });
+});
 
 
-function isBiggerThan(value){return value > 4};
-var array = [5,7,3,6,1];
-function filter(array, expression){
-    var array2 = [];
-    for(var i =0; i<array.length; i++){
-        if(expression(array[i])){
-            array2[array2.length] = array[i];
-        };
-    };
-    return array2;
-};
-result =(filter(array, isBiggerThan));
 
-console.assert( array.length != result.length,'the original array has same length that newArray');
-console.log('Array original lenght is bigger than new array');
 
-console.assert(typeof result != 'boolean', "the result isn't a boolean");
-console.log("Result isn't a boolean");
+
+
+
+
+
+
+
