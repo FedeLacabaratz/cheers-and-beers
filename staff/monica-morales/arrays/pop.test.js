@@ -1,20 +1,71 @@
 describe('pop',function(){
-    it('should remove the last element from the array [1, 2, 3,4,5]', function () {
-        var array = [1, 2, 3, 4, 5];
-        var newArray = pop(array);
-        var length = newArray.length
-        assert(length === 4, 'should array length be 4, but got ' + length);
-        assert(array[array.length - 2] === 4, 'should last value be 4');
-    }); 
+    it('Should delete the last position and return the last position', function(){
+        (function (){ 
+            var a = [1,2,3,'juan'];
+            pop(a);
+            var result = [1,2,3];
+            assert(a.length === 3, 'The result should be 3');
+            assert(a[0] === result[0], 'Index o should be 1');
+            assert(a[1] === result[1], 'Index o should be 2');
+            assert(a[2] === result[2], 'Index o should be 3');
 
-    it('should delete 5 at the end of array [1, 2, 3, 4, 5]', function () {
-        var array = [1, 2, 3, 4, 5];
-        var newArray = pop(array);
-        assert(newArray.length === 4, 'should array length be 4, but got ' + newArray.length);
-        assert(newArray[newArray.length - 1] === 4, 'should last value be 4');
-        assert(array[0] === 1, 'should value at index 0 be 1');
-        assert(array[1] === 2, 'should value at index 1 be 2');
-        assert(array[2] === 3, 'should value at index 2 be 3');
-        assert(array[3] === 4, 'should value at index 3 be 4');
-    });   
-});
+        })();
+    it('Should delete the last position and return the last position', function(){
+        (function (){ 
+            var a = [1,2,3,'juan'];
+            pop(a);
+            var result = [1,2,3];
+            assert(a.length === 3, 'The result should be 3');
+            assert(a[0] === result[0], 'Index o should be 1');
+            assert(a[1] === result[1], 'Index o should be 2');
+            assert(a[2] === result[2], 'Index o should be 3');
+
+        })();
+
+    it('Should failed if the first arguments is not an array', function(){
+        (function (){
+            var _error;
+            try {
+                pop('helloWorld')
+            } catch (error) {
+                _error = error;
+            }
+            assert(_error instanceof TypeError , 'The error should be TypeError');
+            assert(_error.message ==='helloWorld is not an Array', 'Should fail with message: "helloWorld is not an Array"');
+
+        })();
+    
+
+    it('It should fail if the last element of the array is not the same that the result', )
+
+
+
+
+    })  
+
+
+
+
+
+
+
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})
