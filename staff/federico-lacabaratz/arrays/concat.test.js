@@ -1,26 +1,50 @@
-'use strict';
+describe("Concat", function() {
 
-console.log('------------------------ TEST Concat ------------------------');
+    it("Verifies that contanates 2 arrays", function(){
+        var array1 = [2, 6, 8];
+        var array2 = [7, 9, 3, 6];
 
-console.log('This should merge arrays a and b');
-var a = ['a', 'b', 'c'];
-var b = ['d', 'e', 'f'];
+        var newArray = concat(array1, array2);
 
-var result = concat(a, b);
-console.assert(result.length === (a.length + b.length), 'it should return a new array =', concat(a, b));
+        assert(newArray.length === 7, "should the length of new array be 7, but got " + newArray.length);
+    });
 
+    it("Verifies that the first element of the second array should be the last + 1 of the first", function() {
+        var array1 = [2, 6, 8];
+        var array2 = [7, 9, 3, 6];
 
-console.log('This should merge both numbers and letters into a single array')
-var a = [1, 3, 4, 5];
-var b = ['z', 'x', 'y', 'q'];
-var result = concat(a, b);
+        var newArray = concat(array1, array2);
 
-console.log('This should check each element of the array');
-console.assert(result[0] === 1, 'The value in a[0] should equal 1');
-console.assert(result[1] === 3, 'The value in a[1] should equal 3');
-console.assert(result[2] === 4, 'The value in a[2] should equal 4');
-console.assert(result[3] === 5, 'The value in a[3] should equal 5');
-console.assert(result[4] === 'z', 'The value in b[0] should equal z');
-console.assert(result[5] === 'x', 'The value in b[1] should equal x');
-console.assert(result[6] === 'y', 'The value in b[2] should equal y');
-console.assert(result[7] === 'q', 'The value in b[3] should equal q');
+        assert(array2[0] === newArray[3], "should return 7 , but got " + newArray[3]);
+    });
+    
+    it("Verifies each element within the new array following concatenation", function() {
+        var array1 = [2, 6, 8];
+        var array2 = [7, 9, 3, 6];
+
+        var newArray = concat(array1, array2);
+
+        assert(newArray[0] === 2, 'The value in newArray[0] should equal 2');
+        assert(newArray[1] === 6, 'The value in newArray[1] should equal 6');
+        assert(newArray[2] === 8, 'The value in newArray[2] should equal 8');
+        assert(newArray[3] === 7, 'The value in newArray[3] should equal 7');
+        assert(newArray[4] === 9, 'The value in newArray[4] should equal 9');
+        assert(newArray[5] === 3, 'The value in newArray[5] should equal 3');
+        assert(newArray[6] === 6, 'The value in newArray[6] should equal 6');
+    });
+
+    it('Verifies in case we have \'undefined\' instead of an array', function() {
+            
+        var _error;
+
+        try {
+            concat(undefined, 5);
+        } catch (error) {
+            _error = error;
+
+        } finally {
+            assert(_error instanceof TypeError, 'Should the error be of type TypeError, but got '+ _error.constructor.name);
+            assert(_error.message === 'undefined is not an array', 'should fail with message "undefined is not an array", but got '+ _error.message);
+        }
+    });
+});

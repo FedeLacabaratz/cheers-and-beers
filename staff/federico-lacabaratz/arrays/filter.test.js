@@ -1,4 +1,4 @@
-describe('---------- TEST Filter ----------', function () {
+describe('Filter', function () {
     it('Verifies that all numbers within the array are > than 18', function () {
         var array = [10, 13, 56, 34, 57, 22, 5, 72, 33, 1];
 
@@ -40,6 +40,5 @@ describe('---------- TEST Filter ----------', function () {
             assert(_error instanceof TypeError, 'should error be of type TypeError, but got ' + _error);
             assert(_error.message === 'undefined is not an Array', 'should fail with message "undefined is not an Array"');
         })();
-
     });
 });

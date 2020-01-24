@@ -1,4 +1,4 @@
-describe('---------- ForEach ----------', function() {
+describe('ForEach', function() {
     it('should array [1, 2, 3] be modified adding 10 to each value', function () {
         //a = 10
         var array = [1, 2, 3];

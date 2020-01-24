@@ -1,25 +1,27 @@
 'use strict';
 
-function concat(arr1, arr2) {
+function concat(array, value) {
     
-    var a = [];
+    if (!(array instanceof Array)) throw new TypeError(array + ' is not an array');
 
-    if (typeof(arr1) != 'object') {
-        a[0] = arr1;
+    var newArray = [];
+
+    if (typeof(array) != 'object') {
+        newArray[0] = array;
 
     } else {
-        for (var i = 0; i<arr1.length; i++) {
-            a[i] = arr1[i];
+        for (var i = 0; i<array.length; i++) {
+            newArray[i] = array[i];
         };
     };
 
-    if (typeof(arr2) != 'object') {
-        a[a.length] = arr2;
+    if (typeof(value) != 'object') {
+        newArray[newArray.length] = value;
 
     } else {
-        for (var i = 0; i<arr2.length; i++) {
-            a[a.length] = arr2[i];
+        for (var i = 0; i<value.length; i++) {
+            newArray[newArray.length] = value[i];
         };
     };
-    return a;
+    return newArray;
 };
