@@ -10,7 +10,7 @@ describe('SPLICE TEST', function(){
 
     })
 
-    it('the result shoud have the all the cuted numbers in the correct order', function(){
+    it('the result function should actue on the elements', function(){
 
         var a = [1,2,3,4,5,6]
         var b = splice(a,1,3);
