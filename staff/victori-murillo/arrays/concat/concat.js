@@ -1,6 +1,8 @@
 "use strict"
 
 function concat() {
+  if(!(arguments[0] instanceof Array)) throw new TypeError(arguments[0] + " is not an Array")
+  
   var newArray = [];
 
   for (var i = 0; i < arguments.length; i++) {

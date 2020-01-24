@@ -71,6 +71,19 @@ describe("every", function () {
       assert(_error instanceof TypeError, "shoud be an Error: TypeError, but got " + _error);
       assert(_error.message === "true is not a function", 'should show in message "true is not a function"');
     })();
+
+    (function () {
+      var _error;
+
+      try {
+        every([1, 2], {})
+      } catch (error) {
+        _error = error;
+      }
+
+      assert(_error instanceof TypeError, "shoud be an Error: TypeError, but got " + _error);
+      assert(_error.message === "[object Object] is not a function", 'should show in message "[object Object] is not a function"');
+    })();
   });
 
 

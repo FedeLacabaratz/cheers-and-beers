@@ -1,13 +1,13 @@
 "use strict"
 
 function some(array, expression) {
-  var result = false;
+  if(!(expression instanceof Function)) throw new TypeError(expression + " is not a function");
 
   for (var i = 0; i < array.length; i++) {
 
-    var validate = expression(array[i]);
-    if (validate) result = true;
-  }
+    if (expression(array[i])) {
+      return  true;
+    }
 
-  return result;
+  }
 }

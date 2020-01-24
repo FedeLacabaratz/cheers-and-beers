@@ -68,7 +68,6 @@ describe('forEach', function() {
   it('should fail on non-function expression', function() {
 
     (function() {
-
       var _error;
   
       try {
@@ -83,7 +82,6 @@ describe('forEach', function() {
     })();
 
     (function() {
-      
       var _error;
 
       try {
@@ -98,7 +96,6 @@ describe('forEach', function() {
     })();
 
     (function() {
-      
       var _error;
 
       try {
@@ -115,7 +112,6 @@ describe('forEach', function() {
 
 
     (function() {
-
       var _error;
 
       try {
@@ -131,11 +127,10 @@ describe('forEach', function() {
 
 
     (function() {
-      
       var _error;
       
       try {
-        // forEach([1, 2], {})
+        forEach([1, 2], {})
 
       } catch (error) {
         _error = error;

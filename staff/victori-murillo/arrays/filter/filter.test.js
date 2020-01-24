@@ -26,8 +26,6 @@ describe("filter", function() {
 
   it("should fail is not a function as second argument", function() {
     
-
-    
     (function() {
       var _error;
 

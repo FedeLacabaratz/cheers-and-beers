@@ -2,6 +2,7 @@
 
 function every(array, expression) {
   if(!(expression instanceof Function)) throw new TypeError(expression + " is not a function");
+  
   var count = 0;
 
   for (var i = 0; i < array.length; i++) {
