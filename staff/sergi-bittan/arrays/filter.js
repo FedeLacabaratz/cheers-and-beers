@@ -2,9 +2,6 @@
 
 //var newArray = arr.filter(callback(currentValue[, index[, array]])[, thisArg])
 
-
-
-
 function filter(array,expression) 
 {
     if(!(array instanceof Array)) throw new TypeError(array + " is not an Array");
@@ -19,9 +16,4 @@ function filter(array,expression)
     }
     return newArr;
 };
-
-// var result = [1,2,4,5,];
-// var expresion = function(val){return val * 2};
-// var result = filter(result,expresion);
-//console.log(result);
 

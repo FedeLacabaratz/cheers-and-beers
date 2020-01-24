@@ -3,14 +3,15 @@
 //true si la función callback devuelve un valor truthy para cualquier elemento del array; en caso contrario, false.
 
 
-var arr = [1,3,4,5,6,7,7];
+//var arr = [1,3,4,5,6,7,7];
 
-function some(arr,expresion)
+function some(array,expression)
 {
+    if(!(expression instanceof Function)) throw new TypeError(expression + "is not a function");
     var boolean = false;
-    for (var i = 0; i<arr.length;i++)
+    for (var i = 0; i<array.length;i++)
     {
-        if (expresion(arr[i]))
+        if (expression(array[i]))
         {
             boolean = true;
             break;
@@ -19,24 +20,4 @@ function some(arr,expresion)
     return boolean;
 }
 
-//console.log(some(arr,function(val){ return val > 7}));
-
-
-
-
-
-var arr = [2,4,66,7,2,6,8,9,];
-
-function some(arr,expresion)
-{
-    var boolean = false;
-    for (var i = 0;i<arr.length;i++)
-    {
-        if (expresion(arr[i]))
-        {
-            boolean = true;
-            break;
-        }
-    }
-    return boolean;
-}
+//console.log(some(arr,function(val){ return val > 7})

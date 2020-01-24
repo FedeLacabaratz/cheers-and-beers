@@ -35,14 +35,16 @@ describe("filter",function()
 
         assert(result.length === 3 ,"result should return 3, but got " + result.length);
     });
+
+    it('should fail on non-array first argument', function () 
+    {
+        var _error;
+        try {
+            filter(undefined, function () { });
+        } catch (error) {
+            _error = error;
+        }
+        assert(_error instanceof TypeError, 'should error be of type TypeError, but got ' + _error);
+        assert(_error.message === 'undefined is not an Array', 'should fail with message "undefined is not an Array"');
+    });
 })
-
-
-
-
-
-
-
-
-
-
