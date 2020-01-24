@@ -4,7 +4,7 @@ var newArray = [];
 
 function flat(a, depth = 1){
     for (var i=0; i<a.length; i++){
-        if (a[i] instanceof Array & depth>0){
+        if (a[i] instanceof Array && depth>0){
             flat(a[i], depth-1);
         }
         else{
