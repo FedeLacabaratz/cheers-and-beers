@@ -41,4 +41,13 @@ describe('Murray.prototype.indexOf', function () {
         expect(index).toBe(3);
     });
 
+    it('should a negative index be provided, it will take it as an offset ', function () {
+        var murray = new Murray('test', 1, 3, 'test');
+
+        var index = murray.indexOf('test', -2);
+
+        expect(index).toBe(3);
+
+    });
+
 });
