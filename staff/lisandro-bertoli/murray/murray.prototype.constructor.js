@@ -63,3 +63,12 @@ Murray.prototype.concat = function (args) {
     return result;
 }
 
+Murray.prototype.map = function (expression) {
+    if (typeof expression !== 'function') throw new TypeError(expression + ' is not a function')
+    var returnValue = new Murray();
+
+    for (var i = 0; i < this.length; i++) {
+        returnValue.push(expression(this[i], i));
+    }
+    return returnValue;
+}
