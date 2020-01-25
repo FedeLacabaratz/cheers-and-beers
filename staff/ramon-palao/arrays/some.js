@@ -1,6 +1,7 @@
 var b = ["red", "green", "yellow", "pink"];
 
 function some(array, expression){
+    
     for (var i = 0; i < array.length; i++){
         if(expression(array[i])){
             return true;
@@ -8,6 +9,7 @@ function some(array, expression){
     }
     return false;
 }
+/*
 console.log(b.some(function(value){
     return value === "yellow"
 }));
@@ -17,3 +19,4 @@ console.log(b.some(function(value){
     return value === "orange"
 }));
 //Expected output: false
+*/
