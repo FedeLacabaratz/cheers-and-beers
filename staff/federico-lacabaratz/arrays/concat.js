@@ -4,24 +4,21 @@ function concat(array, value) {
     
     if (!(array instanceof Array)) throw new TypeError(array + ' is not an array');
 
-    var newArray = [];
+    var newArray = new Murray;
+    
+    for (var i = 0; i < array.length; i++) {
+        newArray[i] = array[i];
+    }
 
-    if (typeof(array) != 'object') {
-        newArray[0] = array;
+    if (value instanceof Array) {
+        var index = 0;
 
+        for (var j = array.length; j < array.length + value.length; j++) {
+            newArray[j] = value[index];
+            index++;
+        }
     } else {
-        for (var i = 0; i<array.length; i++) {
-            newArray[i] = array[i];
-        };
-    };
-
-    if (typeof(value) != 'object') {
-        newArray[newArray.length] = value;
-
-    } else {
-        for (var i = 0; i<value.length; i++) {
-            newArray[newArray.length] = value[i];
-        };
-    };
+        newArray[array.length] = value;
+    }
     return newArray;
-};
+}

@@ -1,6 +1,5 @@
 'use strict';
 
-
 function every(arr1, condition) {
     
     var result = true;
