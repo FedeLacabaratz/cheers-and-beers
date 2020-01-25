@@ -94,5 +94,16 @@ Murray.prototype.concat = function() {
 }
 
 Murray.prototype.fill = function(){
-    console.log('miau miau');
+    //debugger
+    arguments[1] = arguments[1] || 0;
+    arguments[2] = arguments[2] || this.length;
+    if (!(typeof arguments[1] === "number")){
+        arguments[1] = 0;
+    } else if(!(typeof arguments[2] === "number")){
+        arguments[2] = this.length;
+    }
+    for (var i=arguments[1]; i < arguments[2]; i++){
+        this[i]=arguments[0];
+    }
+    return this;
 }
