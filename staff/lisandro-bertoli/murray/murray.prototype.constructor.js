@@ -72,3 +72,13 @@ Murray.prototype.map = function (expression) {
     }
     return returnValue;
 }
+
+Murray.prototype.indexOf = function (value, fromIndex) {
+
+    var startAtIndex = parseInt(fromIndex, 10) || 0;
+
+    for (var i = startAtIndex; i < this.length; i++) {
+        if (this[i] === value) return i;
+    }
+    return -1
+}
