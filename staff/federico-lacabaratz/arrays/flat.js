@@ -16,4 +16,4 @@ function flat(array, depth, accumulator) {
 		}
 	}
 	return result;
-}
+};

@@ -1,9 +1,8 @@
 describe('Murray.prototype.every', function() {
 
     it('Returns \'true\' if all elements in a murray are < than 51', function () {
-        var murray = [1, 10, 20, 32, 15, 50, 40, 49];
+        var murray = new Murray(1, 10, 20, 32, 15, 50, 40, 49);
         
-
         var result = murray.every(function(value) {
             if(value < 51) {
                 return true
@@ -15,9 +14,8 @@ describe('Murray.prototype.every', function() {
     });
     
     it('Returns \'true\' if all elements in a murray are > than 5', function () {
-        var murray = [7, 10, 20, 32, 15, 50, 40, 49];
+        var murray = new Murray(7, 10, 20, 32, 15, 50, 40, 49);
         
-
         var result = murray.every(function(value) {
             if(value > 5) {
                 return true
@@ -29,7 +27,7 @@ describe('Murray.prototype.every', function() {
     });
     
     it('Verifies all elements comply with the original condition (value < 51)', function () {
-        var murray = [1, 10, 20, 32, 15, 50, 40, 49];
+        var murray = new Murray(1, 10, 20, 32, 15, 50, 40, 49);
         
         var result = []
         
@@ -47,7 +45,7 @@ describe('Murray.prototype.every', function() {
         expect(result[7]).toBe(true);
     })
 
-    it('should fail on non-array first argument', function () {
+    it('should fail on non-function expression', function () {
         expect(function () {
             new Murray(1, 2, 3).every();
         }).toThrowError(TypeError, 'undefined is not a function');
@@ -59,5 +57,9 @@ describe('Murray.prototype.every', function() {
         expect(function () {
             new Murray(1, 2, 3).every(1);
         }).toThrowError(TypeError, '1 is not a function');
+
+        expect(function () {
+            new Murray(1, 2, 3).every(null);
+        }).toThrowError(TypeError, 'null is not a function');
     })
 });

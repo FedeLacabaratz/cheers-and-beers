@@ -38,8 +38,6 @@ describe('Murray.prototype.forEach', function () {
             new Murray(1, 2, 3).forEach(true);
         }).toThrowError(TypeError, 'true is not a function');
 
-        // TODO refactor following unhappy cases to expect
-
         expect(function () {
             new Murray(1, 2, 3).forEach(1);
         }).toThrowError(TypeError, '1 is not a function');
