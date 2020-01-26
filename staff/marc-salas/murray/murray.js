@@ -113,7 +113,7 @@ Murray.prototype.splice = function (startIndex, count, value) {
     startIndex = Number.isInteger(Math.floor(startIndex)) ?  Math.floor(startIndex)  : 0;
 
     if (startIndex > thisCopy.length-1) {
-        startIndex = thisCopy.length-1
+        startIndex = thisCopy.length
     } else if(startIndex < 0){
         if (-startIndex > thisCopy.length){
             startIndex = 0;
@@ -152,7 +152,16 @@ Murray.prototype.splice = function (startIndex, count, value) {
     }
 
     return result;
+}
 
-
+Murray.prototype.reverse = function(){
+    var result = new Murray();
+    for (var i = 0; i < this.length; i++){
+        result.push(this[this.length-1-i]);
+    }
+    for (var i = 0; i < this.length; i++){
+        this[i] = result[i];
+    }
+    return result;
 }
 
