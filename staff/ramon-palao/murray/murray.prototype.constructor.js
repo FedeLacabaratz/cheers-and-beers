@@ -18,17 +18,19 @@ function Murray() {
         for (var i = 0; i < arguments.length; i++) this[i] = arguments[i];
 }
 
-// Murray.prototype.push = function (value) {
-//     this[this.length] = value;
+Murray.prototype.push = function () {
+    for(var i = 0; i < arguments.length; i++){
+        this[this.length] = arguments[i];
+        this.length++;
+    }
+    return this.length;
+};
 
-//     return ++this.length;
-// };
+Murray.prototype.forEach = function (expression) {
+    if (typeof expression !== 'function') throw new TypeError(expression + ' is not a function');
 
-// Murray.prototype.forEach = function (expression) {
-//     if (typeof expression !== 'function') throw new TypeError(expression + ' is not a function');
-
-//     for (var i = 0; i < this.length; i++) expression(this[i], i, this);
-// };
+    for (var i = 0; i < this.length; i++) expression(this[i], i, this);
+};
 
 Murray.prototype.some = function (expression) {
     if(typeof expression !== "function") throw new TypeError(expression + " is not a function");
@@ -81,4 +83,38 @@ Murray.prototype.includes = function(value, start){
         }
     }
     return false;
+};
+
+Murray.prototype.indexOf = function(value, start){
+    if(start === undefined) start = 0;
+    if(start < 0) start += this.length;
+    for (var i = start; i < this.length; i++){
+        if (this[i] === value){
+            return i;
+        }
+    }
+    return -1;
+};
+
+Murray.prototype.filter = function(expression){
+    if(!(this instanceof Murray)) throw new TypeError(this + ".filter is not a function");
+    if(typeof expression !== "function") throw new TypeError(expression + " is not a function");
+    var result = [];
+    for (var i = 0; i < this.length; i++){
+        if (expression(this[i])){
+            result[result.length] = this[i];
+        }
+    }
+    return result;
+};
+
+Murray.prototype.find = function(expression){
+    if(!(this instanceof Murray)) throw new TypeError(this + ".find is not a function");
+    if(typeof expression !== "function") throw new TypeError(expression + " is not a function");
+    for (var i = 0; i < this.length; i++){
+        if (expression(this[i])){
+            return this[i];
+        }
+    }
+    return undefined;
 };
