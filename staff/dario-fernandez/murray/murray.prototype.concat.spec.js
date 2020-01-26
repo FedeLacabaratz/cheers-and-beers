@@ -4,7 +4,6 @@ describe('Murray.prototype.concat()', function() {
         var murray2 = new Murray(4, 5, 6)
         var result = murray1.concat(murray2)
         expect(result.length).toBe(6)
-        debugger
         for(var i = 0; i < result.length; i++) {
             expect(result[i]).toBe(i + 1)
         }
