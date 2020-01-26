@@ -9,7 +9,6 @@ describe("Murray.prototype.unshift", function () {
     });
 
     it('should add the given value at index 0', function () {
-        debugger
         var murray = new Murray(1, 2, 3);
         murray.unshift(0);
 
