@@ -80,7 +80,6 @@ Murray.prototype.indexOf = function (value, fromIndex) {
     var startAtIndex = fromIndex < 0 ? this.length + fromIndex : fromIndex;
 
     for (var i = startAtIndex; i < this.length; i++) {
-
         if (this[i] === value) return i;
     }
     return -1
@@ -92,9 +91,80 @@ Murray.prototype.filter = function (expression) {
     var returnValue = new Murray();
 
     this.forEach(function (element, index) {
-
         expression(element, index) ? returnValue.push(element) : false;
     });
 
     return returnValue;
+}
+
+Murray.prototype.splice = function (startIndex, count, value) {
+    var thisCopy = new Murray();
+    for (var i = 0; i < this.length; i++) {
+        thisCopy.push(this[i]);
+    }
+
+    for (var i = 0; i < thisCopy.length; i++) {
+        this.pop();
+    }
+
+    var firstHalf = new Murray();
+    var secondHalf = new Murray();
+
+    var addCount = arguments.length > 2 ? arguments.length - 2 : 0;
+    startIndex = Number.isInteger(Math.floor(startIndex)) ? Math.floor(startIndex) : 0;
+
+    if (startIndex > thisCopy.length - 1) {
+        startIndex = thisCopy.length
+    } else if (startIndex < 0) {
+        if (-startIndex > thisCopy.length) {
+            startIndex = 0;
+        } else {
+            startIndex = thisCopy.length + startIndex;
+        }
+    }
+
+    if (count === undefined && arguments[0]) { count = thisCopy.length - startIndex };
+    if (typeof count !== "number") { count = 0 };
+    if (count > thisCopy.length - startIndex) { count = thisCopy.length - startIndex };
+    count = Math.floor(count);
+
+    var result = new Murray();
+
+    for (var i = 0; i < count; i++) {
+        result.push(thisCopy[startIndex + i]);
+    }
+    for (var i = 0; i < startIndex; i++) {
+        firstHalf.push(thisCopy[i]);
+    }
+    for (var i = 0; i < addCount; i++) {
+        firstHalf.push(arguments[2 + i]);
+    }
+    for (var i = startIndex; i < thisCopy.length; i++) {
+        secondHalf.push(thisCopy[i]);
+    }
+    for (var i = 0; i < count; i++) {
+        delete secondHalf[i];
+    }
+    var finalBoss = firstHalf.concat(secondHalf);
+
+    for (var i = 0; i < finalBoss.length; i++) {
+        if (finalBoss[i] !== undefined) {
+            this.push(finalBoss[i]);
+        }
+    }
+    return result;
+}
+
+Murray.prototype.shift = function () {
+    var removedValue = this[0];
+
+    delete this[0];
+
+    for (var i = 1; i < this.length; i++) {
+        this[i - 1] = this[i];
+    }
+
+    this.pop();
+
+    return removedValue;
 }
