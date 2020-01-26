@@ -97,8 +97,9 @@ Murray.prototype.filter = function (expression) {
     return returnValue;
 }
 
-Murray.prototype.splice = function (startIndex, count, value) {
+Murray.prototype.splice = function (startIndex, count) {
     var thisCopy = new Murray();
+
     for (var i = 0; i < this.length; i++) {
         thisCopy.push(this[i]);
     }
@@ -135,6 +136,7 @@ Murray.prototype.splice = function (startIndex, count, value) {
     }
     for (var i = 0; i < startIndex; i++) {
         firstHalf.push(thisCopy[i]);
+
     }
     for (var i = 0; i < addCount; i++) {
         firstHalf.push(arguments[2 + i]);
@@ -167,4 +169,21 @@ Murray.prototype.shift = function () {
     this.pop();
 
     return removedValue;
+}
+
+Murray.prototype.unshift = function () {
+    if (arguments.lengt === 0) return this.length;
+    var args = new Murray();
+
+    for (var i = 0; i < arguments.length; i++) args.push(arguments[i])
+
+    args = args.concat(this);
+
+    for (var i = 0; i < args.length; i++) {
+        this[i] = args[i]
+    }
+
+    this.length = args.length;
+
+    return this.length
 }
