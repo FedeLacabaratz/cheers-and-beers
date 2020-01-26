@@ -1,5 +1,5 @@
 describe("Murray.prototype.concat", function(){
-    it("should murrayOne and murrayTwo be the same object after using the method", function(){
+    it("should murrayOne and murrayTwo not to be modified after using the method", function(){
         var murrayOne = new Murray(1, 2, 3);
         var murrayTwo = new Murray(4, 5, 6);
         var murrayConcat = murrayOne.concat(murrayTwo);
@@ -44,7 +44,7 @@ describe("Murray.prototype.concat", function(){
         expect(murrayConcat).toBeInstanceOf(Murray);
     });
 
-    it("should concat the instance of Murray to strings, numbers or booleans", function(){
+    it("should instance of Murray be concatenated to strings, numbers or booleans", function(){
         var murrayOne = new Murray(1, 2, 3);
         var murrayString = murrayOne.concat("hello");
         var murrayBoolean = murrayOne.concat(true);
@@ -55,10 +55,32 @@ describe("Murray.prototype.concat", function(){
         expect(murrayNumber[3]).toBe(19);
     });
 
+    it("should instance of Murray be concatenated to undefined", function(){
+        var murrayOne = new Murray(1, 2, 3);
+        var murrayUndefined = murrayOne.concat(undefined);
+
+        expect(murrayUndefined[3]).toBe(undefined);
+    });
+
     it("should return the object which calls the method if there are no parameters within the method", function(){
         var murrayOne = new Murray(1, 2, 3);
+        var murrayConcat = murrayOne.concat();
         
+        expect(murrayConcat.length).toBe(murrayOne.length);
+        expect(murrayConcat[0]).toBe(murrayOne[0]);
+        expect(murrayConcat[1]).toBe(murrayOne[1]);
+        expect(murrayConcat[2]).toBe(murrayOne[2]);
+    });
 
-        expect(murrayOne.concat()).toBe(murrayOne);
-    })
-})
+    it("should fail if undefined is concatenated to an instance of Murray", function(){
+        var murrayOne = new Murray(1, 2, 3);
+
+        expect(function(){undefined.concat(murrayOne)}).toThrowError(TypeError, "Cannot read property 'concat' of undefined");
+    });
+
+    it("should fail if a boolean is concatenated to an instance of Murray", function(){
+        var murrayOne = new Murray(1, 2, 3);
+
+        expect(function(){true.concat(murrayOne)}).toThrowError(TypeError, "true.concat is not a function");
+    });
+});

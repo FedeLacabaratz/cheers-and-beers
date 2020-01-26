@@ -17,19 +17,18 @@ function Murray() {
     if (!initializeWithLength)
         for (var i = 0; i < arguments.length; i++) this[i] = arguments[i];
 }
-/*
-Murray.prototype.push = function (value) {
-    this[this.length] = value;
 
-    return ++this.length;
-};
+// Murray.prototype.push = function (value) {
+//     this[this.length] = value;
 
-Murray.prototype.forEach = function (expression) {
-    if (typeof expression !== 'function') throw new TypeError(expression + ' is not a function');
+//     return ++this.length;
+// };
 
-    for (var i = 0; i < this.length; i++) expression(this[i], i, this);
-};
-*/
+// Murray.prototype.forEach = function (expression) {
+//     if (typeof expression !== 'function') throw new TypeError(expression + ' is not a function');
+
+//     for (var i = 0; i < this.length; i++) expression(this[i], i, this);
+// };
 
 Murray.prototype.some = function (expression) {
     if(typeof expression !== "function") throw new TypeError(expression + " is not a function");
@@ -43,14 +42,15 @@ Murray.prototype.some = function (expression) {
 
 Murray.prototype.concat = function(){
     var newMurray = new Murray
-
+    if(typeof this === "undefined") throw new TypeError("Cannot read property 'concat' of " + this);
+    if(typeof this === "boolean") throw new TypeError(this + ".concat is not a function");
     for(var i = 0; i < this.length; i++){
         newMurray[i] = this[i];
         ++newMurray.length; 
     }
 
     for (var i=0; i<arguments.length;  i++){
-        if(typeof arguments[i] === "string" || typeof arguments[i] === "boolean" || typeof arguments[i] === "number" || typeof arguments[i] === "function"){
+        if(typeof arguments[i] === "string" || typeof arguments[i] === "boolean" || typeof arguments[i] === "number" || typeof arguments[i] === "function" || typeof arguments[i] === "undefined"){
             newMurray[newMurray.length] = arguments[i]; ++newMurray.length;
         } else {
             for (var j = 0; j < arguments[i].length; j++){
@@ -60,4 +60,14 @@ Murray.prototype.concat = function(){
         }  
     }
     return newMurray;
+};
+
+Murray.prototype.pop = function(){
+    var result = [];
+    result[result.length] = this[this.length -1];
+
+    delete this[this.length - 1];
+    --this.length;
+
+    return result[result.length -1];
 };
