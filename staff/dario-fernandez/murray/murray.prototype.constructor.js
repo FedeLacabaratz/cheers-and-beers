@@ -7,6 +7,9 @@ function Murray() {
             this[i] = undefined
             this.length++
         }
+        for(var i = 0; i < this.length; i++) {
+            delete this[i]
+        }
     } else if(arguments.length === 1 && typeof arguments[0] === 'number' && !(Number.isInteger(arguments[0]))) {
         throw new RangeError('Invalid murray length')
     } else {
@@ -107,7 +110,7 @@ Murray.prototype.splice = function() {
     } else {
         deleteIndex = Math.floor(deleteIndex)
     }
-    
+
     // Action
     for(var i = 0; i < start && i < this.length; i++){
         auxiliarMurray.push(this[i])
