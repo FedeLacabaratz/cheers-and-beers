@@ -63,6 +63,6 @@ describe("Murray.prototype.map", function() {
     expect(function() {
       new Murray(1, 2, 3).map(false)
     }).toThrowError(TypeError, "false is not a function")
-
   })
+  
 })

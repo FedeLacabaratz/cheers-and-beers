@@ -1,7 +1,9 @@
 describe("Murray.prototype.concat", function() {
 
   it("should return a new murray", function() {
-    expect(new Murray(1, 2).concat([1])).toBeInstanceOf(Murray)
+
+
+    expect(new Murray(1, 2).concat(new Murray(1))).toBeInstanceOf(Murray)
   })
 
   it("should concaten a murray and number/string/boolean/object", function() {
