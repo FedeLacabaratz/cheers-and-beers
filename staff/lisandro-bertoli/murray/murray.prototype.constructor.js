@@ -85,3 +85,16 @@ Murray.prototype.indexOf = function (value, fromIndex) {
     }
     return -1
 }
+
+Murray.prototype.filter = function (expression) {
+    if (typeof expression !== 'function') throw new TypeError(expression + ' is not a function');
+
+    var returnValue = new Murray();
+
+    this.forEach(function (element, index) {
+
+        expression(element, index) ? returnValue.push(element) : false;
+    });
+
+    return returnValue;
+}
