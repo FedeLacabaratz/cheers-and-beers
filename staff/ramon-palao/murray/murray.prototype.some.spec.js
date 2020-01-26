@@ -1,4 +1,4 @@
-describe("murray.prototype.some", function(){
+describe("Murray.prototype.some", function(){
     it("should return true if an element matches the expression", function(){
         var murray = new Murray(10, 2, 15, 24, 8);
         var result = murray.some(function(value){ return value > 20});

@@ -5,7 +5,7 @@ function Murray() {
 
     var initializeWithLength = (function () {
         if (_arguments.length === 1 && typeof _arguments[0] === 'number')
-            if (Number.isInteger(_arguments[0]))
+            if (Number.isInteger(_arguments[0]) && _arguments[0] > 0)
                 return true;
             else throw new RangeError('Invalid murray length')
 
@@ -70,4 +70,15 @@ Murray.prototype.pop = function(){
     --this.length;
 
     return result[result.length -1];
+};
+
+Murray.prototype.includes = function(value, start){
+    if(start === undefined) start = 0;
+    if(start < 0) start += this.length;
+    for (var i = start; i < this.length; i++){
+        if (this[i] === value){
+            return true;
+        }
+    }
+    return false;
 };
