@@ -22,10 +22,44 @@ function describe(description, tests) {
     tests();
 }
 
-function expect() {
-  return {
-    toBe: function(expected) {
-      
+function expect(target) {
+    return {
+        toBe: function(expected) {
+            assert(target === expected, 'expected ' + target + ' to be ' + expected);
+        },
+
+        not: {
+            toBe: function(expected) {
+                assert(target !== expected, 'expected ' + target + ' not to be ' + expected);
+            }
+        },
+
+        toThrowError: function(errorType, message) {
+            var fail;
+
+            try {
+                target();
+            } catch (error) {
+                fail = error;
+            }
+
+            assert(typeof fail !== 'undefined', 'should error ' + fail + ' be defined');
+            assert(fail instanceof errorType, 'should error be of type ' + errorType.name + ' but got ' + fail.constructor.name);
+            assert(fail.message === message, 'should fail with message "' + message + '", but got "' + fail.message + '"');
+        },
+
+        toBeInstanceOf: function(expected) {
+            assert(target instanceof expected, 'expected ' + target.constructor.name + ' to be instance of ' + expected.name);
+        },
+
+        toBePrimitive: function() { // VERY custom matcher (not very official)
+            var type = typeof target;
+
+            assert(type !== 'object' && type !== 'function', 'expected ' + target + ' to be primitive');
+        },
+
+        toBeUndefined: function() {
+            assert(typeof target === 'undefined', 'should ' + target + ' be undefined');
+        }
     }
-  }
 }

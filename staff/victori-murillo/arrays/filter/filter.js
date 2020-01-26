@@ -13,5 +13,5 @@ function filter(array, expression) {
 
   }
 
-  return newArray;
+  return passed;
 }
