@@ -90,8 +90,44 @@ Murray.prototype.filter = function(callback)
 };
 Murray.prototype.slice = function(startIndex, endIndex)
 {
-    debugger
     var newMurray = new Murray;
+    if (startIndex < 0 && endIndex < 0){
+        if (startIndex === endIndex || startIndex > endIndex){
+            newMurray = new Murray;
+            return;
+        }
+    
+        startIndex = -1 * (startIndex);
+        endIndex = -1 * (endIndex);
+        for (var i = this.length - startIndex; i < this.length - endIndex; i++)
+        {
+            newMurray.push(this[i]);
+        }
+        return newMurray;
+    }
+    if(endIndex < 0)
+    {
+        i = startIndex;
+        endIndex = -1 * (endIndex);
+        this.length = (this.length - 1) - endIndex;
+        for (var i = startIndex; i <= this.length; i++)
+        {
+            newMurray.push(this[i]);
+        }
+        return newMurray;
+    }
+    
+    if (startIndex < 0)
+    {   
+        startIndex = -1*(startIndex);
+        startIndex = this.length - startIndex;
+        for (var i = startIndex; i < this.length; i++)
+        {
+            newMurray.push(this[i]);
+        }
+        return newMurray;
+    }
+    
     var endIndex = endIndex || this.length;
     for (var i = startIndex || 0; i< endIndex; i++)
     {
@@ -99,5 +135,35 @@ Murray.prototype.slice = function(startIndex, endIndex)
     }
     return newMurray;
         
+};
+Murray.prototype.shift = function(){
+    var firstPosition = this[0];
+    if (this.length === 0){
+        return undefined;
+    }
+    for (var i = 0; i < this.length; i++)
+    {
+        this[i] = this[i+1];
+    }
+    this.pop();
+    
+
+    //this.length = this.length - 1;//debo modificar la longitud de murray;
+    return firstPosition;
+};
+Murray.prototype.findIndex = function(callback){
+    if(typeof callback !== "function") throw new TypeError(callback + " is not a function");
+    var index = 0;
+    for (var i = 0;i<this.length;i++)
+    {
+        if (callback(this[i]))
+        {
+            index = i;
+            return index;
+        }
+    }
+    index = -1;
+    return index;
 }
+
 
