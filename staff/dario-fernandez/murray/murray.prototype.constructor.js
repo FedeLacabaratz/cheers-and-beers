@@ -142,3 +142,16 @@ Murray.prototype.splice = function() {
     }
     return result
 }
+
+Murray.prototype.reduce = function() {
+    if(!(arguments[0] instanceof Function)) {
+        throw new TypeError(arguments[0] + ' is not a function')
+    }
+    var initialValue = arguments[1] || 0
+    var result = initialValue
+    var expression = arguments[0]
+    for(var i = 0; i < this.length; i++) {
+        result = expression(result, this[i], i, this)
+    }
+    return result
+}
