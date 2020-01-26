@@ -54,6 +54,7 @@ Murray.prototype.concat = function (){
 Murray.prototype.map = function (expression){
     if (typeof expression !== 'function') throw new TypeError(expression + ' is not a function');
     if(expression===undefined) throw new TypeError ('It is necessary an expression');
+    
     var newMurray = new Murray();
     for(var i = 0; i<this.length; i++){
         newMurray[i] = expression(this[i]);
@@ -81,19 +82,47 @@ Murray.prototype.from = function (value){
 };
 
 Murray.prototype.shift = function (){
-    var newMurray = new Murray();
-    for(var i = 0; i < this.length; i++){
-        var firstElement = this[0];
-        if(i>0){
-            newMurray.push(this[i]);
-        }
-    }
-    return firstElement;
-}
+    var firstIndex = this[0];
+    for(var i = 0; i<this.length; i++){
+        this[i] = this[i+1]
+    };
+    if(this.length > 0){
+        delete this[this.length-1]
+        --this.length;
+        return firstIndex;
+    }else{
+        return undefined;
+    };
+};
 
-var a = new Murray(1,2,3,4)
-var b = a.shift();
-console.log(b);
+Murray.prototype.filter = function(expression){
+    if(expression === undefined) throw new TypeError ('It is necessary an expression');
+    if (!(this instanceof Murray)) throw new TypeError(this + ' is not a Murray');
+   
+    var newMurray = new Murray();
+    for(var i =0; i<this.length; i++){
+        if(expression(this[i])){
+            newMurray[newMurray.length] = this[i];
+            ++newMurray.length;
+        };
+    };
+    return newMurray;
+};
+
+Murray.prototype.find = function(expression){
+    if(expression === undefined) throw new TypeError ('It is necessary an expression');
+    if (!(this instanceof Murray)) throw new TypeError(this + ' is not a Murray');
+    for(var i =0; i<this.length; i++){
+        if(expression(this[i])){
+            return this[i];
+        };
+    };
+    return undefined;
+};
+
+
+
+
 
 
 

@@ -30,6 +30,6 @@ describe('Murray.prototype.from',function(){
     it('Should return a murray', function(){
         var result = new Murray().from('hello');
 
-        expect(result instanceof Murray).toBe(true);
+        expect(result).toBeInstanceOf(Murray);
     });
 });
