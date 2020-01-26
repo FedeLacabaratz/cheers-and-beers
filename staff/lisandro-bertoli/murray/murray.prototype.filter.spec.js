@@ -20,6 +20,12 @@ describe('Murray.prototype.filter', function () {
     it('should not modify the original array', function () {
         var murray = new Murray(1, 2, 3);
         murray.filter(function (element) { return element + 1 });
+
+        expect(murray.length).toBe(3);
+        expect(murray[0]).toBe(1);
+        expect(murray[1]).toBe(2);
+        expect(murray[2]).toBe(3);
+
     });
 
     it('should iterate through all elements in the Murray', function () {
@@ -36,6 +42,10 @@ describe('Murray.prototype.filter', function () {
         var returnValue = murray.filter(function (element, index) {
             return index % 2 === 0 ? true : false;
         });
+
+        expect(returnValue[0]).toBe(1);
+        expect(returnValue[1]).toBe(3);
+        expect(returnValue[2]).toBe(5);
     });
 
     it('should fail if non-function expression is given', function () {
