@@ -15,7 +15,6 @@ Murray.prototype.splice = function(starts, remove) {
     remove = Math.floor(remove)
   }
 
-
   var elementsToAdd = new Murray
 
   if(arguments.length > 2) {

@@ -7,11 +7,10 @@ describe("Murray.prototype.slice", function() {
 
   it("should the original murray will not be modified", function() {
     var murray = new Murray(1, 2, 3, 4)
-    var newMurray = murray.slice(1)
+    murray.slice(1)
     murray.forEach(function(element, index) {
       expect(element).toBe(index + 1)
     })
-
   })
 
   it("should cut the murray from the first until the second argument", function() {
@@ -29,10 +28,6 @@ describe("Murray.prototype.slice", function() {
   it("should cut the murray using negative arguments", function() {
     var murray = new Murray('ant', 'bison', 'camel', 'duck', 'elephant')
     var newMurray = murray.slice(-5, -2)
-    console.log(newMurray)
     expect(newMurray[0]).toBe("ant", "bison", "camel")
-    // expect(newMurray[1]).toBe(3)
-    // expect(newMurray[2]).toBe(22)
   })
-  
 })
