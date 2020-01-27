@@ -165,5 +165,24 @@ Murray.prototype.findIndex = function(callback){
     index = -1;
     return index;
 }
+Murray.prototype.concat = function(){
+    debugger
+    newMurray = new Murray;
+    for (var i = 0;i < this.length; i++)
+    {
+        newMurray.push(this[i])
+    }
+    for (var i = 0; i < arguments.length; i++)
+    {
+        if (arguments[i] instanceof Murray)
+        {
+            for (var j = 0; j < arguments[i].length; j++)
+            {
+                newMurray.push(arguments[i][j]);
+            }
+        }
+        newMurray.push(arguments[i]);
+    }
+}
 
 
