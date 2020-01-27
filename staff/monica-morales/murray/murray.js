@@ -120,9 +120,53 @@ Murray.prototype.find = function(expression){
     return undefined;
 };
 
+Murray.prototype.reverse = function(){
+    var container = new Murray();
+    var conta = 0;
+    for(var i = this.length-1; i >= 0; i--){
+        container[conta] = this[i];
+        conta++;  
+        ++container.length;      
+    };
+    for(var i = 0; i < container.length; i++){
+        this[i] = container[i];
+    }
+    return this;
+};
 
+Murray.prototype.slice = function(start, end){
+    var newMurray = new Murray();
+    for(var i = start; i < end; i++){
+        newMurray[newMurray.length] = this[i];
+        ++newMurray.length;
+    };
+    return newMurray;
+};
 
+Murray.prototype.every = function(expression){
+    if(expression === undefined) throw new TypeError ('It is necessary an expression');
+    if (!(this instanceof Murray)) throw new TypeError(this + ' is not a Murray');
+    var result = true;
+    for (var i=0; i<this.length; i++){
+        if(!expression(this[i])){
+            result = false;
+            break;
+        };
+    };
+    return result;
+};
 
+Murray.prototype.indexOf = function(value, start){
+    if (!(this instanceof Murray)) throw new TypeError(this + '.indexOf is not a function');
 
+    if(start === undefined){start = 0};
+    if(start < 0){start += this.length};
+    for(var i = start; i < this.length; i++){
+        if(this[i] === value){
+            return i;
+        }
+    };
+    return -1    
+};
 
 

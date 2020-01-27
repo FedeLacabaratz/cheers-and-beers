@@ -5,10 +5,6 @@ describe('Murray.prototype.push', function () {
 
         expect(length).toBe(4);
         expect(murray[murray.length - 1]).toBe(4);
-
-        murray.forEach(function (value, index) {
-            expect(value).toBe(index + 1);
-        });
     });
 
     it('should have added 5 at the end of murray [1, 2, 3, 4]', function () {

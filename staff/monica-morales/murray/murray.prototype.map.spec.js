@@ -31,7 +31,6 @@ describe('Murray.prototype.map', function () {
         }).toThrowError(TypeError, 'undefined is not a function');
     });
     
-
     it('should fail if expression is a boolean', function () {
         expect(function () {
         new Murray(1, 2, 3).map(true);
