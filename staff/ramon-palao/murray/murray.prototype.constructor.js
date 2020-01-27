@@ -118,3 +118,20 @@ Murray.prototype.find = function(expression){
     }
     return undefined;
 };
+
+Murray.prototype.join = function(value = ","){
+    if(!(this instanceof Murray)){throw new TypeError(this + " is not a function")}
+    var result = "";
+    for (var i=0; i<this.length; i++){
+        if(this[i] === null || this[i] === undefined){
+            this[i] = "";
+        }
+        if(i==this.length-1){
+            result += this[i];
+        }
+        else{
+            result += this[i] + value; 
+        }
+    }
+    return result;
+};
