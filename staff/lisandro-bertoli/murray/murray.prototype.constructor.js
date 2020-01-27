@@ -187,3 +187,18 @@ Murray.prototype.unshift = function () {
 
     return this.length
 }
+
+Murray.prototype.join = function (separator) {
+    if (this.length === 0) { return '' }
+
+    separator = separator || ',';
+    separator += '';
+    var returnValue = this[0] + '';
+
+    for (var i = 1; i < this.length; i++) {
+        returnValue += separator + this[i]
+
+    }
+
+    return returnValue;
+}
