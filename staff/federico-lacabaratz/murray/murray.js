@@ -198,3 +198,7 @@ Murray.prototype.findIndex = function(expression) {
     };
     return -1;
 };
+
+// Murray.prototype.splice = function(start, deleteCount) {
+
+// }

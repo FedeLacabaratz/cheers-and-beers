@@ -12,4 +12,3 @@ console.log('For numbers > than 13, it should return the first number within the
 var results = find(array, firstWithinArray);
 console.assert(results === 130, 'This value should be 130, according to the actual array');
 
-

@@ -1,6 +1,7 @@
 'use strict';
 
 function splice(array, index, deleteCount, value) {
+	
 	var removed = [];
 	
 	for (var i = 1; i <= deleteCount; i++) {
