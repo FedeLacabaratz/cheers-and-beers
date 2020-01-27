@@ -9,7 +9,6 @@ describe("Murray.prototype.flat", function() {
     expect(concatened.length).toBe(4)
   })
 
-
   it("should be 1 level of deep as default value in the first parameter", function() {
     var murray = new Murray(1, 2)
     murray.push(new Murray(3, 4))
@@ -55,7 +54,7 @@ describe("Murray.prototype.flat", function() {
     expect(concatened.length).toBe(12)
   })
 
-  it("should concaten recursively three murrays inside in deep", function() {
+  it("should concaten recursively three murrays inside in deepth", function() {
     var murray1 = new Murray(2, 4)
     var murray2 = new Murray(6, 8)
     var murray3 = new Murray(10, 12)
