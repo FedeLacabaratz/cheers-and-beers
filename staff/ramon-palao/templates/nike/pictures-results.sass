@@ -1,13 +1,18 @@
 @import grid
 
-.main-grid
-    @extend %grid
 
-    &__picture
-        width: 100%
-        height: 21vh
+@media only screen and (min-width: 1024px)
 
-    &__info
-        font-family: $font
+    .main-grid
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        grid-template-rows: 1fr 1fr 1fr 1fr
+
+        &__picture
+            width: 100%
+            height: 40vh
+
+        &__info
+            font-family: $font
     
 
