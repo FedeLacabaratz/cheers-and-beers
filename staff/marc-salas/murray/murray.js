@@ -175,3 +175,11 @@ Murray.prototype.find = function(expression){
     return undefined
 }
 
+Murray.prototype.includes = function(value,startIndex){
+    startIndex = startIndex < 0 ? this.length + startIndex : startIndex;
+    startIndex = typeof startIndex === 'number'? Math.floor(startIndex) : 0;
+    for(var i = startIndex; i < this.length; i++){
+        if (value === this[i]) { return true };
+    }
+    return false;
+}
