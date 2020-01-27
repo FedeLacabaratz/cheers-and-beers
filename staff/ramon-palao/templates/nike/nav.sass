@@ -33,7 +33,27 @@
 .categorias
     display: none
 
+.main-grid
+    display: grid
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr)
+    grid-gap: 1px
+
+    &__picture
+        width: 100%
+        height: 30vh
+
+    &__info
+        width: 100%
+        font-family: $font
+
 @media only screen and (min-width: 1024px)
+
+    .nav-type
+        display: flex
+        flex-direction: row
+        // border: $border-basic
+        height: 7vh
+        font-family: $font
 
     .nav-desktop
         display: flex
@@ -78,6 +98,12 @@
     .nav-left
         display: flex
         flex-direction: column
+
+        &__category
+            font-size: 15px
+            font-family: $font
+            padding:  3vh
+        
     
     // .aside-upper
     //     width: 100%
@@ -88,7 +114,7 @@
     .main-gridprueba
         display: grid
         grid-template-columns: 1fr 3fr
-        grid-template-rows: 1fr 1fr 1fr
+        grid-template-rows: 1fr
         _width: 100%
         _justify-content: space-around
         _margin: 10vh 10vh 10vh 15vh
@@ -108,7 +134,9 @@
 .categorias
     display: flex
     flex-direction: column
-    margin-top: 10vh
+    // align-items: center
+    margin-top: 2vh
+    margin-left: 4vh
     _width: 10%
 
             
