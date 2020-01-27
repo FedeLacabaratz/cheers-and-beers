@@ -37,7 +37,7 @@ describe('Murray.prototype.filter', function () {
         expect(returnValue[2]).toBe(3);
     });
 
-    it('should return all elements at even indexes', function () {
+    it('should the callback accept index as second parameter', function () {
         var murray = new Murray(1, 2, 3, 4, 5);
         var returnValue = murray.filter(function (element, index) {
             return index % 2 === 0 ? true : false;
