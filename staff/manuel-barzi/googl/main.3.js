@@ -6,11 +6,11 @@ var search = createSearch('.search', function (query) {
     });
 });
 
-createSearch('.search-2', function (query) {
-    ecosia(query, function (results) {
-        createResults('.results-2', results);
-    });
-});
+// createSearch('.search-2', function (query) {
+//     googl(query, function (results) {
+//         createResults('.results-2', results);
+//     });
+// });
 
 // createSearch('.search-3', function (query) {
 //     googl(query, function (results) {
