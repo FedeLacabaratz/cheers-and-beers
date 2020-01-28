@@ -37,20 +37,20 @@ Murray.prototype.pop = function() {
 }
 
 Murray.prototype.concat = function() {
-    var newMurray = new Murray
+    var result = new Murray
     for(var i = 0; i < this.length; i++) {
-        newMurray.push(this[i])
+        result.push(this[i])
     }
     for(var i = 0; i < arguments.length; i++) {
         if(arguments[i] instanceof Murray) {
             for(var j = 0; j < arguments[i].length; j++) {
-                newMurray.push(arguments[i][j])
+                result.push(arguments[i][j])
             }
         } else {
-            newMurray.push(arguments[i])
+            result.push(arguments[i])
         }
     }
-    return newMurray
+    return result
 }
 
 Murray.prototype.splice = function() {
@@ -154,4 +154,25 @@ Murray.prototype.reduce = function() {
         result = expression(result, this[i], i, this)
     }
     return result
+}
+
+Murray.prototype.every = function() {
+    if(!(arguments[0] instanceof Function)) {
+        throw new TypeError(arguments[0] + ' is not a function')
+    }
+    if(this.length === 0) {
+        return true
+    }
+    var length = this.length
+    var expression = arguments[0]
+    
+    if(arguments.length === 2) {
+        expression = expression.bind(arguments[1])
+    }
+    for(var i = 0; i < length && i < this.length; i++) {
+        if(!(expression(this[i], i, this))) {
+            return false
+        }
+    }
+    return true
 }

@@ -8,7 +8,7 @@ function it(should, test) {
     try {
         test();
 
-        console.log('%c ♥️ ' + should + ' √', 'color: green;');
+        console.log('%c ♥️ ' + should + ' ✅', 'color: green;');
     } catch (error) {
         console.error('🎈 ' + should + ' †\n', error);
     }
