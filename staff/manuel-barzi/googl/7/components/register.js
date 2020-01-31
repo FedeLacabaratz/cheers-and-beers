@@ -2,6 +2,9 @@
 
 function Register(props) {
     var register = document.createElement('form');
+    
+    this.container = register;
+
     register.classList.add('register');
 
     register.innerHTML = '<h2>Sign-up</h2>'
@@ -24,34 +27,6 @@ function Register(props) {
         props.onSubmit(name, surname, username, password);
     });
 
-    register.showError = function(error) {
-        // OPTION 1 reusing the same feedback
-        
-        // var feedback = this.querySelector('.feedback');
-
-        // if (feedback) {
-        //     feedback.showMessage(error);
-        // } else {
-        //     var feedback = Feedback({ level: 'error', message: error});
-    
-        //     var button = this.querySelector('button');
-    
-        //     this.insertBefore(feedback, button);
-        // }
-
-        // OPTION 2 special effects Abdou © 2020 👌
-
-        var feedback = Feedback({ level: 'error', message: error });
-
-        var button = this.querySelector('button');
-
-        this.insertBefore(feedback, button);
-
-        setTimeout(function() {
-            this.removeChild(feedback);
-        }.bind(this), 3000);
-    };
-
     var login = register.querySelector('a');
 
     login.addEventListener('click', function (event) {
@@ -59,6 +34,16 @@ function Register(props) {
 
         props.onToLogin();
     });
-
-    return register;
 }
+
+Register.prototype.showError = function (error) {
+    var feedback = Feedback({ level: 'error', message: error });
+
+    var button = this.container.querySelector('button');
+
+    this.container.insertBefore(feedback, button);
+
+    setTimeout(function() {
+        this.removeChild(feedback);
+    }.bind(this.container), 3000);
+};

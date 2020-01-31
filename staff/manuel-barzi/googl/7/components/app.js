@@ -7,39 +7,39 @@ function App(props) {
 
     app.innerHTML = '<h1>' + props.title + '</h1>';
 
-    var _login = Login({
+    var _login = new Login({
         onSubmit: function (username, password) {
             try {
                 authenticate(username, password);
 
-                _login.replaceWith(_googl);
+                _login.container.replaceWith(_googl);
             } catch (error) {
                 //alert(error.message + ' ' + IT);
                 _login.showError(error.message + ' ' + IT);
             }
         },
         onToRegister: function () {
-            _login.replaceWith(_register);
+            _login.container.replaceWith(_register.container);
         }
     });
 
-    var _register = Register({
+    app.append(_login.container);
+
+    var _register = new Register({
         onSubmit: function (name, surname, username, password) {
             try {
                 register(name, surname, username, password);
 
-                _register.replaceWith(_login);
+                _register.container.replaceWith(_login.container);
             } catch (error) {
                 //alert(error.message + ' ' + IT);
                 _register.showError(error.message + ' ' + IT);
             }
         },
         onToLogin: function () {
-            _register.replaceWith(_login);
+            _register.container.replaceWith(_login.container);
         }
     });
-
-    app.append(_login);
 
     var _googl = Search({
         title: 'Googl',

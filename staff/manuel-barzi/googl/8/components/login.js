@@ -3,6 +3,8 @@
 function Login(props) {
     var login = document.createElement('form');
 
+    Interactive.call(this, login);
+
     login.classList.add('login');
 
     login.innerHTML = '<h2>Sign-in</h2>'
@@ -20,34 +22,6 @@ function Login(props) {
         props.onSubmit(username, password);
     });
 
-    login.showError = function (error) {
-        // OPTION 1 reusing the same feedback
-
-        // var feedback = this.querySelector('.feedback');
-
-        // if (feedback) {
-        //     feedback.showMessage(error);
-        // } else {
-        //     var feedback = Feedback({ level: 'error', message: error});
-
-        //     var button = this.querySelector('button');
-
-        //     this.insertBefore(feedback, button);
-        // }
-
-        // OPTION 2 special effects Abdou © 2020 👌
-
-        var feedback = Feedback({ level: 'error', message: error });
-
-        var button = this.querySelector('button');
-
-        this.insertBefore(feedback, button);
-
-        setTimeout(function() {
-            this.removeChild(feedback);
-        }.bind(this), 3000);
-    };
-
     var register = login.querySelector('a');
 
     register.addEventListener('click', function (event) {
@@ -55,6 +29,13 @@ function Login(props) {
 
         props.onToRegister();
     });
-
-    return login;
 }
+
+Login.prototype = Object.create(Interactive.prototype);
+Login.prototype.constructor = Login;
+
+Login.prototype.__locateFeedbackInContainer__ = function(feedback) {
+    var button = this.container.querySelector('button'); //?
+
+    this.container.insertBefore(feedback.container, button);
+};
