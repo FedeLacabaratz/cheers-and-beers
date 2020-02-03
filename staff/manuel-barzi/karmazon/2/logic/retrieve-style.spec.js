@@ -1,5 +1,3 @@
-'use strict';
-
-describe('retriveStyle', function () {
+describe('retriveStyle', () => {
     // TODO
 });
