@@ -152,7 +152,7 @@ class App extends Component {
 
             {view === 'register' && <Register onSubmit={handleRegister} onToLogin={handleGoToLogin} error={error} />}
 
-            {view === 'search' && <Search title="Search" onSubmit={handleSearch} query={query} warning={error} />}
+            {view === 'search' && <Search onSubmit={handleSearch} query={query} warning={error} />}
 
             {view === 'search' && vehicles && <Results results={vehicles} onItemClick={handleDetail} />}
 
