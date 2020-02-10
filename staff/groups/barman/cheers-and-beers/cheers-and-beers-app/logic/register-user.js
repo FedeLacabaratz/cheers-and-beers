@@ -12,7 +12,7 @@ function registerUser(name, surname, username, password, callback) {
     call("https://skylabcoders.herokuapp.com/api/v2/users", {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({name, surname, username: `C_B.${username}`, password})
+        body: JSON.stringify({name, surname, username, password, app:"CandB" })
     }, (error, response) => {
         if (error) return callback(error)
         if (response.status === 201) {
