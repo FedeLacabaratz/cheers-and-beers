@@ -1,0 +1,47 @@
+@import components/menu
+*
+    padding: 0
+    margin: 0
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+body
+    width: 100vw
+    height: 100vh
+    background-color: SLATEGRAY
+.login, .register, .search, .item, .settings, .details
+    border: 1px solid black
+    border-radius: 20px
+
+%logo
+    width: 100%
+    padding: 4rem
+
+
+.login
+    &__logo
+        @extend %logo
+
+.register
+    &__logo
+        @extend %logo
+
+.search
+    &__header
+        display: flex
+        align-items: center
+    figure
+        flex: 1
+
+    &__logo
+       width: 7rem
+       height: auto
+       padding: 1rem
+.item 
+    width: 100%
+    height: 100%
+    img
+        width: 7rem
+        max-width: 100%
+h2
+    font-family: 'Permanent Marker', cursive
