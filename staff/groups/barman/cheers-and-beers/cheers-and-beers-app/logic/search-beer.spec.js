@@ -48,7 +48,7 @@ describe('searchBeer', () => {
         )
     })
 
-    fit('Should succeed on non-matching query, returning an empty array', done => {
+    it('Should succeed on non-matching query, returning an empty array', done => {
         query = '999'
         param = 'abv_gt'
         searchBeer(token, query, param, (error, results) => {
@@ -61,7 +61,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '0', 'abv_lt', (error, results) => {
+        query = '0'
+        param = 'abv_lt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -71,7 +73,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '9999', 'ibu_gt', (error, results) => {
+        query = '9999'
+        param = 'ibu_gt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -81,7 +85,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '0', 'ibu_lt', (error, results) => {
+        query = '756776586'
+        param = 'ibu_gt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -91,7 +97,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '999', 'ebc_gt', (error, results) => {
+        query = '999'
+        param = 'ebc_gt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -101,7 +109,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '0', 'ebc_lt', (error, results) => {
+        query = '0'
+        param = 'ebc_lt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -111,7 +121,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'beer_name', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'beer_name'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -121,7 +133,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'yeast', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'yeast'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -131,7 +145,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'brewed_before', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'brewed_before'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -141,7 +157,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'brewed_after', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'brewed_after'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -151,7 +169,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'hops', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'hops'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -161,7 +181,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'malt', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'malt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -171,7 +193,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'food', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'food'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -181,7 +205,9 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'ids', (error, results) => {
+        query = 'sjdnojsdnfsdjkf'
+        param = 'ids'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
             expect(results).toHaveLength(0)
@@ -191,140 +217,155 @@ describe('searchBeer', () => {
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '5', 'abv_gt', (error, results) => {
+        query = '5'
+        param = 'abv_gt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '5', 'abv_lt', (error, results) => {
+        query = '5'
+        param = 'abv_lt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '50', 'ibu_gt', (error, results) => {
+        query = '50'
+        param = 'ibu_gt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '50', 'ibu_lt', (error, results) => {
+        query = '50'
+        param = 'ibu_lt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '15', 'ebc_gt', (error, results) => {
+        query = '15'
+        param = 'ebc_gt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token, '15', 'ebc_lt', (error, results) => {
+        query = '15'
+        param = 'ebc_lt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
+
+            done()
+        })
+    })
+    it('Should succeed on non-matching query, returning an empty array', done => {
+        query = 'Buzz'
+        param = 'beer_name'
+        searchBeer(token, query, param, (error, results) => {
+            expect(error).toBeUndefined()
+            expect(results).toBeDefined()
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'beer_name', (error, results) => {
+        query = '02-2011'
+        param = 'brewed_before'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'sjdnojsdnfsdjkf', 'Buzz', (error, results) => {
+        query = '02-2011'
+        param = 'brewed_after'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'02-2011', 'brewed_before', (error, results) => {
+        query = 'Cross'
+        param = 'hops'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'02-2011', 'brewed_after', (error, results) => {
+        query = 'Pale'
+        param = 'malt'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'Cross', 'hops', (error, results) => {
+        query = 'chicken'
+        param = 'food'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })
     })
 
     it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'Pale', 'malt', (error, results) => {
+        query = '35'
+        param = 'ids'
+        searchBeer(token, query, param, (error, results) => {
             expect(error).toBeUndefined()
             expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
-
-            done()
-        })
-    })
-
-    it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'chicken', 'food', (error, results) => {
-            expect(error).toBeUndefined()
-            expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
-
-            done()
-        })
-    })
-
-    it('Should succeed on non-matching query, returning an empty array', done => {
-        searchBeer(token,'35', 'ids', (error, results) => {
-            expect(error).toBeUndefined()
-            expect(results).toBeDefined()
-            expect(results).toHaveLength(0)
+            expect(results.length).toBeGreaterThan(0)
 
             done()
         })

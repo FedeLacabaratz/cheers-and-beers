@@ -9,7 +9,7 @@ function searchBeer(token, query, param, callback) {
 
     if (!id) throw new Error('no user id in token')
 
-    call`http://skylabcoder.herokuapp.com/api/v2/users/${id}`, {
+    call(`https://skylabcoders.herokuapp.com/api/v2/users/${id}`, {
         method: 'GET',
         headers: { 'Authorization': `Bearer ${token}` },
     }, (error, response) => {
@@ -19,7 +19,7 @@ function searchBeer(token, query, param, callback) {
 
         if (_error) return callback(new Error(_error))
 
-        call`https://api.punkapi.com/v2/beers?${param}=${query}`, undefined, (error, response) => {
+        call(`https://api.punkapi.com/v2/beers?${param}=${query}`, undefined, (error, response) => {
             if (error) return callback(error)
 
             if (response.status === 200) {
@@ -33,6 +33,6 @@ function searchBeer(token, query, param, callback) {
             } else {
                 callback(new Error('Unknown Error'))
             }
-        }
-    }
+        })
+    })
 }
