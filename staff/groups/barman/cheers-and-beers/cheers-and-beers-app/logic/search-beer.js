@@ -19,7 +19,7 @@ function searchBeer(token, query, param, callback) {
 
         if (_error) return callback(new Error(_error))
 
-        call(`https://api.punkapi.com/v2/beers?${param}=${query}`, undefined, (error, response) => {
+        call(`https://api.punkapi.com/v2/beers${param}${query}`, undefined, (error, response) => {
             if (error) return callback(error)
 
             if (response.status === 200) {

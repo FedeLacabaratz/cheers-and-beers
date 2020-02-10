@@ -2,10 +2,10 @@
 const { Component, Fragment } = React
 
 class App extends Component {
-    state = { view: "login", error: undefined, token: undefined, menu: undefined}
+    state = { view: "login", error: undefined, token: undefined, menu: undefined, query: undefined, username: undefined, resultsBeers: undefined }
 
     __handleError__(error) {
-        this.setState({error: error.message})
+        this.setState({ error: error.message })
         setTimeout(() => {
             this.setState({ error: undefined })
         }, 3000)
@@ -24,18 +24,23 @@ class App extends Component {
     handleLogin = (username, password) => {
         try {
             authenticateUser(username, password, (error, token) => {
-                if (error) {                   
+                if (error) {
                     this.__handleError__(error)
                 } else {
                     retrieveUser(token, (error, userData) => {
-                        if(error){
-                            this.state({error: error.message}) 
+                        if (error) {
+                            this.state({ error: error.message })
                             return this.__handleError__(error)
                             sessionStorage.token = token
-                        }else{
-                            alert('done')
-                            //this.setState({view: "search"})    
-                        }                   
+                        } else {
+                            searchBeer(token, "", "/random", (error, response) => {
+                                if (error) {
+                                    this.state({ error: error.message })
+                                } else {
+                                    this.setState({ username: userData, view: "search", token: token, resultsBeers: response })
+                                }
+                            })
+                        }
                     })
                 }
             })
@@ -51,36 +56,91 @@ class App extends Component {
         try {
             registerUser(name, surname, username, password, (error) => {
                 if (error) {
-                  return this.__handleError__(error)
+                    return this.__handleError__(error)
                 } else {
                     this.setState({ view: "login" })
                 }
             })
         } catch (error) {
-           this.__handleError__(error)
+            this.__handleError__(error)
         }
     }
     handleGoToLogin = () => {
         this.setState({ view: "login" })
     }
-    handleMenu = () =>{
-        this.setState({menu: true })
+
+    handleMenu = () => {
+        this.setState({ menu: true })
     }
     handleNav = (nav) => {
         alert(`pulsaste ${nav}`)
-        this.setState({menu: undefined })
+        this.setState({ menu: undefined })
     }
 
+    handleSearch = (query) => {
+        const token = this.state.token
+        try {
+            searchBeer(token, query, '?beer_name=', (error, results) => {
+                if (results.length === 0) {
+                    searchBeer(token, query, '?yeast=', (error, results) => {
+                        if (results.length === 0) {
+                            searchBeer(token, query, '?brewed_before=', (error, results) => {
+                                if (results.length === 0) {
+                                    searchBeer(token, query, '?abv_gt=', (error, results) => {
+                                        if (results.length === 0) {
+                                            searchBeer(token, query, '?hops=', (error, results) => {
+                                                if (results.length === 0) {
+                                                    searchBeer(token, query, '?malt=', (error, results) => {
+                                                        if (results.length === 0) {
+                                                            searchBeer(token, query, '?food=', (error, results) => {
+                                                                if (results.length === 0) {
+                                                                    this.__handleError__(error)
+                                                                } else {
+                                                                    this.setState({ resultsBeers: results })
+                                                                }
+                                                            })
+                                                        } else {
+                                                            this.setState({ resultsBeers: results })
+                                                        }
+                                                    })
+                                                } else {
+                                                    this.setState({ resultsBeers: results })
+                                                }
+                                            })
+                                        } else {
+                                            this.setState({ resultsBeers: results })
+                                        }
+                                    })
+                                } else {
+                                    this.setState({ resultsBeers: results })
+                                }
+                            })
+                        } else {
+                            this.setState({ resultsBeers: results })
+                        }
+                    })
+                } else {
+                    this.setState({ resultsBeers: results })
+                }
+            })
+        } catch (error) {
+            this.__handleError__(error)
+        }
+    }
+
+    handleDetails = (id) => {
+        alert("Fede tiobueno" + id)
+    }
     render() {
-        const { props: { title }, state: { view, error, menu}, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleNav } = this
+        const { props: { title }, state: { view, error, menu, query, username, resultsBeers }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleNav, handleSearch, handleDetails } = this
         return <main>
-            <h1>{title}</h1>
+            < h1 > {title}</h1 >
 
             {view === "login" && <Login onSubmit={handleLogin} onToRegister={handleGoToRegister} onToMenu={handleMenu} menu={menu} onClickNav={handleNav} error={error} />}
             {view === "register" && <Register onSubmit={handleRegister} onToLogin={handleGoToLogin} error={error} />}
-
-
-        </main>
+            {view === "search" && <Search onSubmit={handleSearch} user={username} query={query} warning={error} />}
+            {view === "search" && resultsBeers && <Results results={resultsBeers} itemClick={handleDetails} />}
+        </main >
 
     }
 
