@@ -18,10 +18,6 @@ function retrieveUser(token, callback){
         let userData = {error: _error, username} = JSON.parse(response.content)
         if(_error) return callback(new Error(_error))
 
-        const realName = userData.username.split(".")[1]
-        
-        userData = {username: realName}
-        debugger
         callback(undefined, userData)
 
     })
