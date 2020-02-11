@@ -246,8 +246,6 @@ class App extends Component {
         const { props: { title }, state: { view, error, menu, query, username, resultsBeers, beer, fav }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleFav, handleSearch, handleDetails, handleAle, handleLager, handleStout, handleIpa } = this
 
         return <main>
-            < h1 > {title}</h1 >
-
             {view === "login" && <Login onSubmit={handleLogin} onToRegister={handleGoToRegister} error={error} />}
             {view === "register" && <Register onSubmit={handleRegister} onToLogin={handleGoToLogin}  error={error} />}
             {view === "search" && <Search onSubmit={handleSearch} user={username} query={query} onToMenu={handleMenu} menu={menu} onClickAle={handleAle} onClickLager={handleLager} onClickStout={handleStout} onClickIpa={handleIpa} error={error} />}
