@@ -15,9 +15,11 @@ function searchBeer(token, query, param, callback) {
     }, (error, response) => {
         if (error) return callback(error)
 
-        const { error: _error, username } = JSON.parse(response.content)
+        const userData = { error: _error, fav } = JSON.parse(response.content)
 
         if (_error) return callback(new Error(_error))
+
+        const userFav = userData.fav
 
         call(`https://api.punkapi.com/v2/beers${param}${query}`, undefined, (error, response) => {
             if (error) return callback(error)
@@ -25,7 +27,7 @@ function searchBeer(token, query, param, callback) {
 
             if (response.status === 200) {
                 const results = JSON.parse(response.content)
-                callback(undefined, results)
+                callback(undefined, results, userFav)
 
             } else if (response.status === 400 || response.status === 500) {
                 const { error } = JSON.parse(response.content)
