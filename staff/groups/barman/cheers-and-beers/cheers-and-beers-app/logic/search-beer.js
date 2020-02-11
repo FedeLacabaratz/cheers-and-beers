@@ -22,6 +22,7 @@ function searchBeer(token, query, param, callback) {
         call(`https://api.punkapi.com/v2/beers${param}${query}`, undefined, (error, response) => {
             if (error) return callback(error)
 
+
             if (response.status === 200) {
                 const results = JSON.parse(response.content)
                 callback(undefined, results)
