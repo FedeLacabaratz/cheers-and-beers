@@ -1,20 +1,5 @@
-function Login({ onSubmit, onToRegister, onToMenu, menu, error, onClickNav}) {
+function Login({ onSubmit, onToRegister,  error}) {
     return <div>
-        <button onClick={event => {
-            event.preventDefault()
-            onToMenu()
-        }
-        }></button>
-        {menu && <div className="menu menu--show">
-            <div className="menu__content">
-                <Menu onClickNav={onClickNav}/>
-            </div>
-        </div>}
-        {!menu && <div className="menu menu--hide">
-            <div className="menu__content">
-                <Menu onClickNav={onClickNav}/>
-            </div>
-        </div>}
         <form className="login" onSubmit={event => {
             event.preventDefault()
             const username = event.target.username.value

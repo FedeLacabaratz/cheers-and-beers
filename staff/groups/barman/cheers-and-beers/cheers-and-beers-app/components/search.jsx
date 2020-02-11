@@ -1,4 +1,4 @@
-function Search({ onSubmit, user, error }){
+function Search({ onSubmit, user, onToMenu, menu, error, onClickNav }){
 return <form className="search" onSubmit={event => {
             event.preventDefault()
             const query = event.target.query.value
@@ -9,7 +9,23 @@ return <form className="search" onSubmit={event => {
         </figure>
         <i className="fas fa-lock"></i>
         <h3>{username} <img src="" alt="X" /> </h3>
-        <i className="fas fa-bars"></i>
+        <i className="fas fa-bars">
+        <button onClick={event => {
+            event.preventDefault()
+            onToMenu()
+        }
+        }></button>
+        {menu && <div className="menu menu--show">
+            <div className="menu__content">
+                <Menu onClickNav={onClickNav}/>
+            </div>
+        </div>}
+        {!menu && <div className="menu menu--hide">
+            <div className="menu__content">
+                <Menu onClickNav={onClickNav}/>
+            </div>
+        </div>}  
+        </i>
         <input type="text" placeholder="Search" name="query"/>
         <button><i className="fas fa-search"></i>HolaFede</button>
         {error && <Feedback level="warning" message = {error}/>}
