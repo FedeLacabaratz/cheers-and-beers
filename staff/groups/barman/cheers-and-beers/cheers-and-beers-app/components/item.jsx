@@ -9,7 +9,6 @@ function Item({result, fav, onClick}){
         <figure>
             <img src={result.image_url} onClick={event => {
                 event.preventDefault()
-                debugger
                 onClick(result.id)
             }} alt="img"/>
         <figcaption>{result.tagline}</figcaption>

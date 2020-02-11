@@ -235,19 +235,15 @@ class App extends Component {
             }                            
             recursive()
    
-        }   
-    
-
-
-    render() {
-        const { props: { title }, state: { view, error, menu, query, username, resultsBeers }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleNav, handleSearch, handleDetails, handleAle, handleLager, handleStout, handleIpa } = this
+        }
+        
 
     handleFav = id => {
         alert("Marc what the fuck!!??")
     }
-
+    
     render() {
-        const { props: { title }, state: { view, error, menu, query, username, beer, resultsBeers, fav }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleNav, handleSearch, handleDetails, handleFav } = this
+        const { props: { title }, state: { view, error, menu, query, username, resultsBeers, beer, fav }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleFav, handleSearch, handleDetails, handleAle, handleLager, handleStout, handleIpa } = this
 
         return <main>
             < h1 > {title}</h1 >
@@ -262,3 +258,4 @@ class App extends Component {
     }
 
 }
+
