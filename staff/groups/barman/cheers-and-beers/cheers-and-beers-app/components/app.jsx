@@ -2,7 +2,7 @@
 const { Component, Fragment } = React
 
 class App extends Component {
-    state = { view: "login", error: undefined, token: undefined, menu: undefined, query: undefined, username: undefined, resultsBeers: undefined }
+    state = { view: "login", error: undefined, token: undefined, menu: undefined, query: undefined, username: undefined, beer: undefined, resultsBeers: undefined, fav: undefined}
 
     __handleError__(error) {
         this.setState({ error: error.message })
@@ -96,31 +96,31 @@ class App extends Component {
                                                                 if (results.length === 0) {
                                                                     this.__handleError__(error)
                                                                 } else {
-                                                                    this.setState({ resultsBeers: results })
+                                                                    this.setState({ beer: undefined, resultsBeers: results })
                                                                 }
                                                             })
                                                         } else {
-                                                            this.setState({ resultsBeers: results })
+                                                            this.setState({ beer: undefined, resultsBeers: results })
                                                         }
                                                     })
                                                 } else {
-                                                    this.setState({ resultsBeers: results })
+                                                    this.setState({ beer: undefined, resultsBeers: results })
                                                 }
                                             })
                                         } else {
-                                            this.setState({ resultsBeers: results })
+                                            this.setState({ beer: undefined, resultsBeers: results })
                                         }
                                     })
                                 } else {
-                                    this.setState({ resultsBeers: results })
+                                    this.setState({ beer: undefined, resultsBeers: results })
                                 }
                             })
                         } else {
-                            this.setState({ resultsBeers: results })
+                            this.setState({ beer: undefined, resultsBeers: results })
                         }
                     })
                 } else {
-                    this.setState({ resultsBeers: results })
+                    this.setState({ beer: undefined, resultsBeers: results })
                 }
             })
         } catch (error) {
@@ -128,11 +128,28 @@ class App extends Component {
         }
     }
 
-    handleDetails = (id) => {
-        alert("Fede tiobueno" + id)
+    handleDetails = id => {
+        debugger
+        const token = this.state.token
+        const _id = id.toString()
+        try {
+            searchBeer(token, _id, '?ids=', (error, beer, fav) => {
+                if (error) 
+                    return this.__handleError__(error)
+                
+                this.setState({ beer, resultsBeers: undefined})
+            })
+        } catch (error) {
+            this.__handleError__(error)
+        }
     }
+
+    handleFav = id => {
+        alert("Marc what the fuck!!??")
+    }
+
     render() {
-        const { props: { title }, state: { view, error, menu, query, username, resultsBeers }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleNav, handleSearch, handleDetails } = this
+        const { props: { title }, state: { view, error, menu, query, username, beer, resultsBeers, fav }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleNav, handleSearch, handleDetails, handleFav } = this
         return <main>
             < h1 > {title}</h1 >
 
@@ -140,6 +157,7 @@ class App extends Component {
             {view === "register" && <Register onSubmit={handleRegister} onToLogin={handleGoToLogin} error={error} />}
             {view === "search" && <Search onSubmit={handleSearch} user={username} query={query} warning={error} />}
             {view === "search" && resultsBeers && <Results results={resultsBeers} itemClick={handleDetails} />}
+            {view === "search" && beer && <Detail beer={beer} fav={fav} onFav={handleFav} />}
         </main >
 
     }
