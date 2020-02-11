@@ -1,4 +1,4 @@
-function Search({ onSubmit, user, onToMenu, menu, error, onClickNav }){
+function Search({ onSubmit, user, onToMenu, menu, error, onClickNav, onClickAle, onClickLager, onClickStout, onClickIpa }){
 return <form className="search" onSubmit={event => {
             event.preventDefault()
             const query = event.target.query.value
@@ -17,7 +17,7 @@ return <form className="search" onSubmit={event => {
         }></button>
         {menu && <div className="menu menu--show">
             <div className="menu__content">
-                <Menu onClickNav={onClickNav}/>
+                <Menu onClickAle={onClickAle} onClickLager={onClickLager} onClickStout={onClickStout} onClickIpa={onClickIpa}/>
             </div>
         </div>}
         {!menu && <div className="menu menu--hide">

@@ -1,20 +1,23 @@
-function Menu({ onClickNav }) {
+function Menu({ onClickAle, onClickLager, onClickStout, onClickIpa }) {
     return <div>
+        <h3>Beer types</h3>
+        <a onClick={event => {
+                 debugger
+            event.preventDefault()
+            onClickAle()
+        }}>ALE</a>
         <a onClick={event => {
             event.preventDefault()
-            onClickNav('MARC')
-        }}>MARC</a>
+            onClickLager()
+        }}>LAGER</a>
         <a onClick={event => {
             event.preventDefault()
-            onClickNav('FEDE')
-        }}>FEDE</a>
+            onClickStout()
+        }}>STOUT</a>
         <a onClick={event => {
             event.preventDefault()
-            onClickNav('ANA')
-        }}>ANA</a>
-        <a onClick={event => {
-            event.preventDefault()
-            onClickNav('BATMAN!!!')
-        }}>BATMAN</a>
+            onClickIpa()
+        }}>IPA</a>
+        
     </div>
 }
