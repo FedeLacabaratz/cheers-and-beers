@@ -30,28 +30,117 @@
   width: 0%;
 }
 
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.login__logo {
+  border-bottom: 2px solid #EF9F1B;
+}
+.login > h2 {
+  text-align: center;
+}
+.login > input {
+  text-align: center;
+  background-color: white;
+  height: 30px;
+  width: 95%;
+  border-radius: 15px;
+}
+.login > button {
+  background-color: #EF9F1B;
+  height: 30px;
+  width: 95%;
+  border-radius: 15px;
+}
+.login > a {
+  text-align: center;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register__logo {
+  border-bottom: 2px solid #EF9F1B;
+}
+.register > h2 {
+  text-align: center;
+}
+.register > input {
+  text-align: center;
+  background-color: white;
+  height: 30px;
+  width: 95%;
+  border-radius: 15px;
+}
+.register > button {
+  background-color: #EF9F1B;
+  height: 30px;
+  width: 95%;
+  border-radius: 15px;
+}
+.register > a {
+  text-align: center;
+}
+
+.search {
+  display: grid;
+  grid-template-areas: "l h h" "l i b";
+}
+.search__logo {
+  grid-area: l;
+}
+.search > h3 {
+  grid-area: h;
+}
+.search > input {
+  grid-area: i;
+}
+.search > fa- {
+  grid-area: b;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.item figure {
+  display: flex;
+  flex-direction: column;
+}
+.item img {
+  align-self: center;
+  height: 80%;
+  width: 40%;
+}
+.item > h2 {
+  padding: 2px;
+  text-align: center;
+  background-color: #66CDAA;
+}
+
 * {
   padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  background-color: #2c7873;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: SLATEGRAY;
-}
-
-.login, .register, .search, .item, .settings, .details {
-  border: 1px solid black;
-  border-radius: 20px;
-}
-
-.register__logo, .login__logo {
-  width: 100%;
-  padding: 4rem;
+.login__logo, .register__logo {
+  width: 65%;
+  padding: 3rem;
 }
 
 .search__header {
@@ -65,15 +154,6 @@ body {
   width: 7rem;
   height: auto;
   padding: 1rem;
-}
-
-.item {
-  width: 100%;
-  height: 100%;
-}
-.item img {
-  width: 7rem;
-  max-width: 100%;
 }
 
 h2 {
