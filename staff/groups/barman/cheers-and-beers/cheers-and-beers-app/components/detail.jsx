@@ -16,16 +16,16 @@ function Detail({ beer, onFav, fav }) {
             <p>Amargor: {ibu}</p>
             <p>Color final: {srm}</p>
             <p>PH: {ph}</p>
-            <p>Tipo de malta: {malt.map(item => <ul> 
-                <li>Nombre de Malta: {item.name}</li>
-                <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
+            <span>Tipo de malta: {malt.map(item => <ul> 
+                <li >Nombre de Malta: {item.name}</li>
+                <li >Cantidad: {item.amount.value} {item.amount.unit}</li>
             </ul>)}
-            </p>
-            <p>Tipo de lúpulo: {hops.map(item => <ul> 
-                <li>Nombre de lúpulo: {item.name}</li>
-                <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
+            </span>
+            <span>Tipo de lúpulo: {hops.map(item => <ul> 
+                <li >Nombre de lúpulo: {item.name}</li>
+                <li >Cantidad: {item.amount.value} {item.amount.unit}</li>
             </ul>)}
-            </p>
+            </span>
             <p>Tipo de levadura: {yeast}</p>
             <ul>Food Pairing: {food_pairing.map(item=> <li>{item}</li>)}</ul>
             <p>Consejos del creador: {brewers_tips}</p>
@@ -44,16 +44,16 @@ function Detail({ beer, onFav, fav }) {
             <p>Amargor: {ibu}</p>
             <p>Color final: {srm}</p>
             <p>PH: {ph}</p>
-            <p>Tipo de malta: {malt.map(item => <ul> 
+            <span>Tipo de malta: {malt.map(item => <ul> 
                 <li>Nombre de Malta: {item.name}</li>
                 <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
             </ul>)}
-            </p>
-            <p>Tipo de lúpulo: {hops.map(item => <ul> 
+            </span>
+            <span>Tipo de lúpulo: {hops.map(item => <ul> 
                 <li>Nombre de lúpulo: {item.name}</li>
                 <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
             </ul>)}
-            </p>
+            </span>
             <p>Tipo de levadura: {yeast}</p>
             <ul>Food Pairing: {food_pairing.map(item=> <li>{item}</li>)}</ul>
             <p>Consejos del creador: {brewers_tips}</p>

@@ -21,7 +21,7 @@ function searchBeer(token, query, param, callback) {
 
         const userFav = userData.fav
 
-        call(`https://api.punkapi.com/v2/beers${param}${query}`, undefined, (error, response) => {
+        call(`https://api.punkapi.com/v2/beers?${param}=${query}`, undefined, (error, response) => {
             if (error) return callback(error)
 
 
