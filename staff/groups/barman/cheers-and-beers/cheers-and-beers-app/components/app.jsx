@@ -82,7 +82,7 @@ class App extends Component {
     }
 
     handleSearch = (query) => {
-        let token = this.state.token
+        const { token } = sessionStorage
         try {
             searchBeer(token, query, '?abv_gt=', (error, results, fav) => {
                 if (error || results.length === 0) {
@@ -133,7 +133,7 @@ class App extends Component {
     }
 
     handleDetails = id => {
-        const token = this.state.token
+        const { token } = sessionStorage
         const _id = id.toString()
         try {
             searchBeer(token, _id, '?ids=', (error, beer, fav) => {
@@ -149,7 +149,7 @@ class App extends Component {
 
 
     handleAle = () => {
-        const token = this.state.token
+        const { token } = sessionStorage
         const arrayAle = ["67", "82", "166", "175", "176", "182"]
         let resultsAle = []
         let position = 0
@@ -172,7 +172,7 @@ class App extends Component {
     }
 
     handleLager = () => {
-        const token = this.state.token
+        const { token } = sessionStorage
         const arrayLager = ["81", "4", "8", "81", "162", "163"]
         let resultsLager = []
         let position = 0
@@ -195,7 +195,7 @@ class App extends Component {
     }
 
     handleStout = () => {
-        const token = this.state.token
+        const { token } = sessionStorage
         const arrayStout = ["58", "134", "155", "209", "11", "70"]
         let resultsStout = []
         let position = 0
@@ -218,7 +218,7 @@ class App extends Component {
     }
 
     handleIpa = () => {
-        const token = this.state.token
+        const { token } = sessionStorage
         const arrayIpa = ["18", "30", "39", "42", "48", "55"]
         let resultsIpa = []
         let position = 0
@@ -241,17 +241,15 @@ class App extends Component {
 
 
     handleFav = id => {
-        const {token} = sessionStorage
+        const { token } = sessionStorage
         try {
-            const {query} = this.state
+            const { query } = this.state
             toggleFavBeer(token, id, (error, response) => {
                 if (error)
                     return this.__handleError__(error)
 
-                retrieveUser(token, (error, userData) => this.setState({fav: userData.fav}))
-
+                retrieveUser(token, (error, userData) => this.setState({ fav: userData.fav }))
             })
-
         } catch (error) {
             this.__handleError__(error)
         }
@@ -262,8 +260,35 @@ class App extends Component {
         this.setState({ view: 'login', userData: undefined })
     }
 
+    handleFavList = () => {
+        const { token } = sessionStorage
+        let resultsFav = []
+        let position = 0
+        const userDataFav = this.state.userData.fav
+        const recursive = () => {
+            debugger
+            if (resultsFav.length !== userDataFav.length) {
+                searchBeer(token, userDataFav[position].toString(), "?ids=", (error, results) => {
+                    if (error)
+                        this.__handleError__(error)
+                    else {
+                        position++
+                        resultsFav.push(results[0])
+                    }
+
+                    if (resultsFav.length !== userDataFav.length) {
+                        recursive()
+                    } else {
+                        this.setState({ resultsBeers: resultsFav, menu: undefined })
+                    }
+                })
+            }
+        }
+        recursive()
+    }
+
     render() {
-        const { props: { title }, state: { view, error, menu, query, username, resultsBeers, beer, fav, userData }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleFav, handleSearch, handleDetails, handleAle, handleLager, handleStout, handleIpa, handleLogout } = this
+        const { props: { title }, state: { view, error, menu, query, username, resultsBeers, beer, fav, userData }, handleLogin, handleGoToRegister, handleRegister, handleGoToLogin, handleMenu, handleFav, handleSearch, handleDetails, handleAle, handleLager, handleStout, handleIpa, handleLogout, handleFavList } = this
 
         return <main>
             < h1 > {title}</h1 >
@@ -272,7 +297,7 @@ class App extends Component {
 
             {view === "register" && <Register onSubmit={handleRegister} onToLogin={handleGoToLogin} error={error} />}
 
-            {view === "search" && <Search onSubmit={handleSearch} user={username} query={query} onToMenu={handleMenu} menu={menu} onClickAle={handleAle} onClickLager={handleLager} onClickStout={handleStout} onClickIpa={handleIpa} error={error} onLogout={handleLogout} />}
+            {view === "search" && <Search onSubmit={handleSearch} user={username} query={query} onToMenu={handleMenu} menu={menu} onClickAle={handleAle} onClickLager={handleLager} onClickStout={handleStout} onClickIpa={handleIpa} error={error} onLogout={handleLogout} onFavList={handleFavList} />}
 
             {view === "search" && resultsBeers && <Results results={resultsBeers} itemClick={handleDetails} fav={fav} onFav={handleFav} />}
 

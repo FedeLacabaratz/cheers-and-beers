@@ -1,4 +1,4 @@
-function Search({ onSubmit, user, onToMenu, menu, error, onClickNav, onClickAle, onClickLager, onClickStout, onClickIpa, onLogout }){
+function Search({ onSubmit, user, onToMenu, menu, error, onClickNav, onClickAle, onClickLager, onClickStout, onClickIpa, onLogout, onFavList}){
 return <form className="search" onSubmit={event => {
             event.preventDefault()
             const query = event.target.query.value
@@ -32,6 +32,11 @@ return <form className="search" onSubmit={event => {
         }}></i>
         <button><i className="fas fa-search"></i>Search</button>
         {error && <Feedback level="warning" message = {error}/>}
+
+        <button className="search__favList" onClick={event =>{
+            event.preventDefault()
+            onFavList()
+        }} >❤️</button>
         
 </form> 
 }
