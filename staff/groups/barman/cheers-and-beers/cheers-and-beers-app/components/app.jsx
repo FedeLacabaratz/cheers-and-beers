@@ -2,7 +2,7 @@
 const { Component, Fragment } = React
 
 class App extends Component {
-    state = { view: undefined, userData: undefined, error: undefined, token: undefined, menu: undefined, query: undefined, username: undefined, beer: undefined, resultsBeers: undefined, fav: undefined, token: undefined }
+    state = { view: undefined, userData: undefined, error: undefined, token: undefined, menu: undefined, query: undefined, param: undefined, username: undefined, beer: undefined, resultsBeers: undefined, fav: undefined, token: undefined }
 
     __handleError__(error) {
         if (error) this.setState({ error: error.message })
@@ -16,13 +16,30 @@ class App extends Component {
         const { token } = sessionStorage
 
         if (token) {
-            retrieveUser(token, (error, userData) => {
-                if (error)
-                    this.handleLogout()
+            try {
+                retrieveUser(token, (error, userData) => {
+                    if (error) {
 
-                this.setState({ view: 'search', userData })
-            })
-        } else this.setState({ view: 'login' })
+                        this.handleLogout()
+                    }
+
+                    this.setState({ view: 'search', userData })
+
+                    if (address.search.q) {
+                        const { q: query } = address.search
+
+                        this.handleSearch(query)
+                    } else if (address.hash && address.hash.startsWith('ids')) {
+                        const [, id] = address.hash.split('=')
+
+                        this.handleDetails(id)
+                    }
+                })
+            } catch (error) {
+                this.handleLogout()
+            }
+
+        } else this.handleLogout()
     }
 
     handleLogin = (username, password) => {
@@ -33,14 +50,16 @@ class App extends Component {
                 } else {
                     retrieveUser(token, (error, userData) => {
                         if (error) {
-                            this.state({ error: error.message })
                             return this.__handleError__(error)
                         } else {
-                            searchBeer(token, "", "/random", (error, response) => {
+                            let random = Math.floor(Math.random() * (320) + 1)
+                            searchBeer(token, random.toString(), 'ids', (error, response) => {
                                 if (error) {
                                     this.state({ error: error.message })
                                 } else {
                                     sessionStorage.token = token
+                                    address.hash = `random`
+
                                     this.setState({ userData: userData, view: "search", token: token, resultsBeers: response })
                                 }
                             })
@@ -77,54 +96,53 @@ class App extends Component {
         this.setState({ menu: true })
     }
     handleNav = (nav) => {
-        alert(`pulsaste ${nav}`)
         this.setState({ menu: undefined })
     }
 
     handleSearch = (query) => {
         const { token } = sessionStorage
         try {
-            searchBeer(token, query, '?abv_gt=', (error, results, fav) => {
+            searchBeer(token, query, 'abv_gt', (error, results, fav) => {
                 if (error || results.length === 0) {
-                    searchBeer(token, query, '?yeast=', (error, results, fav) => {
+                    searchBeer(token, query, 'yeast', (error, results, fav) => {
                         if (error || results.length === 0) {
-                            searchBeer(token, query, '?brewed_before=', (error, results, fav) => {
+                            searchBeer(token, query, 'brewed_before', (error, results, fav) => {
                                 if (error || results.length === 0) {
-                                    searchBeer(token, query, '?food=', (error, results, fav) => {
+                                    searchBeer(token, query, 'food', (error, results, fav) => {
                                         if (error || results.length === 0) {
-                                            searchBeer(token, query, '?hops=', (error, results, fav) => {
+                                            searchBeer(token, query, 'hops', (error, results, fav) => {
                                                 if (error || results.length === 0) {
-                                                    searchBeer(token, query, '?malt=', (error, results, fav) => {
+                                                    searchBeer(token, query, 'malt', (error, results, fav) => {
                                                         if (error || results.length === 0) {
-                                                            searchBeer(token, query, '?beer_name=', (error, results, fav) => {
+                                                            searchBeer(token, query, 'beer_name', (error, results, fav) => {
                                                                 if (error || results.length === 0) {
                                                                     this.__handleError__(error)
                                                                 } else {
-                                                                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                                                                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'beer_name' })
                                                                 }
                                                             })
                                                         } else {
-                                                            this.setState({ beer: undefined, resultsBeers: results, fav })
+                                                            this.setState({ beer: undefined, resultsBeers: results, fav, param: 'malt' })
                                                         }
                                                     })
                                                 } else {
-                                                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                                                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'hops' })
                                                 }
                                             })
                                         } else {
-                                            this.setState({ beer: undefined, resultsBeers: results, fav })
+                                            this.setState({ beer: undefined, resultsBeers: results, fav, param: 'food' })
                                         }
                                     })
                                 } else {
-                                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'brewed_before' })
                                 }
                             })
                         } else {
-                            this.setState({ beer: undefined, resultsBeers: results, fav })
+                            this.setState({ beer: undefined, resultsBeers: results, fav, param: 'yeast' })
                         }
                     })
                 } else {
-                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'abv_gt' })
                 }
             })
         } catch (error) {
@@ -136,11 +154,13 @@ class App extends Component {
         const { token } = sessionStorage
         const _id = id.toString()
         try {
-            searchBeer(token, _id, '?ids=', (error, beer, fav) => {
+            searchBeer(token, _id, 'ids', (error, beer, fav) => {
                 if (error)
                     return this.__handleError__(error)
 
-                this.setState({ beer, resultsBeers: undefined, fav })
+                address.hash = `ids=${id}`
+
+                this.setState({ view: 'search', beer, resultsBeers: undefined, fav })
             })
         } catch (error) {
             this.__handleError__(error)
@@ -155,7 +175,7 @@ class App extends Component {
         let position = 0
         const recursive = () => {
             if (resultsAle.length !== arrayAle.length) {
-                searchBeer(token, arrayAle[position], "?ids=", (error, results) => {
+                searchBeer(token, arrayAle[position], "ids", (error, results) => {
                     position++
                     resultsAle.push(results[0])
                     if (resultsAle.length !== arrayAle.length) {
@@ -178,7 +198,7 @@ class App extends Component {
         let position = 0
         const recursive = () => {
             if (resultsLager.length !== arrayLager.length) {
-                searchBeer(token, arrayLager[position], "?ids=", (error, results) => {
+                searchBeer(token, arrayLager[position], "ids", (error, results) => {
                     position++
                     resultsLager.push(results[0])
                     if (resultsLager.length !== arrayLager.length) {
@@ -201,7 +221,7 @@ class App extends Component {
         let position = 0
         const recursive = () => {
             if (resultsStout.length !== arrayStout.length) {
-                searchBeer(token, arrayStout[position], "?ids=", (error, results) => {
+                searchBeer(token, arrayStout[position], "ids", (error, results) => {
                     position++
                     resultsStout.push(results[0])
                     if (resultsStout.length !== arrayStout.length) {
@@ -224,7 +244,7 @@ class App extends Component {
         let position = 0
         const recursive = () => {
             if (resultsIpa.length !== arrayIpa.length) {
-                searchBeer(token, arrayIpa[position], "?ids=", (error, results) => {
+                searchBeer(token, arrayIpa[position], "ids", (error, results) => {
                     position++
                     resultsIpa.push(results[0])
                     if (resultsIpa.length !== arrayIpa.length) {
@@ -241,19 +261,23 @@ class App extends Component {
 
 
     handleFav = id => {
-        const { token } = sessionStorage
         try {
-            const { query } = this.state
+            const { token } = sessionStorage
             toggleFavBeer(token, id, (error, response) => {
                 if (error)
                     return this.__handleError__(error)
 
-                retrieveUser(token, (error, userData) => {
-                    if(error) return this.__handleError__(error)
-                    else this.setState({ fav: userData.fav })
-                })
-                if(error)
-                return this.__handleError__(error)
+                if (address.search.q) {
+                    const { q: query } = address.search
+                } else if (address.hash && address.hash.startsWith('ids')) {
+                    const [, id] = address.hash.split('=')
+
+                    retrieveUser(token, (error, userData) => {
+                        if (error) return this.__handleError__(error)
+                        else this.setState({ fav: userData.fav })
+                    })}
+                if (error)
+                    return this.__handleError__(error)
             })
         } catch (error) {
             this.__handleError__(error)
@@ -262,6 +286,7 @@ class App extends Component {
 
     handleLogout = () => {
         sessionStorage.clear()
+        address.clear()
         this.setState({ view: 'login', userData: undefined })
     }
 
@@ -270,19 +295,19 @@ class App extends Component {
         let resultsFav = []
         let position = 0
         retrieveUser(token, (error, userData) => {
-            if(error) return this.__handleError__(error)
-            else this.setState({ fav: userData.fav })            
+            if (error) return this.__handleError__(error)
+            else this.setState({ fav: userData.fav })
             let userDataFav = userData.fav
             const recursive = () => {
                 if (resultsFav.length !== userDataFav.length) {
-                    searchBeer(token, userDataFav[position].toString(), "?ids=", (error, results) => {
+                    searchBeer(token, userDataFav[position].toString(), "ids", (error, results) => {
                         if (error)
                             this.__handleError__(error)
                         else {
                             position++
                             resultsFav.push(results[0])
                         }
-    
+
                         if (resultsFav.length !== userDataFav.length) {
                             recursive()
                         } else {
