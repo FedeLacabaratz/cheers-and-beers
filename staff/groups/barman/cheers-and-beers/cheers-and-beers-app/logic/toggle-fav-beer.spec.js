@@ -33,31 +33,95 @@ fdescribe("Toggle favorite beers", () => {
             })
         })
     })
-    fdescribe("On correct credentials", () => {
+    describe("On correct credentials", () => {
         it('Should create the tag fav on user', (done) => {
             idBeer = 35
             toggleFavBeer(token, idBeer, (error, response) => {
-                call(`https://skylabcoders.herokuapp.com/api/v2/users`, {
+                const _token = token.split('.')
+                const id = JSON.parse(atob(_token[1])).sub
+                call(`https://skylabcoders.herokuapp.com/api/v2/users/${id}`, {
                     method: 'GET',
                     headers: {
                         'Content-Type': "application/json",
                         'Authorization': ` Bearer ${token}`
                     }
                 }, (error, response) => {
-                    debugger                  
                     let _userData = { error: _error, username } = JSON.parse(response.content)
-                    
-                    userData = _userData
-                    //callback(undefined, userData)
-                   debugger 
-                })
-                debugger
-                expect(error).toBeUndefined()
-                expect(userData).toBeDefined()
 
-                done()
+                    expect(error).toBeUndefined()
+                    expect(_userData).toBeDefined()
+                    expect(_userData.fav).toBeDefined()
+                    expect(_userData.fav[0]).toBe(35)
+                    expect(_userData.fav.length).toBe(1)
+                    toggleFavBeer(token, 35, (error, response) => {
+                        done()
+
+                    })
+                })
 
             })
         })
+        it('Should add a valuen on tag fav', (done) => {
+            toggleFavBeer(token, 35, (error, response) => {
+                idBeer = 55
+                toggleFavBeer(token, idBeer, (error, response) => {
+                    const _token = token.split('.')
+                    const id = JSON.parse(atob(_token[1])).sub
+                    call(`https://skylabcoders.herokuapp.com/api/v2/users/${id}`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': "application/json",
+                            'Authorization': ` Bearer ${token}`
+                        }
+                    }, (error, response) => {
+                        let _userData = { error: _error, username } = JSON.parse(response.content)
+    
+                        expect(error).toBeUndefined()
+                        expect(_userData).toBeDefined()
+                        expect(_userData.fav).toBeDefined()
+                        expect(_userData.fav[0]).toBe(35)
+                        expect(_userData.fav[1]).toBe(55)
+                        expect(_userData.fav.length).toBe(2)
+                        toggleFavBeer(token, 35, (error, response) => {
+                            toggleFavBeer(token, 55, (error, response) => {
+                                
+                                done()
+                            })
+                        })
+                    })
+    
+                })
+
+            })
+        })
+        it('Shoul delete an already existing taf on fav', (done) =>{
+
+            toggleFavBeer(token, 55, (error, response) => {
+                idBeer = 55
+                toggleFavBeer(token, idBeer, (error, response) => {
+                    const _token = token.split('.')
+                    const id = JSON.parse(atob(_token[1])).sub
+                    call(`https://skylabcoders.herokuapp.com/api/v2/users/${id}`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': "application/json",
+                            'Authorization': ` Bearer ${token}`
+                        }
+                    }, (error, response) => {
+                        let _userData = { error: _error, username } = JSON.parse(response.content)
+                        expect(error).toBeUndefined()
+                        expect(_userData).toBeDefined()
+                        expect(_userData.fav).toBeDefined()
+                        expect(_userData.fav[0]).toBe(undefined)
+                        expect(_userData.fav.length).toBe(0)
+                        done()
+    
+                    })
+    
+                })
+
+            })
+        })
+
     })
 })
