@@ -248,7 +248,12 @@ class App extends Component {
                 if (error)
                     return this.__handleError__(error)
 
-                retrieveUser(token, (error, userData) => this.setState({ fav: userData.fav }))
+                retrieveUser(token, (error, userData) => {
+                    if(error) return this.__handleError__(error)
+                    else this.setState({ fav: userData.fav })
+                })
+                if(error)
+                return this.__handleError__(error)
             })
         } catch (error) {
             this.__handleError__(error)
@@ -264,27 +269,30 @@ class App extends Component {
         const { token } = sessionStorage
         let resultsFav = []
         let position = 0
-        const userDataFav = this.state.userData.fav
-        const recursive = () => {
-            debugger
-            if (resultsFav.length !== userDataFav.length) {
-                searchBeer(token, userDataFav[position].toString(), "?ids=", (error, results) => {
-                    if (error)
-                        this.__handleError__(error)
-                    else {
-                        position++
-                        resultsFav.push(results[0])
-                    }
-
-                    if (resultsFav.length !== userDataFav.length) {
-                        recursive()
-                    } else {
-                        this.setState({ resultsBeers: resultsFav, menu: undefined })
-                    }
-                })
+        retrieveUser(token, (error, userData) => {
+            if(error) return this.__handleError__(error)
+            else this.setState({ fav: userData.fav })            
+            let userDataFav = userData.fav
+            const recursive = () => {
+                if (resultsFav.length !== userDataFav.length) {
+                    searchBeer(token, userDataFav[position].toString(), "?ids=", (error, results) => {
+                        if (error)
+                            this.__handleError__(error)
+                        else {
+                            position++
+                            resultsFav.push(results[0])
+                        }
+    
+                        if (resultsFav.length !== userDataFav.length) {
+                            recursive()
+                        } else {
+                            this.setState({ resultsBeers: resultsFav, menu: undefined })
+                        }
+                    })
+                }
             }
-        }
-        recursive()
+            recursive()
+        })
     }
 
     render() {
