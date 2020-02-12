@@ -1,7 +1,6 @@
 function Detail({ beer, onFav, fav }) {
     
     const { id, name, tagline, first_brewed, description, image_url, abv, ibu, srm, ph, ingredients, food_pairing, brewers_tips, contributed_by } = beer[0]
-    debugger
     const { malt, hops, yeast } = ingredients
 
     if (!fav || !fav.includes(id)) {

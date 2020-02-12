@@ -5,6 +5,8 @@ if (typeof Location.prototype.queryString === 'undefined')
             const index = url.indexOf('?')
             let qs = ''
             const keys = Object.keys(queryString)
+
+
             for (let i = 0; i < keys.length; i++) {
                 const key = keys[i]
                 qs += `${key}=${queryString[key]}`
@@ -14,6 +16,7 @@ if (typeof Location.prototype.queryString === 'undefined')
                 url = url.slice(0, index + 1).concat(qs)
                 history.pushState({ path: url }, '', url)
             }
+            
         },
         get() {
             const queryString = {}

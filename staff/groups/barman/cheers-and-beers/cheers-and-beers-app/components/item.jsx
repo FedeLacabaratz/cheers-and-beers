@@ -1,17 +1,35 @@
-function Item({result, fav, onClick}){
-    return <div className="item" >
-        <h2>{result.name}</h2>
-        <h3>{result.abv}</h3>
+function Item({ result: { id, name, abv, image_url, tagline }, fav, onClick, onFav }) {
 
-        {/* <figure className="beer-of-the-day">
-            <img src="img/Milhouse_Van_Houten.png" alt="Milhouse_Van_Houten"/>
-        </figure> */}
-        <figure>
-            <img src={result.image_url} onClick={event => {
-                event.preventDefault()
-                onClick(result.id)
-            }} alt="img"/>
-        <figcaption>{result.tagline}</figcaption>
-        </figure> 
-    </div>
+    if (!fav || !fav.includes(id)) {
+        return  <div className="item" >
+                    <h2>{name} <span onClick={() => onFav(id)}>🤍</span></h2>
+                    <h3>{abv}</h3>
+                    <figure className="beer-of-the-day">
+                        <img src="img/Milhouse_Van_Houten.png" alt="Milhouse Recommends" />
+                    </figure>
+                    <figure>
+                        <img src={image_url} onClick={event => {
+                            event.preventDefault()
+                            onClick(id)
+                        }} alt="img" />
+                        <figcaption>{tagline}</figcaption>
+                    </figure>
+                </div>
+    } else {
+        return  <div className="item" >
+                    <h2>{name} <span onClick={() => onFav(id)}>❤️</span></h2>
+                    <h3>{abv}</h3>
+                    <figure className="beer-of-the-day">
+                        <img src="img/Milhouse_Van_Houten.png" alt="Milhouse Recommends" />
+                    </figure>
+                    <figure>
+                        <img src={image_url} onClick={event => {
+                            event.preventDefault()
+                            onClick(id)
+                        }} alt="img" />
+                        <figcaption>{tagline}</figcaption>
+                    </figure>
+                </div>
+    }
+
 }
