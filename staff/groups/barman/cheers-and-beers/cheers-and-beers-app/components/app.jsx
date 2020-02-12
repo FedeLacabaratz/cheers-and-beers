@@ -2,7 +2,7 @@
 const { Component, Fragment } = React
 
 class App extends Component {
-    state = { view: undefined, userData: undefined, error: undefined, token: undefined, menu: undefined, query: undefined, username: undefined, beer: undefined, resultsBeers: undefined, fav: undefined, token: undefined }
+    state = { view: undefined, userData: undefined, error: undefined, token: undefined, menu: undefined, query: undefined, username: undefined, beer: undefined, resultsBeers: undefined, fav: undefined, token: undefined, favList: false }
 
     __handleError__(error) {
         if (error) this.setState({ error: error.message })
@@ -41,7 +41,7 @@ class App extends Component {
                                     this.state({ error: error.message })
                                 } else {
                                     sessionStorage.token = token
-                                    this.setState({ userData: userData, view: "search", token: token, resultsBeers: response })
+                                    this.setState({ userData: userData, view: "search", token: token, resultsBeers: response, favList: undefined })
                                 }
                             })
                         }
@@ -100,31 +100,31 @@ class App extends Component {
                                                                 if (error || results.length === 0) {
                                                                     this.__handleError__(error)
                                                                 } else {
-                                                                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                                                                    this.setState({ beer: undefined, resultsBeers: results, fav, favList: undefined })
                                                                 }
                                                             })
                                                         } else {
-                                                            this.setState({ beer: undefined, resultsBeers: results, fav })
+                                                            this.setState({ beer: undefined, resultsBeers: results, fav, favList: undefined })
                                                         }
                                                     })
                                                 } else {
-                                                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                                                    this.setState({ beer: undefined, resultsBeers: results, fav, favList: undefined })
                                                 }
                                             })
                                         } else {
-                                            this.setState({ beer: undefined, resultsBeers: results, fav })
+                                            this.setState({ beer: undefined, resultsBeers: results, fav, favList: undefined })
                                         }
                                     })
                                 } else {
-                                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                                    this.setState({ beer: undefined, resultsBeers: results, fav, favList: undefined })
                                 }
                             })
                         } else {
-                            this.setState({ beer: undefined, resultsBeers: results, fav })
+                            this.setState({ beer: undefined, resultsBeers: results, fav, favList: undefined })
                         }
                     })
                 } else {
-                    this.setState({ beer: undefined, resultsBeers: results, fav })
+                    this.setState({ beer: undefined, resultsBeers: results, fav ,favList: undefined })
                 }
             })
         } catch (error) {
@@ -140,7 +140,7 @@ class App extends Component {
                 if (error)
                     return this.__handleError__(error)
 
-                this.setState({ beer, resultsBeers: undefined, fav })
+                this.setState({ beer, resultsBeers: undefined, fav, favList: undefined })
             })
         } catch (error) {
             this.__handleError__(error)
@@ -161,7 +161,7 @@ class App extends Component {
                     if (resultsAle.length !== arrayAle.length) {
                         recursive()
                     } else {
-                        this.setState({ resultsBeers: resultsAle, menu: undefined })
+                        this.setState({ resultsBeers: resultsAle, menu: undefined, favList: undefined })
 
                     }
                 })
@@ -184,7 +184,7 @@ class App extends Component {
                     if (resultsLager.length !== arrayLager.length) {
                         recursive()
                     } else {
-                        this.setState({ resultsBeers: resultsLager, menu: undefined })
+                        this.setState({ resultsBeers: resultsLager, menu: undefined, favList: undefined })
 
                     }
                 })
@@ -207,7 +207,7 @@ class App extends Component {
                     if (resultsStout.length !== arrayStout.length) {
                         recursive()
                     } else {
-                        this.setState({ resultsBeers: resultsStout, menu: undefined })
+                        this.setState({ resultsBeers: resultsStout, menu: undefined, favList: undefined })
 
                     }
                 })
@@ -230,7 +230,7 @@ class App extends Component {
                     if (resultsIpa.length !== arrayIpa.length) {
                         recursive()
                     } else {
-                        this.setState({ resultsBeers: resultsIpa, menu: undefined })
+                        this.setState({ resultsBeers: resultsIpa, menu: undefined, favList: undefined })
                     }
                 })
             }
@@ -242,6 +242,7 @@ class App extends Component {
 
     handleFav = id => {
         const { token } = sessionStorage
+        const favList = this.state.favList
         try {
             const { query } = this.state
             toggleFavBeer(token, id, (error, response) => {
@@ -250,7 +251,10 @@ class App extends Component {
 
                 retrieveUser(token, (error, userData) => {
                     if(error) return this.__handleError__(error)
-                    else this.setState({ fav: userData.fav })
+                    else {
+                        this.setState({ fav: userData.fav, favList: undefined })
+                        if (favList)this.handleFavList()
+                    }
                 })
                 if(error)
                 return this.__handleError__(error)
@@ -286,7 +290,7 @@ class App extends Component {
                         if (resultsFav.length !== userDataFav.length) {
                             recursive()
                         } else {
-                            this.setState({ resultsBeers: resultsFav, menu: undefined })
+                            this.setState({ resultsBeers: resultsFav, menu: undefined, favList: true, beer: undefined })
                         }
                     })
                 }
@@ -305,9 +309,9 @@ class App extends Component {
 
             {view === "search" && <Search onSubmit={handleSearch} user={username} query={query} onToMenu={handleMenu} menu={menu} onClickAle={handleAle} onClickLager={handleLager} onClickStout={handleStout} onClickIpa={handleIpa} error={error} onLogout={handleLogout} onFavList={handleFavList} />}
 
-            {view === "search" && resultsBeers && <Results results={resultsBeers} itemClick={handleDetails} fav={fav} onFav={handleFav} />}
+            {view === "search" && resultsBeers && !beer && <Results results={resultsBeers} itemClick={handleDetails} fav={fav} onFav={handleFav} updateFavList={handleFavList} />}
 
-            {view === "search" && beer && <Detail beer={beer} fav={fav} onFav={handleFav} />}
+            {view === "search" && beer && !resultsBeers && <Detail beer={beer} fav={fav} onFav={handleFav} />}
         </main >
 
     }
