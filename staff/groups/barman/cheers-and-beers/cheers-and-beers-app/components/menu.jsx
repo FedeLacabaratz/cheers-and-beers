@@ -1,6 +1,6 @@
 function Menu({ onClickAle, onClickLager, onClickStout, onClickIpa }) {
     return <div>
-        <h3>Beer types</h3>
+        <h3>OUR COLLECTION</h3>
         <a onClick={event => {
                  debugger
             event.preventDefault()
