@@ -120,31 +120,31 @@ class App extends Component {
                                                                 if (error || results.length === 0) {
                                                                     this.__handleError__(error)
                                                                 } else {
-                                                                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'beer_name', favList: undefined })
+                                                                    this.setState({ beer: undefined, query, resultsBeers: results, fav, param: 'beer_name', favList: undefined })
                                                                 }
                                                             })
                                                         } else {
-                                                            this.setState({ beer: undefined, resultsBeers: results, fav, param: 'malt', favList: undefined })
+                                                            this.setState({ beer: undefined, query, resultsBeers: results, fav, param: 'malt', favList: undefined })
                                                         }
                                                     })
                                                 } else {
-                                                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'hops', favList: undefined })
+                                                    this.setState({ beer: undefined, query, resultsBeers: results, fav, param: 'hops', favList: undefined })
                                                 }
                                             })
                                         } else {
-                                            this.setState({ beer: undefined, resultsBeers: results, fav, param: 'food', favList: undefined })
+                                            this.setState({ beer: undefined, query, resultsBeers: results, fav, param: 'food', favList: undefined })
                                         }
                                     })
                                 } else {
-                                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'brewed_before', favList: undefined })
+                                    this.setState({ beer: undefined, query, resultsBeers: results, fav, param: 'brewed_before', favList: undefined })
                                 }
                             })
                         } else {
-                            this.setState({ beer: undefined, resultsBeers: results, fav, param: 'yeast', favList: undefined })
+                            this.setState({ beer: undefined, query, resultsBeers: results, fav, param: 'yeast', favList: undefined })
                         }
                     })
                 } else {
-                    this.setState({ beer: undefined, resultsBeers: results, fav, param: 'abv_gt', favList: undefined })
+                    this.setState({ beer: undefined, query, resultsBeers: results, fav, param: 'abv_gt', favList: undefined })
 
                 }
             })
@@ -164,7 +164,7 @@ class App extends Component {
 
                 address.hash = `ids=${id}`
 
-                this.setState({ view: 'search', beer, resultsBeers: undefined, fav, favList: undefined })
+                this.setState({ view: 'search', beer, resultsBeers: undefined, query: undefined, fav, favList: undefined })
             })
         } catch (error) {
             this.__handleError__(error)
@@ -273,17 +273,23 @@ class App extends Component {
             toggleFavBeer(token, id, (error, response) => {
                 if (error)
                     return this.__handleError__(error)
+                    retrieveUser(token, (error, userData) => {
+                        if (error) return this.__handleError__(error)
+                        else 
+                            this.setState({ fav: userData.fav })
 
+                        if (this.state.query)
+                            this.handleSearch(this.state.query)
+                        
+                        else if (this.state.favList)
+                            this.handleFavList()
+                    })
                 if (address.search.q) {
                     const { q: query } = address.search
                 } else if (address.hash && address.hash.startsWith('ids')) {
                     const [, id] = address.hash.split('=')
 
-                    retrieveUser(token, (error, userData) => {
-                        if (error) return this.__handleError__(error)
-                        else this.setState({ fav: userData.fav, favList: undefined })
-                        if (favList)this.handleFavList()
-                    })}
+                    }
                 if (error)
                     return this.__handleError__(error)
             })
@@ -319,7 +325,7 @@ class App extends Component {
                         if (resultsFav.length !== userDataFav.length) {
                             recursive()
                         } else {
-                            this.setState({ resultsBeers: resultsFav, menu: undefined, favList: true, beer: undefined })
+                            this.setState({ resultsBeers: resultsFav, query: undefined, menu: undefined, favList: true, beer: undefined })
                         }
                     })
                 }
