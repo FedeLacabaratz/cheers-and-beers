@@ -6,13 +6,18 @@ function Search({ onSubmit, user, onToMenu, menu, error, onClickNav, onClickAle,
     }
     }>
         <div className="search__header">
-            <img className="search__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo" />
-            <i className="search__lock fas fa-lock" onClick={event => {
-                event.preventDefault()
-                onLogout()
-            }}></i>
-            <h3 className="search__user">{username}></h3>
-            <img className="search__ranking" src="img/level4.png" alt="ranking" />
+            <div className="search__logoholder">
+                <img className="search__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo" />
+            </div>
+            <div className="search__userholder">
+                <i className="search__lock fas fa-lock" onClick={event => {
+                    event.preventDefault()
+                    onLogout()
+                }}></i>
+                <h3 className="search__user">{username}></h3>
+                <img className="search__ranking" src="img/level4.png" alt="ranking" />
+
+            </div>
         </div>
 
         <div className="search__menu">
@@ -34,12 +39,12 @@ function Search({ onSubmit, user, onToMenu, menu, error, onClickNav, onClickAle,
             <input className="search__query" type="text" placeholder="Search" name="query" />
 
             <button><i className="search__searching fas fa-search"></i></button>
-            {error && <Feedback level="warning" message={error} />}
 
             <div className="search__favList" onClick={event => {
                 event.preventDefault()
                 onFavList()
             }} >❤️</div>
         </div>
+        {error && <Feedback level="warning" message={error} />}
     </form>
 }
