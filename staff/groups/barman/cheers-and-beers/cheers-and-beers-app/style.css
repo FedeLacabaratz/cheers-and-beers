@@ -21,6 +21,18 @@
   display: grid;
   color: white;
 }
+.menu__content > div > a {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.menu__content > div > h3 {
+  margin-left: 25vw;
+  margin-right: 25vw;
+  width: 50vw;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+}
 
 .menu--show {
   width: 100%;
