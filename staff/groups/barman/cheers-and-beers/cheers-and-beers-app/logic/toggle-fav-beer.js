@@ -1,7 +1,7 @@
 function toggleFavBeer(token, idBeer, callback) {
-    if (typeof token !== 'string') throw new TypeError(`${token} is not a string`)
-    if (typeof idBeer !== 'number') throw new TypeError(`${idBeer} is not a number`)
-    if (typeof callback !== 'function') throw new TypeError(`${callback} is not a function`)
+    if (typeof token !== 'string') throw new TypeError(`token ${token} is not a string`)
+    if (typeof idBeer !== 'number') throw new TypeError(`idBeer ${idBeer} is not a number`)
+    if (typeof callback !== 'function') throw new TypeError(`callback ${callback} is not a function`)
 
     call(`https://skylabcoders.herokuapp.com/api/v2/users`, {
         method: 'GET',

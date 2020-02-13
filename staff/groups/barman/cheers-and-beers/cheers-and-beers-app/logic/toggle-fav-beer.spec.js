@@ -1,4 +1,4 @@
-fdescribe("Toggle favorite beers", () => {
+describe("Toggle favorite beers", () => {
     let token, idBeer, name, surname, username, password, userdata, error
     beforeEach(done => {
         name = "name-" + Math.random(),
@@ -123,5 +123,47 @@ fdescribe("Toggle favorite beers", () => {
             })
         })
 
+    })
+    it('should fain on non-string', () =>{
+        idBeer = 55
+        token = 1
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `token ${token} is not a string`)
+        token = true
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `token ${token} is not a string`)
+        token = null
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `token ${token} is not a string`)
+        token = undefined
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `token ${token} is not a string`)
+    })
+    it('should fain on non-string', () =>{
+        idBeer = "55"
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `idBeer ${idBeer} is not a number`)
+        idBeer = true
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `idBeer ${idBeer} is not a number`)
+        idBeer = null
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `idBeer ${idBeer} is not a number`)
+        idBeer = undefined
+        expect( () =>
+        toggleFavBeer(token, idBeer, ()=>{})).toThrowError(TypeError, `idBeer ${idBeer} is not a number`)
+    })
+    it('should fain on non-string', () =>{
+        idBeer = 55
+        expect( () =>
+        toggleFavBeer(token, idBeer, 1)).toThrowError(TypeError, `callback 1 is not a function`)
+        expect( () =>
+        toggleFavBeer(token, idBeer, "hola")).toThrowError(TypeError, `callback hola is not a function`)
+        expect( () =>
+        toggleFavBeer(token, idBeer, true)).toThrowError(TypeError, `callback true is not a function`)
+        expect( () =>
+        toggleFavBeer(token, idBeer, undefined)).toThrowError(TypeError, `callback undefined is not a function`)
+        expect( () =>
+        toggleFavBeer(token, idBeer, null)).toThrowError(TypeError, `callback null is not a function`)
     })
 })
