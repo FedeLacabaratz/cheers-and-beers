@@ -26,7 +26,7 @@ describe("Authenticate User", () => {
         it("Should succeed on correct credentials", done => {
             authenticateUser(username, password, (error, token) => {
                 expect(error).toBeUndefined()
-                expect(token).toBeA("string")
+                expect(typeof token).toBe("string")
                 const [header, payload, signature] = token.split(".")
                 expect(header.length).toBeGreaterThan(0)
                 expect(payload.length).toBeGreaterThan(0)
