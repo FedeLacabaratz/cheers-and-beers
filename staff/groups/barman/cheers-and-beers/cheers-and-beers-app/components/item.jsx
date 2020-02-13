@@ -3,7 +3,7 @@ function Item({ result: { id, name, abv, image_url, tagline }, fav, onClick, onF
     if (!fav || !fav.includes(id)) {
         return  <div className="item" >
                     <h2>{name} <span onClick={() => onFav(id)}>🤍</span></h2>
-                    <h3>{abv}</h3>
+                    <h3>Alcohol:{abv}</h3>
                     <figure className="beer-of-the-day">
                         <img src="img/Milhouse_Van_Houten.png" alt="Milhouse Recommends" />
                     </figure>
@@ -18,7 +18,7 @@ function Item({ result: { id, name, abv, image_url, tagline }, fav, onClick, onF
     } else {
         return  <div className="item" >
                     <h2>{name} <span onClick={() => onFav(id)}>❤️</span></h2>
-                    <h3>{abv}</h3>
+                    <h3>Alcohol:{abv}</h3>
                     <figure className="beer-of-the-day">
                         <img src="img/Milhouse_Van_Houten.png" alt="Milhouse Recommends" />
                     </figure>

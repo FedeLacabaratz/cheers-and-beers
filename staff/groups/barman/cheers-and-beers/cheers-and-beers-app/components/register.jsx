@@ -10,16 +10,16 @@ function Register({ onSubmit, onToLogin, error }) {
     }}>
 
         <img className="register__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo" />
-        <h2>Beer-Up</h2>
-        <input type="text" placeholder="name" name="name" />
-        <input type="text" placeholder="surname" name="surname" />
-        <input type="text" placeholder="username" name="username" />
-        <input type="password" placeholder="password" name="password" />
+        <h2 className="register__title">Beer-Up</h2>
+        <input className="register__input" type="text" placeholder="name" name="name" />
+        <input className="register__input" type="text" placeholder="surname" name="surname" />
+        <input className="register__input" type="text" placeholder="username" name="username" />
+        <input className="register__input" type="password" placeholder="password" name="password" />
 
         {error && <Feedback level="error" message={error} />}
         
-        <button>Submit</button>
-        <a href="" onClick={event => {
+        <button className="register__submit">Submit</button>
+        <a className="register__login" href="" onClick={event => {
             event.preventDefault()
             onToLogin()
         }}>Beer-In</a>
