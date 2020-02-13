@@ -1,9 +1,10 @@
 .search
     display: flex
     flex-direction: column
+    font-family: 'Satisfy', cursive
     top: 0
     position: sticky
-    height: 10%
+    height: 10vh
     justify-content: space-between
     &__userholder
         display: flex
@@ -14,7 +15,8 @@
         flex-direction: row
         padding-bottom: 2px
         padding-right: 35px
-        justify-content: space-between
+        justify-content: center
+        align-items: center
     &__logo
         width: 35%
         margin-left: 0.4rem
@@ -41,9 +43,10 @@
         display: flex
         flex-direction: row
         justify-content: space-around
+        align-items: center
         padding-top: 0.5rem
-        padding-bottom: 1rem
-        height: 25px
+        padding-bottom: 0.5rem
+        height: 12vh
         border-bottom: 2px solid #EF9F1B
     &__hamburguer
         color: #EF9F1B
@@ -57,9 +60,7 @@
         border-radius: 20px
         border: 0
         padding: 5px
-        //border-bottom: 1px solid #EF9F1B
         background-color: rgba(255,255,255,0.5)
-        //background-color: rgba(255,255,255,0.5)
     button
         border: 0
         background-color: transparent
@@ -69,6 +70,21 @@
         color: #d45b46
         text-align: center
         font-size: 20px
+    
+
+.item
+    font-family: 'Satisfy', cursive
+    background-color: #8ec5a6
+    h2
+        font-size: 2.4em
+        font-weight: bold
+    h3
+        font-size: 23px
+    
+.results
+    margin-top: 3rem
+    font-family: 'Satisfy', cursive
+
 @media only screen and (min-width: 600px) 
     .search
         height: 15vh
@@ -80,8 +96,8 @@
         &__ranking
             width: 20%
             height: 90%
-            margin-top: 2px
-            padding-bottom: 20px
+            margin-bottom: 1rem
+            padding-bottom: 2px
         &__look
             margin-left: 200px
             margin-top: 10px
