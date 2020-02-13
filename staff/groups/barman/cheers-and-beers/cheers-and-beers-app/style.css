@@ -117,14 +117,12 @@
 .search {
   display: flex;
   flex-direction: column;
+  background-color: #0a070242;
 }
 .search__header {
   display: flex;
   flex-direction: row;
   padding: 0.5rem;
-  border-bottom: 2px solid #EF9F1B;
-  background-image: url(img/beer.jpg);
-  margin-top: 0.5rem;
 }
 .search__logo {
   width: 22%;
@@ -158,6 +156,7 @@
   justify-content: space-around;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
+  position: sticky;
 }
 .search__hamburguer {
   color: #EF9F1B;
