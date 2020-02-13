@@ -1,83 +1,17 @@
-.menu {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  overflow-x: hidden;
-  transition: width 1s;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 1 | @import components/menu
+ *   |         ^^^^^^^^^^^^^^^
+ *   '
+ *   style.sass 1:9  root stylesheet */
 
-.menu__content {
-  position: relative;
-  top: 25%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import components/menu\a   \2502          ^^^^^^^^^^^^^^^\a   \2575 \a   style.sass 1:9  root stylesheet";
 }
-.menu__content > div {
-  display: grid;
-  color: white;
-}
-
-.menu--show {
-  width: 100%;
-}
-
-.menu--hide {
-  width: 0%;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: SLATEGRAY;
-}
-
-.login, .register, .search, .item, .settings, .details {
-  border: 1px solid black;
-  border-radius: 20px;
-}
-
-.register__logo, .login__logo {
-  width: 100%;
-  padding: 4rem;
-}
-
-.search__header {
-  display: flex;
-  align-items: center;
-}
-.search figure {
-  flex: 1;
-}
-.search__logo {
-  width: 7rem;
-  height: auto;
-  padding: 1rem;
-}
-
-.item {
-  width: 100%;
-  height: 100%;
-}
-.item img {
-  width: 7rem;
-  max-width: 100%;
-}
-
-h2 {
-  font-family: "Permanent Marker", cursive;
-}
-
-/*# sourceMappingURL=style.css.map */
