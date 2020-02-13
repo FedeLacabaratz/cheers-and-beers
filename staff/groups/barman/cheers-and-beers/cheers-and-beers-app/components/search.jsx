@@ -4,16 +4,22 @@ return <form className="search" onSubmit={event => {
             const query = event.target.query.value
             onSubmit(query)} 
             }>
-        <figure>
+        <div className="search__header">
             <img className="search__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo" />
-        </figure>
-        <h3>{username} <img src="" alt="X" /> </h3>
-        <i className="fas fa-bars">
-        <button onClick={event => {
+     <i className="search__lock fas fa-lock" onClick={event => {
+            event.preventDefault()
+            onLogout()
+        }}></i>
+        <h3 className="search__user">{username}></h3>
+        <img className="search__ranking" src="img/level4.png" alt="ranking" /> 
+        </div>
+
+        <div className="search__menu">
+        <i className="search__hamburguer fas fa-bars" onClick={event => {
             event.preventDefault()
             onToMenu()
         }
-        }></button>
+    }></i>
         {menu && <div className="menu menu--show">
             <div className="menu__content">
                 <Menu onClickAle={onClickAle} onClickLager={onClickLager} onClickStout={onClickStout} onClickIpa={onClickIpa}/>
@@ -24,19 +30,15 @@ return <form className="search" onSubmit={event => {
                 <Menu onClickNav={onClickNav}/>
             </div>
         </div>}  
-        </i>
-        <input type="text" placeholder="Search" name="query"/>
-        <i className="fas fa-lock" onClick={event => {
-            event.preventDefault()
-            onLogout()
-        }}></i>
-        <button><i className="fas fa-search"></i>Search</button>
+        <input className="search__query" type="text" placeholder="Search" name="query"/>
+       
+        <i className="search__searching fas fa-search"></i>
         {error && <Feedback level="warning" message = {error}/>}
 
         <button className="search__favList" onClick={event =>{
             event.preventDefault()
             onFavList()
         }} >❤️</button>
-        
+        </div>
 </form> 
 }
