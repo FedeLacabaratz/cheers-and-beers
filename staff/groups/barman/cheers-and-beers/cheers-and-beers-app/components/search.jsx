@@ -2,7 +2,7 @@ function Search({ onSubmit, user, onToMenu, menu, error, onClickNav, onClickAle,
 return <form className="search" onSubmit={event => {
             event.preventDefault()
             const query = event.target.query.value
-            onSubmit(query) }
+            onSubmit(query)} 
             }>
         <div className="search__header">
             <img className="search__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo" />

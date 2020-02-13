@@ -1,4 +1,4 @@
-function Item({ result: { id, name, abv, image_url, tagline }, fav, onClick, onFav }) {
+function Item({ result: { id, name, abv, image_url, tagline }, fav, onClick, onFav, updateFavList, favList }) {
 
     if (!fav || !fav.includes(id)) {
         return  <div className="item" >
@@ -30,6 +30,7 @@ function Item({ result: { id, name, abv, image_url, tagline }, fav, onClick, onF
                         <figcaption>{tagline}</figcaption>
                     </figure>
                 </div>
+
     }
 
 }
