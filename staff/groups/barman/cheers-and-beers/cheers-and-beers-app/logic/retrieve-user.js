@@ -1,3 +1,11 @@
+/**
+ * logic - retrieve-user
+ * @param {string} token - credentials acces
+ * @param {function} callback - function
+ * @returns {Error} Error - in error case
+ * @returns {object} userData - object with data of the user
+ */
+
 function retrieveUser(token, callback){
     if(typeof token !== 'string') throw  new TypeError(`token ${token} is not a string`)
     if(typeof callback !== 'function') throw  new TypeError(`${callback} is not a function`)

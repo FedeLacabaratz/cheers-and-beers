@@ -1,3 +1,14 @@
+/**
+ * logic - search-beer
+ * @param {string} token - credentials acces
+ * @param {string} query - searched beer
+ * @param {string} param - end point
+ * @param {function} callback - function
+ * @returns {Error} Error - in error case
+ * @returns {object}  - object with user's data, fav...
+ * undefined, (error, response)
+ */
+
 function searchBeer(token, query, param, callback) {
     if (typeof token !== 'string') throw new TypeError(`token ${token} is not a string`)
     if (typeof query !== 'string') throw new TypeError(`query ${query} is not a string`)
