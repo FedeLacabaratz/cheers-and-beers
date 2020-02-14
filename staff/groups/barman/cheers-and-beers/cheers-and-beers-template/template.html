@@ -11,77 +11,100 @@
 </head>
 
 <body>
-    <div class="login">
-        <main>
-            <img class="login__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo">
-            <h2>Beer-In</h2>
-            <input type="text" placeholder="username">
-            <input type="password" placeholder="password">
-            <a href="">Beer-up</a>
-            <button>Submit</button>
-        </main>
-    </div>
-    <div class="register">
-        <main>
-            <img class="register__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo">
-            <h2>Beer-Up</h2>
-            <input type="text" placeholder="name">
-            <input type="text" placeholder="surrname">
-            <input type="text" placeholder="username">
-            <input type="password" placeholder="password">
-            <a href="">Beer-In</a>
-            <button>Submit</button>
-
-        </main>
-    </div>
     <div class="search">
-        <header class="search__header">
-            <figure>
-                <img class="search__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo">
-            </figure>
-            <i class="fas fa-lock"></i>
-            <h3>FedeXXX <img src="" alt="X"> </h2>
+        <div class="search__header">
+            <div class="search__logoholder">
+                <img class="search__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo" />
+            </div>
+            <div class="search__userholder">
+                <i class="search__lock fas fa-lock"></i>
+                <h3 class="search__user"></h3>
+                <img class="search__ranking" src="img/level4.png" alt="ranking" />
 
-        </header>
-        <main>
-            <i class="fas fa-bars"></i>
-            <input type="text" placeholder="Search">
-            <i class="fas fa-search"></i>
-        </main>
+            </div>
+        </div>
+        <div class="search__menu">
+            <i class="search__hamburguer fas fa-bars"></i>
+                <div class="menu__content">
+                    
+                </div>
+            <!-- </div>
+                <div class="menu__content">
+                </div>
+            </div> -->
+            <input class="search__query" type="text" placeholder="Search" name="query" />
+
+            <button><i class="search__searching fas fa-search"></i></button>
+
+            <div class="search__favList">❤️</div>
+        </div>
+    </div>
+    
+    <div class="login">
+            <img class="login__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo">
+            <h2 class="login__title">Beer-In</h2>
+            <input class="login__input" type="text" placeholder="username">
+            <input class="login__input" type="password" placeholder="password">
+            <button class="login__submit">Submit</button>
+            <a class="login__register" href="">Beer-up</a>
+    </div>
+
+    <div class="register">
+            <img class="register__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo">
+            <h2 class="register__title">Beer-Up</h2>
+            <input class="register__input" type="text" placeholder="name">
+            <input class="register__input" type="text" placeholder="surrname">
+            <input class="register__input" type="text" placeholder="username">
+            <input class="register__input" type="password" placeholder="password">
+            <button class="register__submit">Submit</button>
+            <a class="register__login" href="">Beer-In</a>
     </div>
     <div class="item">
-        <h2>DUFF</h2>
-        <figure class="beer-of-the-day">
-            <img src="img/Milhouse_Van_Houten.png" alt="Milhouse_Van_Houten">
+        <h2>DUFF <span>🤍</span></h2>
+        <h3>Alcohol:9</h3>
+        <figure class="item__beer-of-the-day">
+            <img src="img/Milhouse_Van_Houten.png" alt="Milhouse Recommends" />
         </figure>
-        <figure>
-            <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/moritz-436331.jpg" alt="img">
-            <figcaption>Slogan</figcaption>
+        <figure class="item__img-beer">
+            <img src="https://img2.freepng.es/20180320/hwe/kisspng-aluminum-can-brand-mug-duff-1-5ab0a14814b607.9300280515215250640848.jpg">
+            <figcaption>The reason of your son</figcaption>
         </figure>
     </div>
-    <div class="settings">
-        <main>
-            <h2>settings</h2>
-            <input type="text" placeholder="name" required>
-            <input type="text" placeholder="surrname" required>
-            <input type="text" placeholder="username" required>
-            <input type="email" placeholder="email" required>
-            <input type="password" placeholder="password" required>
-            <a href="">Return</a>
-            <button>Save</button>
-        </main>
-    </div>
-    <div class="details">
-        <h2>DUFF</h2>
-        <h3>Tagline</h3>
-        <img src="https://media-verticommnetwork1.netdna-ssl.com/wines/moritz-436331.jpg" alt="img">
-        <article>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum in modi, voluptatibus soluta libero numquam nostrum molestias eos beatae minus ipsam rem ab aliquam. Unde dignissimos maiores dolore at quasi.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque qui, dignissimos dolorum obcaecati, saepe aliquid rem iusto corrupti error consequatur, culpa quis doloribus veritatis quibusdam fugiat veniam. Quia, nam magni</p>
-        </article>
-        <button>Details</button>
-        <button>Ingredients</button>
-        <button>Tips</button>
+    <div class="detail">
+        <div class="detail__nameBeer">
+            <h3>Nombre: {name} <span>🤍</span></h3>
+            <p>Lema: {tagline}</p>
+            <p>Fecha de primera elaboración: {first_brewed}</p>
+            </div>
+            <div class="detail__background">
+            <h4>Descripción:</h4>
+            <p> {description} </p>
+            <img src={image_url} />
+            <p>Volumen de alcohol: {abv}</p>
+            <p>Amargor: {ibu}</p>
+            <p>Color final: {srm}</p>
+            <p>PH: {ph}</p>
+            <div class="detail_ingredients">
+            <h4>Ingredientes</h4>
+            <span>Tipo de malta: {malt.map(item => <ul>
+                <li>Nombre de Malta: {item.name}</li>
+                <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
+            </ul>)}
+            </span>
+            <span>Tipo de lúpulo: {hops.map(item => <ul>
+                <li>Nombre de lúpulo: {item.name}</li>
+                <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
+            </ul>)}
+            </span>
+            <p>Tipo de levadura: {yeast}</p>
+            </div>
+            <div class="detail__tips">
+            <h4>Consejos</h4>
+            <img class="detail__moe" src="img/Moe_Szyslak.png" alt="Moe"></img>
+            <ul>Food Pairing: {food_pairing.map(item => <li>{item}</li>)}</ul>
+            <p>Consejos del creador: {brewers_tips}</p>
+            </div>
+            </div>
     </div>
 </body>
 

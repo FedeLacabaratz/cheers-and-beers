@@ -1,13 +1,3 @@
-/**
- * logic - register-user
- * @param {string} name -  name typeof string
- * @param {string}  surname -  surname typeof string
- * @param {string}  username -  username typeof string
- * @param {string}  password -  password typeof string
- * @param {function} callback - function
- * @return {Error} Error - in error case
- */
-
 function registerUser(name, surname, username, password, callback) {
     if (typeof name !== "string") throw new TypeError(`name ${name} is not a string`)
     if (!name.trim()) throw new Error("name is empty")

@@ -1,12 +1,3 @@
-/**
- * logic - authenticate-user
- * @param {string} username -  username typeof string
- * @param {string} password -  password typeof string
- * @param {function} callback - function
- * @returns {Error} Error - in error case
- * @returns {string} token - credentials acces
- */
-
 function authenticateUser(username, password, callback) {
     if (typeof username !== "string") throw new TypeError(`username ${username} is not a string`)
     if (typeof password !== "string") throw new TypeError(`password ${password} is not a string`)
