@@ -2,7 +2,6 @@ function Menu({ onClickAle, onClickLager, onClickStout, onClickIpa }) {
     return <div>
         <h3>OUR COLLECTION</h3>
         <a onClick={event => {
-                 debugger
             event.preventDefault()
             onClickAle()
         }}>ALE</a>
