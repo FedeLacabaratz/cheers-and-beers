@@ -95,7 +95,7 @@ class App extends Component {
     }
 
     handleMenu = () => {
-        this.setState({ menu: true })
+        this.setState({ menu: true, beer: undefined })
     }
     handleNav = (nav) => {
         this.setState({ menu: undefined })
