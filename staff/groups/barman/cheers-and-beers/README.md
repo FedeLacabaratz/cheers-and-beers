@@ -2,14 +2,6 @@
 
 ## INDEX
 
-## INTRODUCTION
-
-## FUNCTIONAL DESCRIPTION
-### Uses Cases
-### Flows
-
-## TECHNICAL DESCRIPTION
-### Blocks
-### Modules
-### Sequences
-### Data Model
+![Web App](http://barman.surge.sh/)
+![Documentation] (staff/groups/barman/cheers-and-beers/cheers-and-beer-doc/README.md)
+![Team](staff/groups/barman/README.md)
