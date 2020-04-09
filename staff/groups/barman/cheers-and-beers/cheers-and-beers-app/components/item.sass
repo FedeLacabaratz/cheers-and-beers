@@ -1,0 +1,44 @@
+.item
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    background-color: rgba(255,255,255,0.5)
+    border-radius: 20px
+    width: 80%
+    margin-top: 15px
+    margin-bottom: 15px
+    &__img-beer
+        display: flex
+        flex-direction: column
+        align-self: center
+        & > img
+            width: 25%
+            align-self: center
+        & > figcaption
+            align-self: center
+            //background-color: #0c010183
+            font-size: 23px
+            margin: 10px
+            padding: 10px
+            color: black
+            border-radius: 20px
+    &__beer-of-the-day
+        & > img
+            display: none
+    & > h2
+        display: flex
+        padding: 2px
+        text-align: center
+        border-bottom: 3px solid #EF9F1B
+        justify-content: space-between
+        padding-left: 25px
+    & > h3 
+        text-align: center
+
+@media only screen and (min-width: 600px) 
+    .item
+        margin: 30px
+        width: 20%
+        & img
+            width: 25%
+  

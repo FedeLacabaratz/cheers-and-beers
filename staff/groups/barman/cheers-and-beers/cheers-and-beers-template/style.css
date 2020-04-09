@@ -1,0 +1,464 @@
+.menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow-x: hidden;
+  transition: width 1s;
+}
+
+.menu__content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.menu__content > div {
+  display: grid;
+  color: white;
+}
+.menu__content > div > a {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.menu__content > div > h3 {
+  margin-left: 25vw;
+  margin-right: 25vw;
+  width: 50vw;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid white;
+}
+
+.menu--show {
+  width: 100%;
+}
+
+.menu--hide {
+  width: 0%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c7873;
+}
+.login__logo {
+  max-width: 18rem;
+  border-bottom: 2px solid #EF9F1B;
+  margin-top: 5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.login__title {
+  text-align: center;
+}
+.login__input {
+  text-align: center;
+  background-color: white;
+  height: 30px;
+  width: 72%;
+  border-radius: 15px;
+  justify-items: center;
+  margin: 0.5rem auto;
+}
+.login__submit {
+  margin: 1rem;
+  background-color: #EF9F1B;
+  border-radius: 15px;
+  border: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  height: 30px;
+  width: 72%;
+  margin: 0.5rem auto;
+}
+.login__login {
+  text-align: center;
+}
+.login__input, .login__submit {
+  width: 28%;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2c7873;
+}
+.register__logo {
+  max-width: 18rem;
+  border-bottom: 2px solid #EF9F1B;
+  margin-top: 5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.register__title {
+  text-align: center;
+}
+.register__input {
+  text-align: center;
+  background-color: white;
+  height: 30px;
+  width: 72%;
+  border-radius: 15px;
+  justify-items: center;
+  margin: 0.5rem auto;
+}
+.register__submit {
+  margin: 1rem;
+  background-color: #EF9F1B;
+  border-radius: 15px;
+  border: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  height: 30px;
+  width: 72%;
+  margin: 0.5rem auto;
+}
+.register__login {
+  text-align: center;
+}
+.register__input, .register__submit {
+  width: 28%;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  font-family: "Satisfy", cursive;
+  top: 0;
+  position: sticky;
+  height: 10vh;
+  justify-content: space-between;
+}
+.search__userholder {
+  display: flex;
+  width: 140vw;
+}
+.search__header {
+  background-color: #1E4F4B;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 2px;
+  padding-right: 35px;
+  justify-content: center;
+  align-items: center;
+}
+.search__logo {
+  width: 35%;
+  margin-left: 0.4rem;
+  margin-top: 0.5rem;
+}
+.search__title {
+  margin-top: 1rem;
+  align-items: center;
+}
+.search__user {
+  margin-top: 2rem;
+  font-family: "Permanent Marker", cursive;
+  margin-right: 10px;
+}
+.search__ranking {
+  width: 40%;
+  height: 60%;
+  margin-top: 1rem;
+  margin-right: 1rem;
+}
+.search__lock {
+  align-items: flex-end;
+  margin-top: 2.3rem;
+  margin-right: 10px;
+  color: #EF9F1B;
+}
+.search__menu {
+  background-color: #2C7873;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: 12vh;
+  border-bottom: 2px solid #EF9F1B;
+}
+.search__hamburguer {
+  color: #EF9F1B;
+}
+.search__favList {
+  background-color: transparent;
+}
+.search__searching {
+  color: #EF9F1B;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.search__query {
+  color: black;
+  border-radius: 20px;
+  border: 0;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.search button {
+  border: 0;
+  background-color: transparent;
+}
+.search button > i {
+  background-color: transparent;
+}
+.search .feedback {
+  color: #d45b46;
+  text-align: center;
+  font-size: 20px;
+}
+
+.item {
+  font-family: "Satisfy", cursive;
+  background-color: #8ec5a6;
+  justify-content: center;
+  align-items: center;
+}
+.item h2 {
+  font-size: 2.4em;
+  font-weight: bold;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+.item h3 {
+  font-size: 23px;
+}
+.item span {
+  font-size: 18px;
+}
+
+.results {
+  margin-top: 3rem;
+  font-family: "Satisfy", cursive;
+}
+
+@media only screen and (min-width: 600px) {
+  .search {
+    height: 15vh;
+    margin-bottom: 20px;
+  }
+  .search__logo {
+    width: 20%;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+  .search__logoholder {
+    align-items: center;
+    width: 30%;
+  }
+  .search__header {
+    height: 20vh;
+  }
+  .search__ranking {
+    width: 20%;
+    height: 90%;
+    margin-bottom: 1rem;
+    padding-bottom: 2px;
+  }
+  .search__look {
+    align-items: center;
+    margin-left: 200px;
+    font-size: 50px;
+  }
+  .search__userholder {
+    display: flex;
+    width: 20%;
+    justify-content: space-around;
+  }
+  .search__user {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  .search__menu {
+    height: 20vh;
+  }
+  .search > i {
+    display: flex;
+    align-items: center;
+    font-size: 50px;
+  }
+  .search__query {
+    height: 3vh;
+    width: 30vw;
+  }
+}
+.results {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  width: 80%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.item__img-beer {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.item__img-beer > img {
+  width: 25%;
+  align-self: center;
+}
+.item__img-beer > figcaption {
+  align-self: center;
+  font-size: 23px;
+  margin: 10px;
+  padding: 10px;
+  color: black;
+  border-radius: 20px;
+}
+.item__beer-of-the-day > img {
+  display: none;
+}
+.item > h2 {
+  display: flex;
+  padding: 2px;
+  text-align: center;
+  border-bottom: 3px solid #EF9F1B;
+  justify-content: space-between;
+  padding-left: 25px;
+}
+.item > h3 {
+  text-align: center;
+}
+
+@media only screen and (min-width: 600px) {
+  .item {
+    margin: 30px;
+    width: 20%;
+  }
+  .item img {
+    width: 25%;
+  }
+}
+.detail {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #8ec5a6;
+  border-radius: 20px;
+  overflow: none;
+  margin-top: 4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Indie Flower", cursive;
+}
+.detail h4 {
+  font-size: 23px;
+  font-family: "Satisfy", cursive;
+}
+.detail p {
+  font-size: 18px;
+}
+.detail span {
+  font-size: 18px;
+}
+.detail ul {
+  font-size: 20px;
+}
+.detail li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-rigth: 1rem;
+  font-size: 18px;
+}
+.detail__nameBeer {
+  margin-bottom: 15px;
+  border-bottom: 3px solid #EF9F1B;
+}
+.detail__nameBeer > h3 {
+  letter-spacing: 2px;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+  font-family: "Satisfy", cursive;
+  margin-top: 1rem;
+}
+.detail__background {
+  margin: 0 1rem;
+}
+.detail__background > span {
+  align-content: center;
+}
+.detail__background > img {
+  float: left;
+  height: 21rem;
+  margin: 1rem;
+}
+.detail__background > ul {
+  font-size: 18px;
+  list-style: none;
+  font-size: 18px;
+}
+.detail__tips > img {
+  height: 12rem;
+  float: right;
+  margin-top: 1rem;
+}
+
+.detail {
+  font-size: 2rem;
+}
+.detail li {
+  margin: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul {
+  padding-inline-start: 0px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #2c7873;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+.login__title, .register__title {
+  font-family: "Permanent Marker", cursive;
+}
+
+/*# sourceMappingURL=style.css.map */

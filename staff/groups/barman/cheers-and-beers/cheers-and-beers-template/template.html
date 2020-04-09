@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheers & Beers</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="search">
+        <div class="search__header">
+            <div class="search__logoholder">
+                <img class="search__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo" />
+            </div>
+            <div class="search__userholder">
+                <i class="search__lock fas fa-lock"></i>
+                <h3 class="search__user"></h3>
+                <img class="search__ranking" src="img/level4.png" alt="ranking" />
+
+            </div>
+        </div>
+        <div class="search__menu">
+            <i class="search__hamburguer fas fa-bars"></i>
+                <div class="menu__content">
+                    
+                </div>
+            <!-- </div>
+                <div class="menu__content">
+                </div>
+            </div> -->
+            <input class="search__query" type="text" placeholder="Search" name="query" />
+
+            <button><i class="search__searching fas fa-search"></i></button>
+
+            <div class="search__favList">❤️</div>
+        </div>
+    </div>
+    
+    <div class="login">
+            <img class="login__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo">
+            <h2 class="login__title">Beer-In</h2>
+            <input class="login__input" type="text" placeholder="username">
+            <input class="login__input" type="password" placeholder="password">
+            <button class="login__submit">Submit</button>
+            <a class="login__register" href="">Beer-up</a>
+    </div>
+
+    <div class="register">
+            <img class="register__logo" src="img/cheers-and-beersLogo.png" alt="cheers-and-beersLogo">
+            <h2 class="register__title">Beer-Up</h2>
+            <input class="register__input" type="text" placeholder="name">
+            <input class="register__input" type="text" placeholder="surrname">
+            <input class="register__input" type="text" placeholder="username">
+            <input class="register__input" type="password" placeholder="password">
+            <button class="register__submit">Submit</button>
+            <a class="register__login" href="">Beer-In</a>
+    </div>
+    <div class="item">
+        <h2>DUFF <span>🤍</span></h2>
+        <h3>Alcohol:9</h3>
+        <figure class="item__beer-of-the-day">
+            <img src="img/Milhouse_Van_Houten.png" alt="Milhouse Recommends" />
+        </figure>
+        <figure class="item__img-beer">
+            <img src="https://img2.freepng.es/20180320/hwe/kisspng-aluminum-can-brand-mug-duff-1-5ab0a14814b607.9300280515215250640848.jpg">
+            <figcaption>The reason of your son</figcaption>
+        </figure>
+    </div>
+    <div class="detail">
+        <div class="detail__nameBeer">
+            <h3>Nombre: {name} <span>🤍</span></h3>
+            <p>Lema: {tagline}</p>
+            <p>Fecha de primera elaboración: {first_brewed}</p>
+            </div>
+            <div class="detail__background">
+            <h4>Descripción:</h4>
+            <p> {description} </p>
+            <img src={image_url} />
+            <p>Volumen de alcohol: {abv}</p>
+            <p>Amargor: {ibu}</p>
+            <p>Color final: {srm}</p>
+            <p>PH: {ph}</p>
+            <div class="detail_ingredients">
+            <h4>Ingredientes</h4>
+            <span>Tipo de malta: {malt.map(item => <ul>
+                <li>Nombre de Malta: {item.name}</li>
+                <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
+            </ul>)}
+            </span>
+            <span>Tipo de lúpulo: {hops.map(item => <ul>
+                <li>Nombre de lúpulo: {item.name}</li>
+                <li>Cantidad: {item.amount.value} {item.amount.unit}</li>
+            </ul>)}
+            </span>
+            <p>Tipo de levadura: {yeast}</p>
+            </div>
+            <div class="detail__tips">
+            <h4>Consejos</h4>
+            <img class="detail__moe" src="img/Moe_Szyslak.png" alt="Moe"></img>
+            <ul>Food Pairing: {food_pairing.map(item => <li>{item}</li>)}</ul>
+            <p>Consejos del creador: {brewers_tips}</p>
+            </div>
+            </div>
+    </div>
+</body>
+
+</html>
