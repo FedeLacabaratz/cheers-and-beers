@@ -1,1 +1,0 @@
-./bin/ls-info.sh

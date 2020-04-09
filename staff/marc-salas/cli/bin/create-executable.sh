@@ -1,3 +1,0 @@
-touch $*
-chmod 744 $*
-

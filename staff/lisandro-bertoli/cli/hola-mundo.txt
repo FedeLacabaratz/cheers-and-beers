@@ -1,1 +1,0 @@
-./bin/hola-mundo.txt

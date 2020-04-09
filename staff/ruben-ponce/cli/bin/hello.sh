@@ -1,3 +1,0 @@
- echo Hello: $1
-
-
