@@ -1,10 +1,11 @@
 # CHEERS & BEERS APP
 
 ## INDEX
-
-![Web App](http://barman.surge.sh/)
-![Documentation] (staff/groups/barman/cheers-and-beers/cheers-and-beer-doc/README.md)
-![Trello] (https://trello.com/b/gf0wsCub/barman)
+<ul>
+    <li>![Web App](http://barman.surge.sh/)</li>
+    <li>![Documentation](staff/groups/barman/cheers-and-beers/cheers-and-beer-doc/README.md)</li>
+    <li>![Trello](https://trello.com/b/gf0wsCub/barman)</li>
+</ul>
 
 ### STAFF
 - Ana Cano Prieto
