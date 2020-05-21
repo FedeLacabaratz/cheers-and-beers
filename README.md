@@ -1,11 +1,11 @@
-![](stuff/misc/skylab-logo.png)
+# CHEERS & BEERS APP
 
-# Full-Stack Web-Development Bootcamp 202001 - 1er App (Solo Front-End y consumiendo una API de cervezas)
+## INDEX
 
-![alt timeline](stuff/misc/timeline.jpg)
+- [Web App](http://barman.surge.sh/)
+- [Documentation](staff/groups/barman/cheers-and-beers/cheers-and-beer-doc/README.md)
 
-[Slides](https://docs.google.com/presentation/d/1gp6C0VXyTZtbGhBTWwgSsFGb82uinVnfGTnLx6n9p6Q/edit?usp=sharing)
-
-[Tasks](https://trello.com/b/eWaE7lLg/skylab-bootcamp-202001-board)
-
-[Misc](https://drive.google.com/drive/folders/1i473kSGu_gYY0BzmsDY-HBcbSMyJvfl9?usp=sharing)
+### STAFF
+- Ana Cano Prieto
+- Marc Salas Torras
+- Federico Lacabaratz
