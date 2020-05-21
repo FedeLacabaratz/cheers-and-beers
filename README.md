@@ -1,6 +1,6 @@
 ![](stuff/misc/skylab-logo.png)
 
-# Full-Stack Web-Development Bootcamp 202001
+# Full-Stack Web-Development Bootcamp 202001 - 1er App (Solo Front-End y consumiendo una API de cervezas)
 
 ![alt timeline](stuff/misc/timeline.jpg)
 
